@@ -1,6 +1,6 @@
 Topic: Personal Task Management System <br>
 
-# Web-Dev-Group-1-Sec.-2-
+Web-Dev-Group-Sec.-2-
 
 Members: <br>
 Nobel Tibebe UGR/5954/14 <br>
