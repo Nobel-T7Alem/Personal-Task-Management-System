@@ -12,14 +12,18 @@ const mongoose_1 = require("@nestjs/mongoose");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const user_models_1 = require("./user.models");
+const agency_module_1 = require("./agency/agency.module");
+const volunteer_module_1 = require("./volunteer/volunteer.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forRoot('mongodb+srv://tayejoshua4:Qm*X!AR2XGJtUvd@sebawi-app.3xgf2rf.mongodb.net/?retryWrites=true&w=majority'),
-            mongoose_1.MongooseModule.forFeature([{ name: 'user', schema: user_models_1.UserSchema }])
+            mongoose_1.MongooseModule.forRoot('mongodb+srv://ruthalemfanta:ggCjAMfGGIggO0FU@cluster0.4sdzlj8.mongodb.net/?retryWrites=true&w=majority'),
+            mongoose_1.MongooseModule.forFeature([{ name: 'user', schema: user_models_1.UserSchema }]),
+            agency_module_1.AgencyModule,
+            volunteer_module_1.VolunteerModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
