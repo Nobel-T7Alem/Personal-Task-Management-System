@@ -18,7 +18,7 @@ exports.AgencyModule = AgencyModule;
 exports.AgencyModule = AgencyModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forRoot('mongodb+srv://ruthalemfanta:UCncYZKAtJ7stw9S@cluster0.4sdzlj8.mongodb.net/?retryWrites=true&w=majority'),
+            mongoose_1.MongooseModule.forRoot('mongodb+srv://tayejoshua4:Qm*X!AR2XGJtUvd@sebawi-app.3xgf2rf.mongodb.net/Sebawi-app?retryWrites=true&w=majority'),
             mongoose_1.MongooseModule.forFeature([{ name: 'agency', schema: agency_model_1.AgencySchema }])
         ],
         controllers: [agency_controller_1.AgencyController],
