@@ -25,8 +25,10 @@
 import { Document } from 'mongoose';
 export type VolunteerDocument = Volunteer & Document;
 export declare class Volunteer {
-    username: string;
+    id: number;
+    name: string;
     email: string;
+    username: string;
     password: string;
     date_added: Date;
 }

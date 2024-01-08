@@ -8,10 +8,10 @@ import { Volunteer } from './volunteer.model';
 export class VolunteerController {
   constructor(private readonly volunteerService: VolunteerService) {}
 
-  @Post()
-  async createVolunteer(@Body() volunteerDto: Volunteer){
-    return this.volunteerService.createVolunteer(volunteerDto)
+  async createVolunteer(@Body() createVolunteerDto: CreateVolunteerDto) {
+    return this.volunteerService.createVolunteer(createVolunteerDto);
   }
+
 
   @Get()
   readVolunteer(){

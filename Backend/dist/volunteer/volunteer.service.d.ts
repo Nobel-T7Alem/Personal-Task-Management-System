@@ -26,14 +26,16 @@ import { CreateVolunteerDto } from './dto/create-volunteer.dto';
 import { UpdateVolunteerDto } from './dto/update-volunteer.dto';
 import { Model } from 'mongoose';
 import { Volunteer, VolunteerDocument } from './volunteer.model';
+import { VolunteerLoginDto } from './dto/volunteer-login.dto';
 export declare class VolunteerService {
     private readonly volunteerModel;
     constructor(volunteerModel: Model<VolunteerDocument>);
-    createVolunteer(volunteer: Volunteer): Promise<Volunteer>;
+    createVolunteer(createVolunteerDto: CreateVolunteerDto): Promise<Volunteer>;
     readVolunteer(): Promise<void | (import("mongoose").Document<unknown, {}, VolunteerDocument> & Volunteer & import("mongoose").Document<any, any, any> & {
         _id: import("mongoose").Types.ObjectId;
     })[]>;
     updateVolunteer(id: any, data: any): Promise<Volunteer>;
+    validateVolunteer(volunteerLoginDto: VolunteerLoginDto): Promise<Volunteer>;
     create(createVolunteerDto: CreateVolunteerDto): string;
     findAll(): string;
     findOne(id: number): string;

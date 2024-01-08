@@ -1,10 +1,13 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable,BadRequestException } from '@nestjs/common';
 import { CreateVolunteerDto } from './dto/create-volunteer.dto';
 import { UpdateVolunteerDto } from './dto/update-volunteer.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import {Model} from 'mongoose';
 import { Volunteer, VolunteerDocument } from './volunteer.model';
-
+import { UnauthorizedException } from '@nestjs/common';
+import { VolunteerLoginDto } from './dto/volunteer-login.dto';
+import { plainToClass } from 'class-transformer';
+import { validate } from 'class-validator';
 
 
 @Injectable()
@@ -14,9 +17,16 @@ export class VolunteerService {
    ){}
 
    //creating a volunteer
-  async createVolunteer (volunteer: Volunteer): Promise<Volunteer>{
-    const newVolunteer = new this.volunteerModel(volunteer)
-    return newVolunteer.save()
+   async createVolunteer(createVolunteerDto: CreateVolunteerDto): Promise<Volunteer> {
+    const volunteer = plainToClass(CreateVolunteerDto, createVolunteerDto);
+    const errors = await validate(volunteer);
+  
+    if (errors.length > 0) {
+      throw new BadRequestException(errors);
+    }
+  
+    const newVolunteer = new this.volunteerModel(volunteer);
+    return newVolunteer.save();
   }
 
   //reading user collection 
@@ -30,7 +40,19 @@ export class VolunteerService {
   async updateVolunteer(id, data): Promise<Volunteer>{
     return this.volunteerModel.findByIdAndUpdate(id, data,{new:true})
   }
+   //validate volunteer
+   async validateVolunteer(volunteerLoginDto: VolunteerLoginDto): Promise<Volunteer> {
+    const { username, password } = volunteerLoginDto;
+    const volunteer = await this.volunteerModel.findOne({ username });
+  
+    if (!volunteer || volunteer.password !== password) {
+      throw new UnauthorizedException('Invalid volunteer credentials');
+    }
+  
+    return volunteer;
+  }
 
+  // default
   create(createVolunteerDto: CreateVolunteerDto) {
     return 'This action adds a new volunteer';
   }

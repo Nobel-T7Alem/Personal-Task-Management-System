@@ -2,14 +2,14 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, Put } from '@nestjs/
 import { AgencyService } from './agency.service';
 import { Agency } from './agency.model';
 import { UpdateAgencyDto } from './dto/update-agency.dto';
+import { CreateAgencyDto } from './dto/create-agency.dto';
 
 @Controller('agency')
 export class AgencyController {
   constructor(private readonly agencyService: AgencyService) {}
 
-  @Post()
-  async createAgency(@Body() agencyDto: Agency){
-    return this.agencyService.createAgency(agencyDto)
+  async createAgency(@Body() createAgencyDto: CreateAgencyDto) {
+    return this.agencyService.createAgency(createAgencyDto);
   }
 
   @Get()

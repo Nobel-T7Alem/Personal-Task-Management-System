@@ -9,29 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserSchema = exports.User = void 0;
-const mongoose_1 = require("@nestjs/mongoose");
-let User = class User {
+exports.JwtStrategy = void 0;
+const common_1 = require("@nestjs/common");
+const passport_1 = require("@nestjs/passport");
+const passport_jwt_1 = require("passport-jwt");
+const config_1 = require("../../config");
+let JwtStrategy = class JwtStrategy extends (0, passport_1.PassportStrategy)(passport_jwt_1.Strategy) {
+    constructor() {
+        super({
+            jwtFromRequest: passport_jwt_1.ExtractJwt.fromAuthHeaderAsBearerToken(),
+            secretOrKey: config_1.jwtConstants.secret,
+        });
+    }
+    async validate(payload) {
+        return payload;
+    }
 };
-exports.User = User;
-__decorate([
-    (0, mongoose_1.Prop)(),
-    __metadata("design:type", String)
-], User.prototype, "username", void 0);
-__decorate([
-    (0, mongoose_1.Prop)(),
-    __metadata("design:type", String)
-], User.prototype, "email", void 0);
-__decorate([
-    (0, mongoose_1.Prop)(),
-    __metadata("design:type", String)
-], User.prototype, "password", void 0);
-__decorate([
-    (0, mongoose_1.Prop)({ default: Date.now }),
-    __metadata("design:type", Date)
-], User.prototype, "date_added", void 0);
-exports.User = User = __decorate([
-    (0, mongoose_1.Schema)()
-], User);
-exports.UserSchema = mongoose_1.SchemaFactory.createForClass(User);
-//# sourceMappingURL=user.models.js.map
+exports.JwtStrategy = JwtStrategy;
+exports.JwtStrategy = JwtStrategy = __decorate([
+    (0, common_1.Injectable)(),
+    __metadata("design:paramtypes", [])
+], JwtStrategy);
+//# sourceMappingURL=jwt-strategy.js.map
