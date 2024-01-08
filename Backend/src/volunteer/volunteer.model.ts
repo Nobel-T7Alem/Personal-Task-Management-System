@@ -6,13 +6,19 @@ export type VolunteerDocument = Volunteer & Document
 
 @Schema()
 export class Volunteer{
-    @Prop()
-    username: string;
+    @Prop({ required: true })
+    id: number;
 
-    @Prop()
+    @Prop({ required: true })
+    name: string;
+  
+    @Prop({ required: true, unique: true })
     email: string;
-
-    @Prop()
+  
+    @Prop({ required: true, unique: true })
+    username: string;
+  
+    @Prop({ required: true })
     password: string;
 
     @Prop({default:Date.now})

@@ -25,8 +25,11 @@
 import { Document } from 'mongoose';
 export type AgencyDocument = Agency & Document;
 export declare class Agency {
-    username: string;
+    id: number;
+    name: string;
     email: string;
+    username: string;
+    description: string;
     password: string;
     date_added: Date;
 }

@@ -15,15 +15,23 @@ let Volunteer = class Volunteer {
 };
 exports.Volunteer = Volunteer;
 __decorate([
-    (0, mongoose_1.Prop)(),
-    __metadata("design:type", String)
-], Volunteer.prototype, "username", void 0);
+    (0, mongoose_1.Prop)({ required: true }),
+    __metadata("design:type", Number)
+], Volunteer.prototype, "id", void 0);
 __decorate([
-    (0, mongoose_1.Prop)(),
+    (0, mongoose_1.Prop)({ required: true }),
+    __metadata("design:type", String)
+], Volunteer.prototype, "name", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ required: true, unique: true }),
     __metadata("design:type", String)
 ], Volunteer.prototype, "email", void 0);
 __decorate([
-    (0, mongoose_1.Prop)(),
+    (0, mongoose_1.Prop)({ required: true, unique: true }),
+    __metadata("design:type", String)
+], Volunteer.prototype, "username", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", String)
 ], Volunteer.prototype, "password", void 0);
 __decorate([
