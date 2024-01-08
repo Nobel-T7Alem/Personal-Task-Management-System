@@ -1,9 +1,7 @@
 # compiled output
-/dist
 /node_modules
 
-# Logs
-logs
+# Logslogs
 *.log
 npm-debug.log*
 pnpm-debug.log*
