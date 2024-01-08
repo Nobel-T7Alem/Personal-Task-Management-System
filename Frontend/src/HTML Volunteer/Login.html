@@ -7,14 +7,16 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="styles/styles.css" />
+
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <!-- Add your custom stylesheet here if you have additional styles -->
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="Home.html">
         <!-- Updated href to point to the homepage -->
         <img
-          src="Images/Icon-03.png"
+          src="../Images/Icon-03.png"
           alt="Icon"
           class="d-inline-block align-top"
         />
@@ -36,51 +38,52 @@
       </div>
     </nav>
     <div class="container-fluid">
-      <div class="row no-gutters vertical-center">
-        <!-- Image Container -->
-        <div class="col-md-6 d-none d-md-flex contact-img-wrapper">
+      <div class="row">
+        <div class="col-md-6 d-none d-md-flex login-img-wrapper">
           <img
-            src="Images/Contact page.png"
-            alt="contact image"
+            src="../Images/Login Page.png"
+            alt="Login Page Image"
             class="img-fluid"
           />
         </div>
-        <!-- Form Container -->
         <div class="col-md-6 d-flex align-items-center justify-content-center">
-          <form class="contact-form">
-            <h2>Get in Touch</h2>
+          <form class="login-form">
+            <h2>Login to Sebawi!</h2>
+            <!-- Form content -->
             <div class="form-group">
-              <label for="name">Name</label>
+              <label for="username">Username</label>
               <input
                 type="text"
                 class="form-control"
-                id="name"
-                placeholder="Your Name"
+                id="username"
+                placeholder="Enter username"
               />
             </div>
             <div class="form-group">
-              <label for="email">Email Address</label>
+              <label for="password">Password</label>
               <input
-                type="email"
+                type="password"
                 class="form-control"
-                id="email"
-                placeholder="Your Email"
+                id="password"
+                placeholder="Enter password"
               />
             </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea
-                class="form-control"
-                id="message"
-                rows="5"
-                placeholder="Your Message"
-              ></textarea>
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="loginAsAgency"
+              />
+              <label class="form-check-label" for="loginAsAgency"
+                >Login as Agency</label
+              >
             </div>
-            <button type="submit" class="btn btn-contact">Send Message</button>
+            <button type="submit" class="btn btn-big-green mt-3">Login</button>
           </form>
         </div>
       </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
