@@ -13,11 +13,12 @@ body {
 }
 
 .navbar-brand img {
-  height: 60px;
+  height: 70px;
+  width: auto;
 }
 
 .navbar-nav .nav-link-btn {
-  background-color: #006400;
+  background-color: #40ab40;
   border-color: #006400;
   color: #ffffff;
   font-weight: bold;
@@ -70,9 +71,18 @@ body {
   max-width: 100%;
   height: auto;
 }
+
+.contact-img-wrapper {
+  padding: 30px; /* Adds space around the image */
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
+  height: 100vh; /* Make the div take the full height of the viewport */
+}
+
 .contact-form {
-  max-width: 600px; /* Set the width of the contact form */
-  margin: 50px auto;
+  max-width: 500px; /* Adjust the width as per your design preference */
+  margin: auto; /* Center form in the available vertical space */
   padding: 30px;
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -83,20 +93,9 @@ body {
   padding: 30px;
 }
 
-.map-placeholder {
-  width: 100%;
-  height: 300px; /* Set a fixed height */
-  background-color: #ddd; /* Placeholder color */
-  text-align: center;
-  line-height: 300px; /* Center text vertically */
-  color: #666;
-  margin-bottom: 30px;
-}
-
 .btn-contact {
   background-color: #006400; /* Dark green background for the button */
   color: #ffffff; /* White text */
-  font-size: 16px; /* Larger font size for the button */
   padding: 10px 20px;
   border: none;
   border-radius: 5px; /* Rounded corners for the button */
@@ -105,4 +104,13 @@ body {
 
 .btn-contact:hover {
   background-color: #32cd32; /* Light green on hover */
+}
+
+@media (min-width: 992px) {
+  /* Adjust breakpoint if needed */
+  .vertical-center {
+    min-height: 100vh; /* Full height */
+    display: flex;
+    align-items: center; /* Align vertically */
+  }
 }
