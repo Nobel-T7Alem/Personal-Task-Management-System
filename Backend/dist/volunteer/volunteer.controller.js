@@ -15,14 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.VolunteerController = void 0;
 const common_1 = require("@nestjs/common");
 const volunteer_service_1 = require("./volunteer.service");
+const create_volunteer_dto_1 = require("./dto/create-volunteer.dto");
 const update_volunteer_dto_1 = require("./dto/update-volunteer.dto");
-const volunteer_model_1 = require("./volunteer.model");
 let VolunteerController = class VolunteerController {
     constructor(volunteerService) {
         this.volunteerService = volunteerService;
     }
-    async createVolunteer(volunteerDto) {
-        return this.volunteerService.createVolunteer(volunteerDto);
+    async createVolunteer(createVolunteerDto) {
+        return this.volunteerService.createVolunteer(createVolunteerDto);
     }
     readVolunteer() {
         return this.volunteerService.readVolunteer();
@@ -45,10 +45,9 @@ let VolunteerController = class VolunteerController {
 };
 exports.VolunteerController = VolunteerController;
 __decorate([
-    (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [volunteer_model_1.Volunteer]),
+    __metadata("design:paramtypes", [create_volunteer_dto_1.CreateVolunteerDto]),
     __metadata("design:returntype", Promise)
 ], VolunteerController.prototype, "createVolunteer", null);
 __decorate([

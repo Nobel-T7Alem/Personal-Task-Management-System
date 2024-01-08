@@ -18,11 +18,11 @@ exports.VolunteerModule = VolunteerModule;
 exports.VolunteerModule = VolunteerModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forRoot('mongodb+srv://ruthalemfanta:UCncYZKAtJ7stw9S@cluster0.4sdzlj8.mongodb.net/?retryWrites=true&w=majority'),
             mongoose_1.MongooseModule.forFeature([{ name: 'volunteer', schema: volunteer_model_1.VolunteerSchema }])
         ],
         controllers: [volunteer_controller_1.VolunteerController],
         providers: [volunteer_service_1.VolunteerService],
+        exports: [mongoose_1.MongooseModule.forFeature([{ name: 'volunteer', schema: volunteer_model_1.VolunteerSchema }])],
     })
 ], VolunteerModule);
 //# sourceMappingURL=volunteer.module.js.map

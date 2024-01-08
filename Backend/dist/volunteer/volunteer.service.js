@@ -14,13 +14,22 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VolunteerService = void 0;
 const common_1 = require("@nestjs/common");
+const create_volunteer_dto_1 = require("./dto/create-volunteer.dto");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
+const common_2 = require("@nestjs/common");
+const class_transformer_1 = require("class-transformer");
+const class_validator_1 = require("class-validator");
 let VolunteerService = class VolunteerService {
     constructor(volunteerModel) {
         this.volunteerModel = volunteerModel;
     }
-    async createVolunteer(volunteer) {
+    async createVolunteer(createVolunteerDto) {
+        const volunteer = (0, class_transformer_1.plainToClass)(create_volunteer_dto_1.CreateVolunteerDto, createVolunteerDto);
+        const errors = await (0, class_validator_1.validate)(volunteer);
+        if (errors.length > 0) {
+            throw new common_1.BadRequestException(errors);
+        }
         const newVolunteer = new this.volunteerModel(volunteer);
         return newVolunteer.save();
     }
@@ -31,6 +40,14 @@ let VolunteerService = class VolunteerService {
     }
     async updateVolunteer(id, data) {
         return this.volunteerModel.findByIdAndUpdate(id, data, { new: true });
+    }
+    async validateVolunteer(volunteerLoginDto) {
+        const { username, password } = volunteerLoginDto;
+        const volunteer = await this.volunteerModel.findOne({ username });
+        if (!volunteer || volunteer.password !== password) {
+            throw new common_2.UnauthorizedException('Invalid volunteer credentials');
+        }
+        return volunteer;
     }
     create(createVolunteerDto) {
         return 'This action adds a new volunteer';

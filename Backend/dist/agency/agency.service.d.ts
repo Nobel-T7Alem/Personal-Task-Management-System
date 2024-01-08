@@ -25,14 +25,17 @@
 import { Agency, AgencyDocument } from '../agency/agency.model';
 import { UpdateAgencyDto } from './dto/update-agency.dto';
 import { Model } from 'mongoose';
+import { CreateAgencyDto } from './dto/create-agency.dto';
+import { AgencyLoginDto } from '../agency/dto/agency-login.dto';
 export declare class AgencyService {
     private readonly agencyModel;
     constructor(agencyModel: Model<AgencyDocument>);
-    createAgency(agency: Agency): Promise<Agency>;
+    createAgency(createAgencyDto: CreateAgencyDto): Promise<Agency>;
     readAgency(): Promise<void | (import("mongoose").Document<unknown, {}, AgencyDocument> & Agency & import("mongoose").Document<any, any, any> & {
         _id: import("mongoose").Types.ObjectId;
     })[]>;
     updateAgency(id: any, data: any): Promise<Agency>;
+    validateAgency(agencyLoginDto: AgencyLoginDto): Promise<Agency>;
     findAll(): string;
     findOne(id: number): string;
     update(id: number, updateAgencyDto: UpdateAgencyDto): string;

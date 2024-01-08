@@ -24,12 +24,13 @@
 /// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
 import { VolunteerService } from './volunteer.service';
+import { CreateVolunteerDto } from './dto/create-volunteer.dto';
 import { UpdateVolunteerDto } from './dto/update-volunteer.dto';
 import { Volunteer } from './volunteer.model';
 export declare class VolunteerController {
     private readonly volunteerService;
     constructor(volunteerService: VolunteerService);
-    createVolunteer(volunteerDto: Volunteer): Promise<Volunteer>;
+    createVolunteer(createVolunteerDto: CreateVolunteerDto): Promise<Volunteer>;
     readVolunteer(): Promise<void | (import("mongoose").Document<unknown, {}, import("./volunteer.model").VolunteerDocument> & Volunteer & import("mongoose").Document<any, any, any> & {
         _id: import("mongoose").Types.ObjectId;
     })[]>;
