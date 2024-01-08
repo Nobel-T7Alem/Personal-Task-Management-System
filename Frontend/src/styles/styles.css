@@ -1,38 +1,108 @@
-/* Custom CSS for the navbar */
 body {
   font-family: "Gilmer", sans-serif;
+  background-color: #f4f4f4;
 }
-
 .navbar-nav .nav-link {
-  color: #ffffff; /* White */
-  letter-spacing: 4px; /* Adjust spacing between links */
-  text-transform: uppercase; /* Convert to uppercase */
+  color: #ffffff;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #32cd32; /* Light green on hover */
+  color: #32cd32;
 }
 
 .navbar-brand img {
-  height: 60px; /* Adjust image height */
+  height: 60px;
 }
 
 .navbar-nav .nav-link-btn {
-  background-color: #006400; /* Dark green for buttons */
+  background-color: #006400;
   border-color: #006400;
-  color: #ffffff; /* White text */
-  font-weight: bold; /* Bold text */
-  transition: background-color 0.3s ease-in-out; /* Smooth hover effect */
-  margin-right: 10px; /* Increase space between buttons */
+  color: #ffffff;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+  margin-right: 10px;
 }
 
 .custom-card {
-  background-color: #006400; /* Dark green background */
-  color: white; /* White text */
-  margin: 10px; /* Add some space between cards */
+  background-color: #006400;
+  color: white;
+  margin: 10px;
 }
 
 .navbar-nav .nav-link-btn:hover {
-  background-color: #32cd32; /* Light green on hover */
+  background-color: #32cd32;
   border-color: #32cd32;
+}
+
+.login-img-wrapper {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  max-width: 400px;
+  margin: auto;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-big-green {
+  background-color: #006400;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-big-green:hover {
+  background-color: #32cd32;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.contact-form {
+  max-width: 600px; /* Set the width of the contact form */
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  margin: 50px auto;
+  padding: 30px;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 300px; /* Set a fixed height */
+  background-color: #ddd; /* Placeholder color */
+  text-align: center;
+  line-height: 300px; /* Center text vertically */
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.btn-contact {
+  background-color: #006400; /* Dark green background for the button */
+  color: #ffffff; /* White text */
+  font-size: 16px; /* Larger font size for the button */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px; /* Rounded corners for the button */
+  transition: background-color 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.btn-contact:hover {
+  background-color: #32cd32; /* Light green on hover */
 }
