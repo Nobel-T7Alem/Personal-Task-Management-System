@@ -10,14 +10,16 @@ import { ErrorMiddleware } from './Middleware/error.middleware';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://ruthalemfanta:vKkHT9b9aZAt3Ex7@cluster0.4sdzlj8.mongodb.net/?retryWrites=true&w=majority'),
+    MongooseModule.forRoot('tayejoshua4:Qm*X!AR2XGJtUvd@sebawi-app.3xgf2rf.mongodb.net/?Sebawi-appretryWrites=true&w=majority'),
     AuthModule,
     AgencyModule,
     VolunteerModule,
   ],
   controllers: [AppController],
-  providers: [AppService, 
-   { provide: APP_FILTER,
-    useClass: ErrorMiddleware,}],
+  providers: [AppService,
+    {
+      provide: APP_FILTER,
+      useClass: ErrorMiddleware,
+    }],
 })
-export class AppModule {}
+export class AppModule { }

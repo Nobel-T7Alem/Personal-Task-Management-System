@@ -22,6 +22,6 @@ import { AgencyModule } from 'src/agency/agency.module';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy,  VolunteerService, AgencyService],
+  providers: [AuthService, JwtStrategy, VolunteerService, AgencyService],
 })
-export class AuthModule {}
+export class AuthModule { }

@@ -18,11 +18,11 @@ exports.AgencyModule = AgencyModule;
 exports.AgencyModule = AgencyModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forRoot('mongodb+srv://tayejoshua4:Qm*X!AR2XGJtUvd@sebawi-app.3xgf2rf.mongodb.net/Sebawi-app?retryWrites=true&w=majority'),
             mongoose_1.MongooseModule.forFeature([{ name: 'agency', schema: agency_model_1.AgencySchema }])
         ],
         controllers: [agency_controller_1.AgencyController],
         providers: [agency_service_1.AgencyService],
+        exports: [mongoose_1.MongooseModule.forFeature([{ name: 'agency', schema: agency_model_1.AgencySchema }])],
     })
 ], AgencyModule);
 //# sourceMappingURL=agency.module.js.map
