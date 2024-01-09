@@ -22,15 +22,17 @@ exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forRoot('mongodb+srv://ruthalemfanta:RUzhHpZmurDTtWXC@cluster0.4sdzlj8.mongodb.net/?retryWrites=true&w=majority'),
+            mongoose_1.MongooseModule.forRoot('mongodb+srv://tayejoshua4:Qm*X!AR2XGJtUvd@sebawi-app.3xgf2rf.mongodb.net/Sebawi-app?retryWrites=true&w=majority'),
             agency_module_1.AgencyModule,
             volunteer_module_1.VolunteerModule,
             postagency_module_1.PostagencyModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService,
-            { provide: core_1.APP_FILTER,
-                useClass: error_middleware_1.ErrorMiddleware, }],
+            {
+                provide: core_1.APP_FILTER,
+                useClass: error_middleware_1.ErrorMiddleware,
+            }],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map
