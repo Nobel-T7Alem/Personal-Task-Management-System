@@ -26,11 +26,10 @@
 import { AgencyService } from './agency.service';
 import { Agency } from './agency.model';
 import { UpdateAgencyDto } from './dto/update-agency.dto';
-import { CreateAgencyDto } from './dto/create-agency.dto';
 export declare class AgencyController {
     private readonly agencyService;
     constructor(agencyService: AgencyService);
-    createAgency(createAgencyDto: CreateAgencyDto): Promise<Agency>;
+    createAgency(agencyDto: Agency): Promise<Agency>;
     readAgency(): Promise<void | (import("mongoose").Document<unknown, {}, import("./agency.model").AgencyDocument> & Agency & import("mongoose").Document<any, any, any> & {
         _id: import("mongoose").Types.ObjectId;
     })[]>;

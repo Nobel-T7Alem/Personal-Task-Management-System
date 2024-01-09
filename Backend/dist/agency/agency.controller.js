@@ -15,14 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AgencyController = void 0;
 const common_1 = require("@nestjs/common");
 const agency_service_1 = require("./agency.service");
+const agency_model_1 = require("./agency.model");
 const update_agency_dto_1 = require("./dto/update-agency.dto");
-const create_agency_dto_1 = require("./dto/create-agency.dto");
 let AgencyController = class AgencyController {
     constructor(agencyService) {
         this.agencyService = agencyService;
     }
-    async createAgency(createAgencyDto) {
-        return this.agencyService.createAgency(createAgencyDto);
+    async createAgency(agencyDto) {
+        return this.agencyService.createAgency(agencyDto);
     }
     readAgency() {
         return this.agencyService.readAgency();
@@ -45,9 +45,10 @@ let AgencyController = class AgencyController {
 };
 exports.AgencyController = AgencyController;
 __decorate([
+    (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_agency_dto_1.CreateAgencyDto]),
+    __metadata("design:paramtypes", [agency_model_1.Agency]),
     __metadata("design:returntype", Promise)
 ], AgencyController.prototype, "createAgency", null);
 __decorate([
