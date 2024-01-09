@@ -1,93 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Sebawi</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-
-    <link rel="stylesheet" href="../styles/styles.css" />
-    <!-- Add your custom stylesheet here if you have additional styles -->
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="AgencyHome.html">
-        <img
-          src="../Images/Icon-03.png"
-          alt="Icon"
-          class="d-inline-block align-top"
-        />
-      </a>
-      <div class="navbar-collapse collapse">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link nav-link-btn btn" href="ServiceRequest.html"
-              >Request Service</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-btn btn" href="Contact.html">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-btn btn" href="Login.html">Login</a>
-          </li>
-        </ul>
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css"> 
+  <style>
+    body {
+      font-family: 'Gilmer', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="Login Page.png" alt="Login Page Image" class="img-fluid">
       </div>
-    </nav>
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 d-none d-md-flex login-img-wrapper">
-          <img
-            src="../Images/Login Page.png"
-            alt="Login Page Image"
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-md-6 d-flex align-items-center justify-content-center">
-          <form class="login-form">
-            <h2>Login to Sebawi!</h2>
-            <!-- Form content -->
-            <div class="form-group">
-              <label for="username">Username</label>
-              <input
-                type="text"
-                class="form-control"
-                id="username"
-                placeholder="Enter username"
-              />
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Enter password"
-              />
-            </div>
-            <div class="form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="loginAsAgency"
-              />
-              <label class="form-check-label" for="loginAsAgency"
-                >Login as Agency</label
-              >
-            </div>
-            <button class="btn btn-big-green mt-3" onclick="Login(event)">
-              Login
-            </button>
-          </form>
-        </div>
+      <div class="col-md-6">
+        <form class="login-form">
+          <h2>Login</h2>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="loginAsAgency">
+            <label class="form-check-label" for="loginAsAgency">Login as Agency</label>
+          </div>
+          <button type="submit" class="btn btn-success mt-3">Login</button>
+          <h5  style="margin-top: 10px;">Don't have an account? <a href="signup.html">Sign Up.</a></h5>
+        </form>
       </div>
     </div>
-    <script src="../script/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>

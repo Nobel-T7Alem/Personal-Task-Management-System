@@ -1,163 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Sebawi</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
+<head>
+  <meta charset="UTF-8">
+  <title>Sebawi</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.0/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.0/dist/aos.js"></script>
+  <style>
+    /* Custom CSS for the navbar */
+    body {
+      font-family: 'Gilmer', sans-serif;
+    }
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gilmer:wght@400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../styles/styles.css" />
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="Home.html">
-        <!-- Updated href to point to the homepage -->
-        <img
-          src="../Images/Icon-03.png"
-          alt="Icon"
-          class="d-inline-block align-top"
-        />
-      </a>
-      <div class="navbar-collapse collapse">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link nav-link-btn btn" href="Agencies.html"
-              >Agencies</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-btn btn" href="Contact.html">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-btn btn" href="Login.html">Login</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    .navbar-nav .nav-link {
+      color: #006400; /* White */
+      letter-spacing: 4px; /* Adjust spacing between links */
+      text-transform: uppercase; /* Convert to uppercase */
+    }
 
-    <div class="container">
-      <h1 class="my-5 text-center">Welcome to Sebawi!</h1>
-      <p>Addis Ababa's first centralized volunteering agencies.</p>
-      <p>
-        We are delighted to have you along with us on this journey and we thank
-        you for the services you are about to provide.
-      </p>
+    .navbar-nav .nav-link:hover {
+      color: #32CD32; /* Light green on hover */
+    }
+    .nav-item{
+      color: #006400;
+    }
 
-      <!-- Information Section -->
-      <!-- Information Section -->
-      <div class="row my-4">
-        <!-- About Us Card -->
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">About Us</h3>
-              <p class="card-text">
-                Sebawi is at the forefront of connecting volunteers with
-                opportunities in Addis Ababa. Our platform enables agencies to
-                find passionate individuals dedicated to various humanitarian
-                causes. From environmental conservation to education and health
-                care, Sebawi's innovative approach ensures that every
-                volunteer's effort makes a significant impact.
-              </p>
-            </div>
-          </div>
-        </div>
+    .navbar-brand img {
+      height: 60px; /* Adjust image height */
+    }
 
-        <!-- Our Impact Card -->
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">Our Impact</h3>
-              <p class="card-text">
-                Since our inception, Sebawi has successfully connected thousands
-                of volunteers with agencies, leading to transformative changes
-                in our community. Our network comprises diverse groups, from
-                small grassroots organizations to large governmental agencies,
-                all working together to address crucial social, environmental,
-                and economic issues in Addis Ababa.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p>What cause will you be joining today?</p>
+    .navbar-nav .nav-link-btn {
+      background-color: #ffffff; /* Dark green for buttons */
+      border: none;
+      color: #006400; /* White text */
+      font-weight: bold; /* Bold text */
+      transition: background-color 0.3s ease-in-out; /* Smooth hover effect */
+      margin-right: 125px; /* Increase space between buttons */
+
+
+      .custom-card {
+      background-color: #006400; /* Dark green background */
+      color: white; /* White text */
+      margin: 10px; /* Add some space between cards */
+    }
+    }
+
+    .navbar-nav .nav-link-btn:hover {
+      background-color: #006400; /* Light green on hover */
+    
+    }
+    span { color: #006400; 
+      font-size: larger; 
+      font-weight: 500s;
+
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Gilmer:wght@400&display=swap" rel="stylesheet">
+</head>
+<body data-aos="fade-up">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="Home.html">
+      <img src="Icon-03.png" alt="Icon" class="d-inline-block align-top" style="width: 100px; height: 110px;">
+    </a>
+    <div class="navbar-collapse collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="About.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="Contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="Login.html">Login</a>
+        </li>
+      </ul>
     </div>
-    <nav>
-      <form
-        class="form-inline mx-auto"
-        style="padding-left: 50px; padding-bottom: 50px"
-      >
-        <input
-          class="form-control mr-sm-2 w-75"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-          Search
-        </button>
-      </form>
-    </nav>
+  </nav>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card custom-card">
-            <img
-              src="https://via.placeholder.com/200x200"
-              class="card-img-top"
-              alt="Placeholder Image"
-            />
-            <div class="card-body">
-              <p class="card-text">This is some placeholder text.</p>
-              <p class="card-text">More placeholder text here.</p>
-              <p class="card-text">Even more placeholder text.</p>
-              <p class="card-text">Last line of text.</p>
-            </div>
+    <h1 style="padding:50px; padding-bottom: 30px; color:#32CD32;">Welcome to Sebawi.</h1>
+    <pre style="font-family: 'Gilmer', sans-serif; font-size: 15pt;padding-left: 50px;">
+Addis Ababa's first centralized hub for volunteering agencies. We are delighted to have you along with us on this journey
+and we thank you for the services you are about to provide.
+
+Addis Ababa is full of agencies and institutions who have devoted their life to serving a humanitarian cause. What cause will you
+be joining today?
+    </pre>
+
+    <form class="form-inline mx-auto" style="padding-left: 50px; padding-bottom: 50px;">
+      <input class="form-control mr-sm-2 w-75" type="search" style="border-color: #32CD32; border-radius: 15px;" placeholder=" &#128269; " aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
+    </form>
+  </nav>
+ 
+  <div class="container" style="padding-bottom: 100px;">
+    <div class="row">
+      <div class="col-md-4" style="border-color: #32CD32;">
+        <div class="card custom-card">
+          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <p class="card-text"><span>Agency:</span> The Ethiopian Red Cross Association</p>
+            <p class="card-text"><span>Service Required:</span> Medicine packaging.</p>
+            <p class="card-text"><span>Location:</span> Across Ambassador Hotel</p>
+            <p class="card-text"><span >Date & Time:</span> 12/2/2024, 7:15-11:00 AM</p>
+            <button type="submit" class="btn btn-success mt-3">Register</button>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card custom-card">
-            <img
-              src="https://via.placeholder.com/200x200"
-              class="card-img-top"
-              alt="Placeholder Image"
-            />
-            <div class="card-body">
-              <p class="card-text">This is some placeholder text.</p>
-              <p class="card-text">More placeholder text here.</p>
-              <p class="card-text">Even more placeholder text.</p>
-              <p class="card-text">Last line of text.</p>
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card custom-card">
+          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <p class="card-text">This is some placeholder text.</p>
+            <p class="card-text">More placeholder text here.</p>
+            <p class="card-text">Even more placeholder text.</p>
+            <p class="card-text">Last line of text.</p>
+            <button type="submit" class="btn btn-success mt-3">Register</button>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card custom-card">
-            <img
-              src="https://via.placeholder.com/200x200"
-              class="card-img-top"
-              alt="Placeholder Image"
-            />
-            <div class="card-body">
-              <p class="card-text">This is some placeholder text.</p>
-              <p class="card-text">More placeholder text here.</p>
-              <p class="card-text">Even more placeholder text.</p>
-              <p class="card-text">Last line of text.</p>
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card custom-card">
+          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <p class="card-text">This is some placeholder text.</p>
+            <p class="card-text">More placeholder text here.</p>
+            <p class="card-text">Even more placeholder text.</p>
+            <p class="card-text">Last line of text.</p>
+            <button type="submit" class="btn btn-success mt-3">Register</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card custom-card" style="margin-top: 20px;">
+          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image" ">
+          <div class="card-body">
+            <p class="card-text">This is some placeholder text.</p>
+            <p class="card-text">More placeholder text here.</p>
+            <p class="card-text">Even more placeholder text.</p>
+            <p class="card-text">Last line of text.</p>
+            <button type="submit" class="btn btn-success mt-3">Register</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" style="margin-top: 20px;">
+        <div class="card custom-card">
+          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <p class="card-text">This is some placeholder text.</p>
+            <p class="card-text">More placeholder text here.</p>
+            <p class="card-text">Even more placeholder text.</p>
+            <p class="card-text">Last line of text.</p>
+            <button type="submit" class="btn btn-success mt-3">Register</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" style="margin-top: 20px;">
+        <div class="card custom-card">
+          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <p class="card-text">This is some placeholder text.</p>
+            <p class="card-text">More placeholder text here.</p>
+            <p class="card-text">Even more placeholder text.</p>
+            <p class="card-text">Last line of text.</p>
+            <button type="submit" class="btn btn-success mt-3">Register</button>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  AOS.init({
+    disable: 'mobile' 
+  });
+</script>
+<footer style="text-align: center; padding: 50px; background-color: rgb(30, 30, 30); color: white;">
+  &#169; Sebawi Volunteering. 2024. All Rights Reserved. 
+</footer>
 </html>
