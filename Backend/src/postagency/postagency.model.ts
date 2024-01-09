@@ -1,25 +1,19 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document } from 'mongoose';
-export type AgencyDocument = Agency & Document 
+export type PostagencyDocument = Postagency & Document 
 
 @Schema()
-export class Agency{
+export class Postagency{
     
 
     @Prop({ required: true })
     name: string;
   
-    @Prop({ required: true, unique: true })
-    email: string;
-  
-    @Prop({ required: true, unique: true })
-    username: string;
-  
     @Prop({ required: true })
     description: string;
   
     @Prop({ required: true })
-    password: string;
+    contact: string;
 
     @Prop({default:Date.now})
     date_added: Date;
@@ -27,5 +21,5 @@ export class Agency{
 
 
 
-export const AgencySchema = SchemaFactory.createForClass(Agency)
+export const PostagencySchema = SchemaFactory.createForClass(Postagency)
 

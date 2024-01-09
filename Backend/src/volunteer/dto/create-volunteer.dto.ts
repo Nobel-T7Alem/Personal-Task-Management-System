@@ -1,4 +1,5 @@
-import { IsNotEmpty, IsString } from "class-validator";
+import { IsString, IsNotEmpty } from 'class-validator';
+
 export class CreateVolunteerDto {
     @IsString()
     @IsNotEmpty()
@@ -6,7 +7,7 @@ export class CreateVolunteerDto {
 
     @IsString()
     @IsNotEmpty()
-    username: string;
+    username:string;
 
     @IsString()
     @IsNotEmpty()

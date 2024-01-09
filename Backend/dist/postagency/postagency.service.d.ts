@@ -22,21 +22,15 @@
 /// <reference types="mongoose/types/validation" />
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
-import { Agency, AgencyDocument } from '../agency/agency.model';
-import { UpdateAgencyDto } from './dto/update-agency.dto';
+import { UpdatePostagencyDto } from './dto/update-postagency.dto';
 import { Model } from 'mongoose';
-import { AgencyLoginDto } from '../agency/dto/agency-login.dto';
-export declare class AgencyService {
-    private readonly agencyModel;
-    constructor(agencyModel: Model<AgencyDocument>);
-    createAgency(agency: Agency): Promise<Agency>;
-    readAgency(): Promise<void | (import("mongoose").Document<unknown, {}, AgencyDocument> & Agency & import("mongoose").Document<any, any, any> & {
-        _id: import("mongoose").Types.ObjectId;
-    })[]>;
-    updateAgency(id: any, data: any): Promise<Agency>;
-    validateAgency(agencyLoginDto: AgencyLoginDto): Promise<Agency>;
+import { Postagency, PostagencyDocument } from './postagency.model';
+export declare class PostagencyService {
+    private readonly postagencyModel;
+    constructor(postagencyModel: Model<PostagencyDocument>);
+    createPostagency(postagency: Postagency): Promise<Postagency>;
     findAll(): string;
     findOne(id: number): string;
-    update(id: number, updateAgencyDto: UpdateAgencyDto): string;
+    update(id: number, updatePostagencyDto: UpdatePostagencyDto): string;
     remove(id: number): string;
 }

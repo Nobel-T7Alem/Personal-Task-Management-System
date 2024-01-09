@@ -11,28 +11,26 @@ const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const mongoose_1 = require("@nestjs/mongoose");
-const auth_module_1 = require("./auth/auth.module");
 const agency_module_1 = require("./agency/agency.module");
 const volunteer_module_1 = require("./volunteer/volunteer.module");
 const core_1 = require("@nestjs/core");
 const error_middleware_1 = require("./Middleware/error.middleware");
+const postagency_module_1 = require("./postagency/postagency.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forRoot('tayejoshua4:Qm*X!AR2XGJtUvd@sebawi-app.3xgf2rf.mongodb.net/?Sebawi-appretryWrites=true&w=majority'),
-            auth_module_1.AuthModule,
+            mongoose_1.MongooseModule.forRoot('mongodb+srv://ruthalemfanta:RUzhHpZmurDTtWXC@cluster0.4sdzlj8.mongodb.net/?retryWrites=true&w=majority'),
             agency_module_1.AgencyModule,
             volunteer_module_1.VolunteerModule,
+            postagency_module_1.PostagencyModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService,
-            {
-                provide: core_1.APP_FILTER,
-                useClass: error_middleware_1.ErrorMiddleware,
-            }],
+            { provide: core_1.APP_FILTER,
+                useClass: error_middleware_1.ErrorMiddleware, }],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

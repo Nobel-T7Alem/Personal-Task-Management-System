@@ -8,11 +8,11 @@ import { AgencySchema } from './agency.model';
 
 @Module({
   imports: [
-
-    MongooseModule.forFeature([{ name: 'agency', schema: AgencySchema }])
+   
+    MongooseModule.forFeature([{name:'agency', schema:AgencySchema}])
   ],
   controllers: [AgencyController],
   providers: [AgencyService],
   exports: [MongooseModule.forFeature([{ name: 'agency', schema: AgencySchema }])],
 })
-export class AgencyModule { }
+export class AgencyModule {}

@@ -22,21 +22,16 @@
 /// <reference types="mongoose/types/validation" />
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
-import { Agency, AgencyDocument } from '../agency/agency.model';
-import { UpdateAgencyDto } from './dto/update-agency.dto';
-import { Model } from 'mongoose';
-import { AgencyLoginDto } from '../agency/dto/agency-login.dto';
-export declare class AgencyService {
-    private readonly agencyModel;
-    constructor(agencyModel: Model<AgencyDocument>);
-    createAgency(agency: Agency): Promise<Agency>;
-    readAgency(): Promise<void | (import("mongoose").Document<unknown, {}, AgencyDocument> & Agency & import("mongoose").Document<any, any, any> & {
-        _id: import("mongoose").Types.ObjectId;
-    })[]>;
-    updateAgency(id: any, data: any): Promise<Agency>;
-    validateAgency(agencyLoginDto: AgencyLoginDto): Promise<Agency>;
-    findAll(): string;
-    findOne(id: number): string;
-    update(id: number, updateAgencyDto: UpdateAgencyDto): string;
-    remove(id: number): string;
+import { Document } from 'mongoose';
+export type PostagencyDocument = Postagency & Document;
+export declare class Postagency {
+    name: string;
+    description: string;
+    contact: string;
+    date_added: Date;
 }
+export declare const PostagencySchema: import("mongoose").Schema<Postagency, import("mongoose").Model<Postagency, any, any, any, Document<unknown, any, Postagency> & Postagency & {
+    _id: import("mongoose").Types.ObjectId;
+}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, Postagency, Document<unknown, {}, import("mongoose").FlatRecord<Postagency>> & import("mongoose").FlatRecord<Postagency> & {
+    _id: import("mongoose").Types.ObjectId;
+}>;

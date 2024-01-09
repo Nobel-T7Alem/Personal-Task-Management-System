@@ -16,20 +16,12 @@ exports.AgencyService = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
-const create_agency_dto_1 = require("./dto/create-agency.dto");
-const class_transformer_1 = require("class-transformer");
-const class_validator_1 = require("class-validator");
 const common_2 = require("@nestjs/common");
 let AgencyService = class AgencyService {
     constructor(agencyModel) {
         this.agencyModel = agencyModel;
     }
-    async createAgency(createAgencyDto) {
-        const agency = (0, class_transformer_1.plainToClass)(create_agency_dto_1.CreateAgencyDto, createAgencyDto);
-        const errors = await (0, class_validator_1.validate)(agency);
-        if (errors.length > 0) {
-            throw new common_1.BadRequestException(errors);
-        }
+    async createAgency(agency) {
         const newAgency = new this.agencyModel(agency);
         return newAgency.save();
     }

@@ -6,19 +6,20 @@ import { CreateAgencyDto } from './dto/create-agency.dto';
 
 @Controller('agency')
 export class AgencyController {
-  constructor(private readonly agencyService: AgencyService) {}
+  constructor(private readonly agencyService: AgencyService) { }
 
-  async createAgency(@Body() createAgencyDto: CreateAgencyDto) {
-    return this.agencyService.createAgency(createAgencyDto);
+  @Post()
+  async createAgency(@Body() agencyDto: Agency) {
+    return this.agencyService.createAgency(agencyDto)
   }
 
   @Get()
-  readAgency(){
+  readAgency() {
     return this.agencyService.readAgency()
   }
 
   @Put(':id')
-  async updateAgency(@Param('id') id:string ,@Body() updateData:UpdateAgencyDto) : Promise<Agency>{
+  async updateAgency(@Param('id') id: string, @Body() updateData: UpdateAgencyDto): Promise<Agency> {
     return this.agencyService.updateAgency(id, updateData)
   }
 

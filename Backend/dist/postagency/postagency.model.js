@@ -9,37 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgencySchema = exports.Agency = void 0;
+exports.PostagencySchema = exports.Postagency = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
-let Agency = class Agency {
+let Postagency = class Postagency {
 };
-exports.Agency = Agency;
+exports.Postagency = Postagency;
 __decorate([
     (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", String)
-], Agency.prototype, "name", void 0);
-__decorate([
-    (0, mongoose_1.Prop)({ required: true, unique: true }),
-    __metadata("design:type", String)
-], Agency.prototype, "email", void 0);
-__decorate([
-    (0, mongoose_1.Prop)({ required: true, unique: true }),
-    __metadata("design:type", String)
-], Agency.prototype, "username", void 0);
+], Postagency.prototype, "name", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", String)
-], Agency.prototype, "description", void 0);
+], Postagency.prototype, "description", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", String)
-], Agency.prototype, "password", void 0);
+], Postagency.prototype, "contact", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ default: Date.now }),
     __metadata("design:type", Date)
-], Agency.prototype, "date_added", void 0);
-exports.Agency = Agency = __decorate([
+], Postagency.prototype, "date_added", void 0);
+exports.Postagency = Postagency = __decorate([
     (0, mongoose_1.Schema)()
-], Agency);
-exports.AgencySchema = mongoose_1.SchemaFactory.createForClass(Agency);
-//# sourceMappingURL=agency.model.js.map
+], Postagency);
+exports.PostagencySchema = mongoose_1.SchemaFactory.createForClass(Postagency);
+//# sourceMappingURL=postagency.model.js.map
