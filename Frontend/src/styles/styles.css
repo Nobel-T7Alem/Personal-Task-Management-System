@@ -4,7 +4,7 @@ body {
 }
 .navbar-nav .nav-link {
   color: #ffffff;
-  letter-spacing: 4px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
