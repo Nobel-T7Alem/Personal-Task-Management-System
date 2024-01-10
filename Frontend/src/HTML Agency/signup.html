@@ -1,68 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Sign Up</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      body {
-        font-family: "Gilmer", sans-serif;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6">
-          <img
-            src="../Images/frame-04.jpg"
-            alt="Login Page Image"
-            class="img-fluid"
-          />
-        </div>
-        <div class="col-md-6">
-          <form class="login-form">
-            <h2>Sign Up</h2>
-            <div class="form-group">
-              <label for="username">Create a Username</label>
-              <input
-                type="text"
-                class="form-control"
-                id="username"
-                placeholder="Enter username"
-              />
-            </div>
-            <div class="form-group">
-              <label for="password">Choose a Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Enter password"
-              />
-            </div>
-            <div class="form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="loginAsAgency"
-              />
-              <label class="form-check-label" for="loginAsAgency"
-                >Sign Up as Agency</label
-              >
-            </div>
-            <button type="submit" class="btn btn-success mt-3">Sign Up</button>
-            <h5 style="margin-top: 10px">
-              Already have an account? <a href="Login.html">Login.</a>
-            </h5>
-          </form>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles/styles.css"> 
+  
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="../Images/frame-04.jpg" alt="Login Page Image" class="img-fluid">
+      </div>
+      <div class="col-md-6" style="margin-top: 15%;">
+        <form class="login-form">
+          <h2>Sign Up</h2>
+          <div class="form-group">
+            <label for="username">Create a Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username">
+          </div>
+          <div class="form-group">
+            <label for="password">Choose a Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="loginAsAgency">
+            <label class="form-check-label" for="loginAsAgency">Sign Up as Agency</label>
+          </div>
+          <button type="submit" class="btn btn-success mt-3">Sign Up</button>
+          <h5 style="margin-top: 10px;">Already have an account? <a href="Login.html">Login.</a></h5>
+        </form>
       </div>
     </div>
+  </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

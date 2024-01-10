@@ -17,6 +17,10 @@ body {
   width: auto;
 }
 
+nav {height: 60px;
+}
+
+
 .navbar-nav .nav-link-btn {
   background-color: #40ab40;
   border-color: #006400;
@@ -27,8 +31,8 @@ body {
 }
 
 .custom-card {
-  background-color: #006400;
-  color: white;
+ 
+  color: black;
   margin: 10px;
 }
 
@@ -134,11 +138,11 @@ body {
     color: #006400; /* White text */
     font-weight: bold; /* Bold text */
     transition: background-color 0.3s ease-in-out; /* Smooth hover effect */
-    margin-right: 125px; /* Increase space between buttons */
+    margin-right: 50px; /* Increase space between buttons */
 
 
     .custom-card {
-    background-color: #006400; /* Dark green background */
+    
     color: white; /* White text */
     margin: 10px; /* Add some space between cards */
   }
@@ -148,12 +152,31 @@ body {
     background-color: #006400; /* Light green on hover */
   
   }
-  span { color: #006400; 
+  span { color: #32CD32; 
     font-size: larger; 
     font-weight: 500s;
-
   }
   
+  pre {
+    font-family: "Gilmer", sans-serif;
+    text-wrap: wrap;
+    font-size: larger;
+    padding-left: 40px;
+    padding-right: 70px;
+    
+  }
+
+  .navbar-toggler-icon:hover {
+    color: #32CD32;
+  }
+
+  .img{
+    display: flex;
+}
+.text{
+    margin-left: 100px;
+    margin-top: 350px;
+}
 
 @media (min-width: 992px) {
   /* Adjust breakpoint if needed */
