@@ -162,6 +162,10 @@ body {
     
   }
 
+  .navbar-toggler-icon:hover {
+    color: #32CD32;
+  }
+
   .img{
     display: flex;
 }
