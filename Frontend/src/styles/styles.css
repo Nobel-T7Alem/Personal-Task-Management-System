@@ -17,6 +17,10 @@ body {
   width: auto;
 }
 
+nav {height: 60px;
+}
+
+
 .navbar-nav .nav-link-btn {
   background-color: #40ab40;
   border-color: #006400;
@@ -134,7 +138,7 @@ body {
     color: #006400; /* White text */
     font-weight: bold; /* Bold text */
     transition: background-color 0.3s ease-in-out; /* Smooth hover effect */
-    margin-right: 125px; /* Increase space between buttons */
+    margin-right: 50px; /* Increase space between buttons */
 
 
     .custom-card {
