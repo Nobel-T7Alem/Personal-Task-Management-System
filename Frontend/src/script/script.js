@@ -31,3 +31,6 @@ function Login(event) {
   //   console.error(error); // Handle any errors that occur during the request
   // });
 }
+AOS.init({
+  disable: 'mobile' 
+});

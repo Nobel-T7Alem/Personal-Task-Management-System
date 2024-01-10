@@ -2,46 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Sebawi</title>
+    <title>Sebawi Service Req.</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="/src/styles/styles.css">
+
   </head>
+
   <body>
     <!-- Navigation (same as in the volunteer interface) -->
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="AgencyHome.html">
-        <img
-          src="../Images/Icon-03.png"
-          alt="Icon"
-          class="d-inline-block align-top"
-        />
-      </a>
-      <div class="navbar-collapse collapse">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link nav-link-btn btn" href="ServiceRequest.html"
-              >Request Service</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-btn btn" href="Contact.html">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-btn btn" href="Login.html">Login</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+        <a class="navbar-brand" href="Home.html">
+          <img src="Icon-03.png" alt="Icon" class="d-inline-block align-top" style="width: 100px; height: 110px;">
+        </a>
+        <div class="navbar-collapse collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="About.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="Contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="Login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
     <!-- Service Request Form -->
     <div class="container">
-      <h2 class="mt-5">Service Request Form</h2>
+      <h2 class="mt-5" style="color: #006400;">Service Request Form:</h2>
       <form>
         <div class="form-group">
-          <label for="centerName">Volunteer Center Name</label>
+          <label for="centerName">Volunteer Center Name:</label>
           <input
             type="text"
             class="form-control"
@@ -50,7 +47,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="serviceDescription">Service Description</label>
+          <label for="serviceDescription">Service Description:</label>
           <textarea
             class="form-control"
             id="serviceDescription"
@@ -59,7 +56,7 @@
           ></textarea>
         </div>
         <div class="form-group">
-          <label for="roleRequirements">Role Requirements</label>
+          <label for="roleRequirements">Role Requirements:</label>
           <textarea
             class="form-control"
             id="roleRequirements"
@@ -68,7 +65,7 @@
           ></textarea>
         </div>
         <div class="form-group">
-          <label for="contactInfo">Contact Information</label>
+          <label for="contactInfo">Contact Information:</label>
           <input
             type="text"
             class="form-control"
@@ -77,13 +74,13 @@
           />
         </div>
         <div class="form group my-4">
-          <label for="photo">Your agency logo</label>
+          <label for="photo">Your agency logo:</label>
           <div>
             <form onsubmit=""></form>
             <input type="file" />
           </div>
         </div>
-        <button type="submit" class="btn btn-big-green">Submit Request</button>
+        <button type="submit" class="btn btn-success" style="margin: 20px;">Submit Request</button>
       </form>
     </div>
 
