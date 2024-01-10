@@ -7,35 +7,54 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="/src/styles/styles.css">
-
+    <link rel="stylesheet" href="../styles/styles.css" />
   </head>
 
   <body>
     <!-- Navigation (same as in the volunteer interface) -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="Home.html">
-          <img src="Icon-03.png" alt="Icon" class="d-inline-block align-top" style="width: 100px; height: 110px;">
-        </a>
-        <div class="navbar-collapse collapse">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="About.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="Contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="Login.html">Login</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <a class="navbar-brand" href="Home.html">
+        <img
+          src="../Images/Icon-03.png"
+          alt="Icon"
+          class="d-inline-block align-top"
+          style="width: 100px; height: 110px"
+        />
+      </a>
+      <div class="navbar-collapse collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="About.html"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="Contact.html"
+              >Contact</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="Login.html"
+              >Login</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <!-- Service Request Form -->
     <div class="container">
-      <h2 class="mt-5" style="color: #006400;">Service Request Form:</h2>
+      <h2 class="mt-5" style="color: #006400">Service Request Form:</h2>
       <form>
         <div class="form-group">
           <label for="centerName">Volunteer Center Name:</label>
@@ -75,15 +94,28 @@
         </div>
         <div class="form group my-4">
           <label for="photo">Your agency logo:</label>
-          <div>
-            <form onsubmit=""></form>
-            <input type="file" />
+          <div class="input-div">
+            <form>
+              <input
+                type="file"
+                class="file"
+                accept="image/png, image/jpeg, image/jpg"
+                id="imageInput"
+              />
+              <button
+                onclick="serviceRequest(event)"
+                type="submit"
+                class="btn btn-success"
+                style="margin: 20px"
+              >
+                Submit Request
+              </button>
+            </form>
           </div>
         </div>
-        <button type="submit" class="btn btn-success" style="margin: 20px;">Submit Request</button>
       </form>
     </div>
-
+    <script src="../script/script.js"></script>
     <!-- Bootstrap JS, same as in the volunteer interface -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

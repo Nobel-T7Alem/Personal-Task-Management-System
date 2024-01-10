@@ -24,19 +24,16 @@
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
 import { Document } from 'mongoose';
-export type PostagencyDocument = Postagency & Document;
-export declare class Postagency {
+export type ImageDocument = Image & Document;
+export declare class Image {
     name: string;
-    description: string;
-    contact: string;
-    date_added: Date;
     image: {
         data: Buffer;
         contentType: string;
     };
 }
-export declare const PostagencySchema: import("mongoose").Schema<Postagency, import("mongoose").Model<Postagency, any, any, any, Document<unknown, any, Postagency> & Postagency & {
+export declare const ImageSchema: import("mongoose").Schema<Image, import("mongoose").Model<Image, any, any, any, Document<unknown, any, Image> & Image & {
     _id: import("mongoose").Types.ObjectId;
-}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, Postagency, Document<unknown, {}, import("mongoose").FlatRecord<Postagency>> & import("mongoose").FlatRecord<Postagency> & {
+}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, Image, Document<unknown, {}, import("mongoose").FlatRecord<Image>> & import("mongoose").FlatRecord<Image> & {
     _id: import("mongoose").Types.ObjectId;
 }>;

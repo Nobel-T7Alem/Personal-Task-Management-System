@@ -9,33 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PostagencySchema = exports.Postagency = void 0;
+exports.ImageSchema = exports.Image = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
-let Postagency = class Postagency {
+let Image = class Image {
 };
-exports.Postagency = Postagency;
+exports.Image = Image;
 __decorate([
     (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", String)
-], Postagency.prototype, "name", void 0);
-__decorate([
-    (0, mongoose_1.Prop)({ required: true }),
-    __metadata("design:type", String)
-], Postagency.prototype, "description", void 0);
-__decorate([
-    (0, mongoose_1.Prop)({ required: true }),
-    __metadata("design:type", String)
-], Postagency.prototype, "contact", void 0);
-__decorate([
-    (0, mongoose_1.Prop)({ default: Date.now }),
-    __metadata("design:type", Date)
-], Postagency.prototype, "date_added", void 0);
+], Image.prototype, "name", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ type: Buffer }),
     __metadata("design:type", Object)
-], Postagency.prototype, "image", void 0);
-exports.Postagency = Postagency = __decorate([
+], Image.prototype, "image", void 0);
+exports.Image = Image = __decorate([
     (0, mongoose_1.Schema)()
-], Postagency);
-exports.PostagencySchema = mongoose_1.SchemaFactory.createForClass(Postagency);
-//# sourceMappingURL=postagency.model.js.map
+], Image);
+exports.ImageSchema = mongoose_1.SchemaFactory.createForClass(Image);
+//# sourceMappingURL=postimage.model.js.map

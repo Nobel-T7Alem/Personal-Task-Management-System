@@ -7,10 +7,10 @@ import { PostagencySchema } from './postagency.model';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{name:'postagency', schema:PostagencySchema}])
+    MongooseModule.forFeature([{ name: 'postagency', schema: PostagencySchema }])
   ],
   controllers: [PostagencyController],
   providers: [PostagencyService],
-  exports: [MongooseModule.forFeature([{name:'postagency', schema:PostagencySchema}])]
+  exports: [MongooseModule.forFeature([{ name: 'postagency', schema: PostagencySchema }])]
 })
-export class PostagencyModule {}
+export class PostagencyModule { }

@@ -31,6 +31,22 @@ function Login(event) {
   //   console.error(error); // Handle any errors that occur during the request
   // });
 }
-AOS.init({
-  disable: 'mobile' 
-});
+// AOS.init({
+//   disable: "mobile",
+// });
+
+function serviceRequest(e) {
+  e.preventDefault(event);
+  const fileInput = document.getElementById("imageInput");
+  const file = fileInput.files;
+  console.log(file);
+  fetch("http://localhost:3000/agency/upload", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: file,
+    cache: "default",
+  });
+}
