@@ -27,8 +27,8 @@ body {
 }
 
 .custom-card {
-  background-color: #006400;
-  color: white;
+ 
+  color: black;
   margin: 10px;
 }
 
@@ -138,7 +138,7 @@ body {
 
 
     .custom-card {
-    background-color: #006400; /* Dark green background */
+    
     color: white; /* White text */
     margin: 10px; /* Add some space between cards */
   }
@@ -148,12 +148,27 @@ body {
     background-color: #006400; /* Light green on hover */
   
   }
-  span { color: #006400; 
+  span { color: #32CD32; 
     font-size: larger; 
     font-weight: 500s;
-
   }
   
+  pre {
+    font-family: "Gilmer", sans-serif;
+    text-wrap: wrap;
+    font-size: larger;
+    padding-left: 40px;
+    padding-right: 70px;
+    
+  }
+
+  .img{
+    display: flex;
+}
+.text{
+    margin-left: 100px;
+    margin-top: 350px;
+}
 
 @media (min-width: 992px) {
   /* Adjust breakpoint if needed */
