@@ -7,7 +7,7 @@ import { VolunteerModule } from './volunteer/volunteer.module';
 import { APP_FILTER } from '@nestjs/core';
 import { ErrorMiddleware } from './Middleware/error.middleware';
 import { PostagencyModule } from './postagency/postagency.module';
-
+import { ConfigModule } from '@nestjs/config'
 
 @Module({
   imports: [
@@ -15,7 +15,6 @@ import { PostagencyModule } from './postagency/postagency.module';
     AgencyModule,
     VolunteerModule,
     PostagencyModule,
-
   ],
   controllers: [AppController],
   providers: [AppService,

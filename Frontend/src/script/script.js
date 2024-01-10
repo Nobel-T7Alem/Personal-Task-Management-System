@@ -7,11 +7,11 @@ function Login(event) {
     ? "http://localhost:3000/agency"
     : "http://localhost:3000/volunteer";
   const loginData = {
-    name: "e",
-    email: "e",
-    username: "user",
-    description: "e",
-    password: "pass",
+    name: "ebd",
+    email: "ebd",
+    username: "asdfuser",
+    description: "efsadf",
+    password: "passfdasfds",
   };
   console.log(pass.value, user.value, isAgency);
   fetch(url, {
