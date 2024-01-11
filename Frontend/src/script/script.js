@@ -1,4 +1,4 @@
-
+//Login Function
 async function logIn(e) {
   e.preventDefault();
   const loginData = {
@@ -8,10 +8,6 @@ async function logIn(e) {
   const url = `http://localhost:3000/auth/login?username=${encodeURIComponent(
     loginData.username
   )}&password=${encodeURIComponent(loginData.password)}`;
-  console.log(url);
-  console.log(
-    "http://localhost:3000/auth/login?username=Joshua Taye&password=joshuataye"
-  );
   const response = await fetch(url, {
     method: "GET",
     headers: {
@@ -30,11 +26,13 @@ async function logIn(e) {
     document.querySelector(".incorrect").classList.toggle("invisible");
     document.querySelector(".incorrect").classList.toggle("position-absolute");
     setTimeout(() => {
-      location.reload();
+      // location.reload();
     }, 2000);
+    console.log(response);
   }
 }
 
+//Signup Function
 function signUp(e) {
   e.preventDefault();
   const signUpData = {
@@ -56,3 +54,14 @@ function signUp(e) {
   });
   console.log("success!");
 }
+
+
+//Service Request
+function serviceRequest(e){
+  e.preventDefault();
+
+
+}
+
+
+

@@ -100,8 +100,12 @@ be joining today?
     </form>
     <div class="container" style="padding-bottom: 100px">
       <div class="row">
-        <div class="col-md-4" style="border-color: #32cd32">
-          <div class="card custom-card">
+        <div
+          class="col-md-4 invisible position-absolute"
+          id="to-be-duplicated"
+          style="border-color: #32cd32"
+        >
+          <div class="card custom-card" id="0">
             <img
               src="https://via.placeholder.com/200x200"
               class="card-img-top"
@@ -109,146 +113,16 @@ be joining today?
             />
             <div class="card-body">
               <p class="card-text">
-                <span>Agency:</span> The Ethiopian Red Cross Association
+                <span>Agency: </span> <span class="agency text-dark"></span>
               </p>
               <p class="card-text">
-                <span>Service Required:</span> Medicine packaging.
+                <span>Service Required: </span> <span class="service text-dark"></span>
               </p>
               <p class="card-text">
-                <span>Location:</span> Across Ambassador Hotel
+                <span>Contact: </span><span class="location text-dark "></span>
               </p>
               <p class="card-text">
-                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
-              </p>
-              <button type="submit" class="btn btn-success mt-3">
-                Register
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card custom-card">
-            <img
-              src="https://via.placeholder.com/200x200"
-              class="card-img-top"
-              alt="Placeholder Image"
-            />
-            <div class="card-body">
-              <p class="card-text">
-                <span>Agency:</span> The Ethiopian Red Cross Association
-              </p>
-              <p class="card-text">
-                <span>Service Required:</span> Medicine packaging.
-              </p>
-              <p class="card-text">
-                <span>Location:</span> Across Ambassador Hotel
-              </p>
-              <p class="card-text">
-                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
-              </p>
-              <button type="submit" class="btn btn-success mt-3">
-                Register
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card custom-card">
-            <img
-              src="https://via.placeholder.com/200x200"
-              class="card-img-top"
-              alt="Placeholder Image"
-            />
-            <div class="card-body">
-              <p class="card-text">
-                <span>Agency:</span> The Ethiopian Red Cross Association
-              </p>
-              <p class="card-text">
-                <span>Service Required:</span> Medicine packaging.
-              </p>
-              <p class="card-text">
-                <span>Location:</span> Across Ambassador Hotel
-              </p>
-              <p class="card-text">
-                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
-              </p>
-              <button type="submit" class="btn btn-success mt-3">
-                Register
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card custom-card">
-            <img
-              src="https://via.placeholder.com/200x200"
-              class="card-img-top"
-              alt="Placeholder Image"
-            />
-            <div class="card-body">
-              <p class="card-text">
-                <span>Agency:</span> The Ethiopian Red Cross Association
-              </p>
-              <p class="card-text">
-                <span>Service Required:</span> Medicine packaging.
-              </p>
-              <p class="card-text">
-                <span>Location:</span> Across Ambassador Hotel
-              </p>
-              <p class="card-text">
-                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
-              </p>
-              <button type="submit" class="btn btn-success mt-3">
-                Register
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" style="margin-top: 20px">
-          <div class="card custom-card">
-            <img
-              src="https://via.placeholder.com/200x200"
-              class="card-img-top"
-              alt="Placeholder Image"
-            />
-            <div class="card-body">
-              <p class="card-text">
-                <span>Agency:</span> The Ethiopian Red Cross Association
-              </p>
-              <p class="card-text">
-                <span>Service Required:</span> Medicine packaging.
-              </p>
-              <p class="card-text">
-                <span>Location:</span> Across Ambassador Hotel
-              </p>
-              <p class="card-text">
-                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
-              </p>
-              <button type="submit" class="btn btn-success mt-3">
-                Register
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" style="margin-top: 20px">
-          <div class="card custom-card">
-            <img
-              src="https://via.placeholder.com/200x200"
-              class="card-img-top"
-              alt="Placeholder Image"
-            />
-            <div class="card-body">
-              <p class="card-text">
-                <span>Agency:</span> The Ethiopian Red Cross Association
-              </p>
-              <p class="card-text">
-                <span>Service Required:</span> Medicine packaging.
-              </p>
-              <p class="card-text">
-                <span>Location:</span> Across Ambassador Hotel
-              </p>
-              <p class="card-text">
-                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
+                <span>Date & Time: </span> <span class="date text-dark"></span>
               </p>
               <button type="submit" class="btn btn-success mt-3">
                 Register
@@ -261,13 +135,13 @@ be joining today?
       <div class="text-center my-5 w-100 d-flex flex-column align-items-center">
         <h2>Ready to Request Volunteer Services?</h2>
         <p>Click the button below to fill out a service request form.</p>
-        <a href="ServiceRequest.html" class="btn btn-big-green"
+        <a href="../HTML Agency/ServiceRequest.html" class="btn btn-big-green"
           >Request Service</a
         >
       </div>
     </div>
   </body>
-  <script src="../script/script.js"></script>
+  <script src="../script/listPosts.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

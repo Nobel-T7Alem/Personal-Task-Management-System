@@ -153,8 +153,8 @@ nav {height: 60px;
   
   }
   span { color: #32CD32; 
-    font-size: larger; 
-    font-weight: 500s;
+    /* font-size: larger; 
+    font-weight: 500s; */
   }
   
   pre {
