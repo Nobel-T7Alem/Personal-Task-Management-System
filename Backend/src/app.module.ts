@@ -7,11 +7,13 @@ import { VolunteerModule } from './volunteer/volunteer.module';
 import { APP_FILTER } from '@nestjs/core';
 import { ErrorMiddleware } from './Middleware/error.middleware';
 import { PostagencyModule } from './postagency/postagency.module';
-import { ConfigModule } from '@nestjs/config';
+
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://tayejoshua4:Qm*X!AR2XGJtUvd@sebawi-app.3xgf2rf.mongodb.net/Sebawi-app?retryWrites=true&w=majority'),
+    MongooseModule.forRoot("mongodb://127.0.0.1:27017", {
+      dbName: 'Sebawi-app',
+    }),
     AgencyModule,
     VolunteerModule,
     PostagencyModule,
