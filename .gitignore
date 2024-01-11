@@ -1,3 +1,5 @@
 #Node module
 /role-based-backend/dist
 /role-based-backend/node_modules
+/backend/node_modules
+/backend/dist
