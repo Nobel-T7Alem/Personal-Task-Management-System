@@ -12,10 +12,11 @@ fetch("http://localhost:3000/posts", {
   .then((json) => {
     posts = json;
     displayPosts(posts);
-    console.log(posts);
   });
 
 function displayPosts(p) {
+  const storedData = JSON.parse(sessionStorage.getItem("token"));
+  console.log(storedData);
   p.forEach((i) => {
     var card = document.getElementById("to-be-duplicated");
     var clone = card.cloneNode(true);
@@ -36,8 +37,6 @@ function displayPosts(p) {
       undefined,
       dateOptions
     )} ${createdAt.toLocaleTimeString(undefined, timeOptions)}`;
-
-    console.log(readableCreatedAt);
     clone.querySelector(".date").innerHTML = readableCreatedAt;
   });
   console.log(p);

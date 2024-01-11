@@ -41,8 +41,9 @@ async function logIn(e) {
     })
     .then((json) => {
       res = json;
+      // sessionStorage.setItem("token", res.token);
+      console.log(res);
     });
-  // return res.token;
 }
 console.log(res);
 //Signup Function
