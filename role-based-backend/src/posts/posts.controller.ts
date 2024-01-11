@@ -36,4 +36,9 @@ export class PostsController {
     return this.postsService.updatePosts(id, posts)
   }  
 
+  @Delete(':id')
+  async deletePosts(@Param('id') postsId: string): Promise<void> {
+    return this.postsService.deletePosts(postsId);
+    }
+
 }
