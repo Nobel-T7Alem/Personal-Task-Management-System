@@ -26,7 +26,7 @@ async function logIn(e) {
     document.querySelector(".incorrect").classList.toggle("invisible");
     document.querySelector(".incorrect").classList.toggle("position-absolute");
     setTimeout(() => {
-      // location.reload();
+      location.reload();
     }, 2000);
     console.log(response);
   }
@@ -55,13 +55,21 @@ function signUp(e) {
   console.log("success!");
 }
 
-
 //Service Request
-function serviceRequest(e){
+function serviceRequest(e) {
   e.preventDefault();
-
-
+  const newPost = {
+    name: e.target.centerName.value,
+    description: e.target.serviceDescription.value,
+    contact: e.target.contactInfo.value,
+  };
+  fetch("http://localhost:3000/posts", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newPost),
+    cache: "default",
+  });
 }
-
-
-
