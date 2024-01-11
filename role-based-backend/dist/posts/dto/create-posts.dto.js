@@ -16,6 +16,21 @@ class CreatePostsDto {
 }
 exports.CreatePostsDto = CreatePostsDto;
 __decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreatePostsDto.prototype, "name", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreatePostsDto.prototype, "description", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreatePostsDto.prototype, "contact", void 0);
+__decorate([
     (0, class_validator_1.IsEmpty)({ message: 'you can not pass user id' }),
     __metadata("design:type", user_schema_1.User)
 ], CreatePostsDto.prototype, "user", void 0);

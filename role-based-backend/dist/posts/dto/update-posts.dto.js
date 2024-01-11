@@ -16,6 +16,24 @@ class UpdatePostsDto {
 }
 exports.UpdatePostsDto = UpdatePostsDto;
 __decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], UpdatePostsDto.prototype, "name", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], UpdatePostsDto.prototype, "description", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], UpdatePostsDto.prototype, "contact", void 0);
+__decorate([
     (0, class_validator_1.IsEmpty)({ message: 'you can not pass user id' }),
     __metadata("design:type", user_schema_1.User)
 ], UpdatePostsDto.prototype, "user", void 0);

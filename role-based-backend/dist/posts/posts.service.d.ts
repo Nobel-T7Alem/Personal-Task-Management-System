@@ -23,16 +23,16 @@
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
 import { Posts } from './schemas/posts.schema';
-import { Model } from 'mongoose';
+import mongoose, { Model } from 'mongoose';
 import { User } from 'src/auth/schemas/user.schema';
 export declare class PostsService {
     private readonly postsModel;
     constructor(postsModel: Model<Posts>);
     createPosts(posts: Posts, user: User): Promise<Posts>;
-    readPosts(): Promise<void | (import("mongoose").Document<unknown, {}, Posts> & Posts & {
-        _id: import("mongoose").Types.ObjectId;
+    readPosts(): Promise<void | (mongoose.Document<unknown, {}, Posts> & Posts & {
+        _id: mongoose.Types.ObjectId;
     })[]>;
-    findAll(): Promise<Posts[]>;
+    findAll(query: any): Promise<Posts[]>;
     findById(id: string): Promise<Posts>;
     updatePosts(id: string, posts: Posts): Promise<Posts>;
 }

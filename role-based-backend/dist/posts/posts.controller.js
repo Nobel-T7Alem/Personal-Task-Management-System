@@ -25,8 +25,9 @@ let PostsController = class PostsController {
     async createPosts(postsDto, req) {
         return this.postsService.createPosts(postsDto, req.user);
     }
-    async getAllUser() {
-        return this.postsService.findAll();
+    async getAllPosts(query) {
+        const posts = await this.postsService.findAll(query);
+        return posts;
     }
     async getPosts(id) {
         return this.postsService.findById(id);
@@ -47,10 +48,11 @@ __decorate([
 ], PostsController.prototype, "createPosts", null);
 __decorate([
     (0, common_1.Get)(),
+    __param(0, (0, common_1.Query)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
-], PostsController.prototype, "getAllUser", null);
+], PostsController.prototype, "getAllPosts", null);
 __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),

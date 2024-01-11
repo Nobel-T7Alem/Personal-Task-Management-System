@@ -29,12 +29,30 @@ let PostsService = class PostsService {
             .then((posts) => { return posts; })
             .catch((err) => console.log(err));
     }
-    async findAll() {
-        const postss = await this.postsModel.find();
-        return postss;
+    async findAll(query) {
+        const resPerPage = 2;
+        const currentPage = Number(query.page) || 1;
+        const skip = resPerPage * (currentPage - 1);
+        const keyword = query.keyword
+            ? {
+                name: {
+                    $regex: query.keyword,
+                    $options: 'i',
+                },
+            }
+            : {};
+        const posts = await this.postsModel.find({ ...keyword })
+            .limit(resPerPage)
+            .skip(skip)
+            .exec();
+        return posts;
     }
     async findById(id) {
+        const isValidID = mongoose_1.default.isValidObjectId(id);
         const posts = await this.postsModel.findById(id);
+        if (!isValidID) {
+            throw new common_1.BadRequestException('Please enter correct id!');
+        }
         if (!posts) {
             throw new common_1.NotFoundException('Posts not found!');
         }
