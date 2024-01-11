@@ -33,5 +33,6 @@ export class PostsController {
   @Put(':id')
   async updateUser(@Param('id') id:string ,@Body() posts:UpdatePostsDto) : Promise<Posts>{
     return this.postsService.updatePosts(id, posts)
-  }
+  }  
+
 }
