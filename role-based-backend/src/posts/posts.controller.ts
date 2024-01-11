@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete,Put, UseGuards, Req } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete,Put, UseGuards, Req, Query } from '@nestjs/common';
 import { PostsService } from './posts.service';
 import { CreatePostsDto } from './dto/create-posts.dto';
 import {UpdatePostsDto} from './dto/update-posts.dto'
@@ -18,8 +18,9 @@ export class PostsController {
   }
 
   @Get()
-  async getAllUser(): Promise<Posts[]>{
-    return this.postsService.findAll();
+  async getAllPosts(@Query() query: any): Promise<Posts[]> {
+    const posts = await this.postsService.findAll(query);
+    return posts;
   }
 
   @Get(':id')
