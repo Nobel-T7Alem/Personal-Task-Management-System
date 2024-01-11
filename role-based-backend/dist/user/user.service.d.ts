@@ -22,18 +22,11 @@
 /// <reference types="mongoose/types/validation" />
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
-import { Posts } from './schemas/posts.schema';
-import mongoose, { Model } from 'mongoose';
-import { User } from 'src/user/schemas/user.schema';
-export declare class PostsService {
-    private readonly postsModel;
-    constructor(postsModel: Model<Posts>);
-    createPosts(posts: Posts, user: User): Promise<Posts>;
-    readPosts(): Promise<void | (mongoose.Document<unknown, {}, Posts> & Posts & {
-        _id: mongoose.Types.ObjectId;
-    })[]>;
-    findAll(query: any): Promise<Posts[]>;
-    findById(id: string): Promise<Posts>;
-    updatePosts(id: string, posts: Posts): Promise<Posts>;
-    deletePosts(postsId: string): Promise<void>;
+import { Model } from 'mongoose';
+import { User } from './schemas/user.schema';
+export declare class UserService {
+    private readonly userModel;
+    constructor(userModel: Model<User>);
+    getAllUsers(): Promise<User[]>;
+    deleteUser(userId: string): Promise<void>;
 }

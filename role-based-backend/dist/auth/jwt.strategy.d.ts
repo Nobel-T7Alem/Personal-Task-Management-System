@@ -23,7 +23,7 @@
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
 import { Model } from "mongoose";
-import { User } from "./schemas/user.schema";
+import { User } from "../user/schemas/user.schema";
 declare const JwtStrategy_base: new (...args: any[]) => any;
 export declare class JwtStrategy extends JwtStrategy_base {
     private userModel;
@@ -31,5 +31,10 @@ export declare class JwtStrategy extends JwtStrategy_base {
     validate(payload: any): Promise<import("mongoose").Document<unknown, {}, User> & User & {
         _id: import("mongoose").Types.ObjectId;
     }>;
+}
+declare const AdminStrategy_base: new (...args: any[]) => any;
+export declare class AdminStrategy extends AdminStrategy_base {
+    constructor();
+    validate(payload: any): Promise<any>;
 }
 export {};

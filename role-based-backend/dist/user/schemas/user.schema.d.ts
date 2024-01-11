@@ -23,16 +23,16 @@
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
+export declare enum UserRole {
+    Admin = "admin",
+    User = "user"
+}
 export declare class User {
     name: string;
     username: string;
     email: string;
     password: string;
-    role: {
-        type: String;
-        enum: ['user', 'admin'];
-        default: 'user';
-    };
+    role: UserRole;
 }
 export declare const UserSchema: import("mongoose").Schema<User, import("mongoose").Model<User, any, any, any, import("mongoose").Document<unknown, any, User> & User & {
     _id: import("mongoose").Types.ObjectId;

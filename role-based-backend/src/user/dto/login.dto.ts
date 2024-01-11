@@ -10,7 +10,5 @@ export class LogInDto {
 
 
    @IsNotEmpty()
-   // @IsStrongPassword()
-   // @MinLength(6)
    readonly password: string;
 }

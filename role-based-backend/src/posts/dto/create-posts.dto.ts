@@ -1,5 +1,5 @@
 import { IsEmpty, IsNotEmpty, IsString } from "class-validator";
-import { User } from "src/auth/schemas/user.schema";
+import { User } from "src/user/schemas/user.schema";
 
 export class CreatePostsDto {
 

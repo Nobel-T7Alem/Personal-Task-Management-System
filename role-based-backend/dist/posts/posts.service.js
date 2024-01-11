@@ -29,8 +29,22 @@ let PostsService = class PostsService {
             .then((posts) => { return posts; })
             .catch((err) => console.log(err));
     }
-    async findAll() {
-        const posts = await this.postsModel.find();
+    async findAll(query) {
+        const resPerPage = 2;
+        const currentPage = Number(query.page) || 1;
+        const skip = resPerPage * (currentPage - 1);
+        const keyword = query.keyword
+            ? {
+                name: {
+                    $regex: query.keyword,
+                    $options: 'i',
+                },
+            }
+            : {};
+        const posts = await this.postsModel.find({ ...keyword })
+            .limit(resPerPage)
+            .skip(skip)
+            .exec();
         return posts;
     }
     async findById(id) {
@@ -46,6 +60,12 @@ let PostsService = class PostsService {
     }
     async updatePosts(id, posts) {
         return await this.postsModel.findByIdAndUpdate(id, posts, { new: true, runValidators: true, });
+    }
+    async deletePosts(postsId) {
+        const result = await this.postsModel.deleteOne({ _id: postsId }).exec();
+        if (result.deletedCount === 0) {
+            throw new common_1.NotFoundException('Post not found');
+        }
     }
 };
 exports.PostsService = PostsService;

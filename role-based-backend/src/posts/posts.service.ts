@@ -2,7 +2,7 @@ import { BadGatewayException, BadRequestException, Injectable, NotFoundException
 import { Posts } from './schemas/posts.schema';
 import mongoose, {Model} from 'mongoose'
 import { InjectModel } from '@nestjs/mongoose';
-import { User } from 'src/auth/schemas/user.schema';
+import { User } from 'src/user/schemas/user.schema';
 @Injectable()
 export class PostsService {
  constructor(
@@ -23,28 +23,26 @@ export class PostsService {
  }
 
   //All posts
-  async findAll(): Promise<Posts[]> {
-    // const resPerPage = 2;
-    // const currentPage = Number(query.page) || 1;
-    // const skip = resPerPage * (currentPage - 1);
+  async findAll(query: any): Promise<Posts[]> {
+    const resPerPage = 2;
+    const currentPage = Number(query.page) || 1;
+    const skip = resPerPage * (currentPage - 1);
   
-    // const keyword = query.keyword
-    //   ? {
-    //       name: {
-    //         $regex: query.keyword,
-    //         $options: 'i',
-    //       },
-    //     }
-    //   : {};
+    const keyword = query.keyword
+      ? {
+          name: {
+            $regex: query.keyword,
+            $options: 'i',
+          },
+        }
+      : {};
   
-    // const posts = await this.postsModel.find({ ...keyword })
-    //   .limit(resPerPage)
-    //   .skip(skip)
-    //   .exec();
+    const posts = await this.postsModel.find({ ...keyword })
+      .limit(resPerPage)
+      .skip(skip)
+      .exec();
   
-    // return posts;
-    const posts = await this.postsModel.find()
-    return posts
+    return posts;
   }
 
  //find posts by id
@@ -72,5 +70,11 @@ async updatePosts(id: string, posts: Posts): Promise<Posts>{
 }
 
 //delete posts by id
+async deletePosts(postsId: string): Promise<void> {
+  const result = await this.postsModel.deleteOne({ _id: postsId }).exec();
+  if (result.deletedCount === 0) {
+      throw new NotFoundException('Post not found');
+  }
 
+}
 }

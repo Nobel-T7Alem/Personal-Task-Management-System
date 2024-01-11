@@ -1,11 +1,11 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { Model } from 'mongoose';
-import { User } from './schemas/user.schema';
+import { User } from '../user/schemas/user.schema';
 import * as bcrypt from 'bcryptjs'
 import { JwtService } from '@nestjs/jwt';
-import { SignUpDto } from './dto/signup.dto';
+import { SignUpDto } from '../user/dto/signup.dto';
 import { InjectModel } from '@nestjs/mongoose';
-import { LogInDto } from './dto/login.dto';
+import { LogInDto } from '../user/dto/login.dto';
 
 @Injectable()
 export class AuthService {
@@ -47,7 +47,8 @@ export class AuthService {
             throw new UnauthorizedException('Invalid username or password')
         }
 
-        const token = this.jwtService.sign({ id: user._id })
+        const token = this.jwtService.sign({ id: user._id,
+            role: user.role })
         return { token }
 
     }

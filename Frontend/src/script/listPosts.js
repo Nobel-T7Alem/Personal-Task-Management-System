@@ -15,8 +15,6 @@ fetch("http://localhost:3000/posts", {
   });
 
 function displayPosts(p) {
-  const storedData = JSON.parse(sessionStorage.getItem("token"));
-  console.log(storedData);
   p.forEach((i) => {
     var card = document.getElementById("to-be-duplicated");
     var clone = card.cloneNode(true);
@@ -41,4 +39,18 @@ function displayPosts(p) {
   });
   console.log(p);
   let card = document.querySelector(".agency");
+}
+
+function request(event) {
+  event.preventDefault();
+  sessionStorage.setItem("fromrequest", "true");
+  a = event.target;
+  a.href = "../HTML Agency/Login.html";
+  const storedData = sessionStorage.getItem("isloggedin");
+  console.log(storedData);
+  if (storedData) {
+    window.location.replace("../HTML Agency/ServiceRequest.html");
+  } else {
+    window.location.replace("../HTML Agency/Login.html");
+  }
 }

@@ -23,10 +23,10 @@
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
 import { Model } from 'mongoose';
-import { User } from './schemas/user.schema';
+import { User } from '../user/schemas/user.schema';
 import { JwtService } from '@nestjs/jwt';
-import { SignUpDto } from './dto/signup.dto';
-import { LogInDto } from './dto/login.dto';
+import { SignUpDto } from '../user/dto/signup.dto';
+import { LogInDto } from '../user/dto/login.dto';
 export declare class AuthService {
     private userModel;
     private jwtService;

@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdatePostsDto = void 0;
 const class_validator_1 = require("class-validator");
-const user_schema_1 = require("../../auth/schemas/user.schema");
+const user_schema_1 = require("../../user/schemas/user.schema");
 class UpdatePostsDto {
 }
 exports.UpdatePostsDto = UpdatePostsDto;

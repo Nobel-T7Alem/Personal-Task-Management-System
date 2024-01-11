@@ -1,6 +1,4 @@
 //Login Function
-res = {};
-loggedin = false
 async function logIn(e) {
   e.preventDefault();
   const loginData = {
@@ -25,10 +23,13 @@ async function logIn(e) {
           .querySelector(".correct")
           .classList.toggle("position-absolute");
         setTimeout(() => {
-          window.location.href = "../HTML Volunteer/Home.html";
-          console.log(response.body);
+          const storedData = sessionStorage.getItem("fromrequest");
+          if (storedData) {
+            window.location.href = "../HTML Agency/ServiceRequest.html";
+          } else {
+            window.location.href = "../HTML Volunteer/Home.html";
+          }
         }, 2000);
-        loggedin = true;
       } else {
         document.querySelector(".incorrect").classList.toggle("invisible");
         document
@@ -38,14 +39,14 @@ async function logIn(e) {
           location.reload();
         }, 2000);
       }
+      return response.json(); // Return the parsed JSON from the response
     })
     .then((json) => {
       res = json;
-      // sessionStorage.setItem("token", res.token);
-      console.log(res);
+      sessionStorage.setItem("isloggedin", "true");
     });
 }
-console.log(res);
+
 //Signup Function
 function signUp(e) {
   e.preventDefault();
@@ -66,25 +67,34 @@ function signUp(e) {
     body: JSON.stringify(signUpData),
     cache: "default",
   });
-  console.log("success!");
+  setTimeout(() => {
+    const storedData = sessionStorage.getItem("fromrequest");
+    if (storedData) {
+      window.location.href = "../HTML Agency/ServiceRequest.html";
+    } else {
+      window.location.href = "../HTML Volunteer/Home.html";
+    }
+  }, 2000);
 }
 
 //Service Request
 function serviceRequest(e) {
-  console.log(res.token);
   e.preventDefault();
-  const newPost = {
-    name: e.target.centerName.value,
-    description: e.target.serviceDescription.value,
-    contact: e.target.contactInfo.value,
-  };
-  fetch("http://localhost:3000/posts", {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newPost),
-    cache: "default",
-  });
+  const storedData = sessionStorage.getItem("token");
+  console.log(storedData);
+  
+  // const newPost = {
+  //   name: e.target.centerName.value,
+  //   description: e.target.serviceDescription.value,
+  //   contact: e.target.contactInfo.value,
+  // };
+  // fetch("http://localhost:3000/posts", {
+  //   method: "POST",
+  //   headers: {
+  //     Accept: "application/json",
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify(newPost),
+  //   cache: "default",
+  // });
 }

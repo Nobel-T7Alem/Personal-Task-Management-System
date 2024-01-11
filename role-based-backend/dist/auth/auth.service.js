@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthService = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("mongoose");
-const user_schema_1 = require("./schemas/user.schema");
+const user_schema_1 = require("../user/schemas/user.schema");
 const bcrypt = require("bcryptjs");
 const jwt_1 = require("@nestjs/jwt");
 const mongoose_2 = require("@nestjs/mongoose");
@@ -47,7 +47,8 @@ let AuthService = class AuthService {
         if (!isPasswordMatched) {
             throw new common_1.UnauthorizedException('Invalid username or password');
         }
-        const token = this.jwtService.sign({ id: user._id });
+        const token = this.jwtService.sign({ id: user._id,
+            role: user.role });
         return { token };
     }
 };

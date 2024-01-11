@@ -1,7 +1,7 @@
 
 import { PartialType } from '@nestjs/mapped-types';
 import { IsEmpty, IsNotEmpty, IsOptional, IsString } from 'class-validator';
-import { User } from 'src/auth/schemas/user.schema';
+import { User } from 'src/user/schemas/user.schema';
 import { CreatePostsDto } from './create-posts.dto';
 
 export class UpdatePostsDto{
