@@ -23,26 +23,28 @@ export class PostsService {
  }
 
   //All posts
-  async findAll(query: any): Promise<Posts[]> {
-    const resPerPage = 2;
-    const currentPage = Number(query.page) || 1;
-    const skip = resPerPage * (currentPage - 1);
+  async findAll(): Promise<Posts[]> {
+    // const resPerPage = 2;
+    // const currentPage = Number(query.page) || 1;
+    // const skip = resPerPage * (currentPage - 1);
   
-    const keyword = query.keyword
-      ? {
-          name: {
-            $regex: query.keyword,
-            $options: 'i',
-          },
-        }
-      : {};
+    // const keyword = query.keyword
+    //   ? {
+    //       name: {
+    //         $regex: query.keyword,
+    //         $options: 'i',
+    //       },
+    //     }
+    //   : {};
   
-    const posts = await this.postsModel.find({ ...keyword })
-      .limit(resPerPage)
-      .skip(skip)
-      .exec();
+    // const posts = await this.postsModel.find({ ...keyword })
+    //   .limit(resPerPage)
+    //   .skip(skip)
+    //   .exec();
   
-    return posts;
+    // return posts;
+    const posts = await this.postsModel.find()
+    return posts
   }
 
  //find posts by id

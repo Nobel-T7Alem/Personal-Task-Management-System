@@ -21,8 +21,6 @@ __decorate([
 ], LogInDto.prototype, "username", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.IsStrongPassword)(),
-    (0, class_validator_1.MinLength)(6),
     __metadata("design:type", String)
 ], LogInDto.prototype, "password", void 0);
 //# sourceMappingURL=login.dto.js.map

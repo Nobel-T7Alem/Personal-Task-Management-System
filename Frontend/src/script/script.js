@@ -1,4 +1,6 @@
 //Login Function
+res = {};
+loggedin = false
 async function logIn(e) {
   e.preventDefault();
   const loginData = {
@@ -8,30 +10,41 @@ async function logIn(e) {
   const url = `http://localhost:3000/auth/login?username=${encodeURIComponent(
     loginData.username
   )}&password=${encodeURIComponent(loginData.password)}`;
-  const response = await fetch(url, {
+  await fetch(url, {
     method: "GET",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
     cache: "default",
-  });
-  if (response.ok) {
-    document.querySelector(".correct").classList.toggle("invisible");
-    document.querySelector(".correct").classList.toggle("position-absolute");
-    setTimeout(() => {
-      window.location.href = "../HTML Volunteer/Home.html";
-    }, 2000);
-  } else {
-    document.querySelector(".incorrect").classList.toggle("invisible");
-    document.querySelector(".incorrect").classList.toggle("position-absolute");
-    setTimeout(() => {
-      location.reload();
-    }, 2000);
-    console.log(response);
-  }
+  })
+    .then((response) => {
+      if (response.ok) {
+        document.querySelector(".correct").classList.toggle("invisible");
+        document
+          .querySelector(".correct")
+          .classList.toggle("position-absolute");
+        setTimeout(() => {
+          window.location.href = "../HTML Volunteer/Home.html";
+          console.log(response.body);
+        }, 2000);
+        loggedin = true;
+      } else {
+        document.querySelector(".incorrect").classList.toggle("invisible");
+        document
+          .querySelector(".incorrect")
+          .classList.toggle("position-absolute");
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
+      }
+    })
+    .then((json) => {
+      res = json;
+    });
+  // return res.token;
 }
-
+console.log(res);
 //Signup Function
 function signUp(e) {
   e.preventDefault();
@@ -43,7 +56,7 @@ function signUp(e) {
   };
 
   console.log(signUpData);
-  fetch("http://localhost:3000/auth/signup", {
+  fetch("http://localhost:3000/post", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -57,6 +70,7 @@ function signUp(e) {
 
 //Service Request
 function serviceRequest(e) {
+  console.log(res.token);
   e.preventDefault();
   const newPost = {
     name: e.target.centerName.value,

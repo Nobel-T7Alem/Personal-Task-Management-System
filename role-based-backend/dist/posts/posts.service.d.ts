@@ -32,7 +32,7 @@ export declare class PostsService {
     readPosts(): Promise<void | (mongoose.Document<unknown, {}, Posts> & Posts & {
         _id: mongoose.Types.ObjectId;
     })[]>;
-    findAll(query: any): Promise<Posts[]>;
+    findAll(): Promise<Posts[]>;
     findById(id: string): Promise<Posts>;
     updatePosts(id: string, posts: Posts): Promise<Posts>;
 }

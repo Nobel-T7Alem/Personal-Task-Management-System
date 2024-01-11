@@ -12,6 +12,7 @@ fetch("http://localhost:3000/posts", {
   .then((json) => {
     posts = json;
     displayPosts(posts);
+    console.log(posts);
   });
 
 function displayPosts(p) {
@@ -41,5 +42,4 @@ function displayPosts(p) {
   });
   console.log(p);
   let card = document.querySelector(".agency");
-  // card.textContent =
 }
