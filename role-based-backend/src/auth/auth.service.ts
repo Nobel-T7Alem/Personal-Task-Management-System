@@ -13,14 +13,15 @@ export class AuthService {
         @InjectModel(User.name)
         private userModel: Model<User>,
         private jwtService: JwtService
-    ){}
+    ) { }
 
-    async signUp(signUpDto: SignUpDto){ Promise<{token: string}>
-        const {name, username, email, password} = signUpDto
+    async signUp(signUpDto: SignUpDto) {
+        Promise<{ token: string }>
+        const { name, username, email, password } = signUpDto
 
 
         const hashedPassword = await bcrypt.hash(password, 10)
-        
+
 
         const user = await this.userModel.create({
             name,
@@ -33,22 +34,21 @@ export class AuthService {
         return { token }
     }
 
-    async login(loginDTo: LogInDto): Promise<{ token:string }>{
-        const { username, password } = loginDTo 
-    
+    async login(loginDTo: LogInDto): Promise<{ token: string }> {
+        const { username, password } = loginDTo
+
         const user = await this.userModel.findOne({ username })
 
-        if (!user){
+        if (!user) {
+            throw new UnauthorizedException('Invalid username or password')
+        }
+        const isPasswordMatched = await bcrypt.compare(password, user.password)
+        if (!isPasswordMatched) {
             throw new UnauthorizedException('Invalid username or password')
         }
 
-        const isPasswordMatched = await bcrypt.compare(password, user.password)
-        if (!isPasswordMatched){
-            throw new UnauthorizedException('Invalid username or password')
-        }
-        
         const token = this.jwtService.sign({ id: user._id })
         return { token }
-    
+
     }
 }

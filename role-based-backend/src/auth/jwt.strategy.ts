@@ -4,11 +4,11 @@ import { PassportStrategy } from "@nestjs/passport";
 import { Model } from "mongoose";
 import { Strategy, ExtractJwt } from "passport-jwt";
 import { User } from "./schemas/user.schema";
-
+// import { Strategy } from "passport-local";
 
 
 @Injectable()
-export class JwtStrategy extends PassportStrategy(Strategy){
+export class JwtStrategy extends PassportStrategy(Strategy) {
     constructor(
         @InjectModel(User.name)
         private userModel: Model<User>
@@ -24,7 +24,7 @@ export class JwtStrategy extends PassportStrategy(Strategy){
 
         const user = await this.userModel.findById(id);
 
-        if(!user) {
+        if (!user) {
             throw new UnauthorizedException('Login first to access this endpoint.')
         }
 

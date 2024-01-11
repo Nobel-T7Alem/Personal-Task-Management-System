@@ -20,7 +20,7 @@
           />
         </div>
         <div class="col-md-6" style="margin-top: 15%">
-          <form class="login-form">
+          <form class="login-form" onsubmit="logIn(event)">
             <h2>Login</h2>
             <div class="form-group">
               <label for="username">Username</label>
@@ -40,25 +40,25 @@
                 placeholder="Enter password"
               />
             </div>
-            <div class="form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="loginAsAgency"
-              />
-              <label class="form-check-label" for="loginAsAgency"
-                >Login as Agency</label
-              >
-            </div>
             <button type="submit" class="btn btn-success mt-3">Login</button>
-            <h5 style="margin-top: 10px">
+            <div style="margin-top: 10px">
               Don't have an account? <a href="signup.html">Sign Up.</a>
-            </h5>
+            </div>
+            <div
+              class="text-danger incorrect my-3 fs-6 font-italic position-absolute invisible"
+            >
+              Incorrect username-password combination. Please try again.
+            </div>
+            <div
+              class="text-success correct my-3 fs-6 font-italic position-absolute invisible"
+            >
+              Login Successful, redirecting...
+            </div>
           </form>
         </div>
       </div>
     </div>
-
+    <script src="../script/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
