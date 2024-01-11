@@ -9,8 +9,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SignUpDto = void 0;
+exports.SignUpDto = exports.IsUnique = exports.IsUniqueConstraint = void 0;
 const class_validator_1 = require("class-validator");
+const user_service_1 = require("../user.service");
+const common_1 = require("@nestjs/common");
+let IsUniqueConstraint = class IsUniqueConstraint {
+    constructor(userService) {
+        this.userService = userService;
+    }
+    async validate(value) {
+        const user = await this.userService.findByUsername(value);
+        return !user;
+    }
+    defaultMessage() {
+        return 'Username is already taken';
+    }
+};
+exports.IsUniqueConstraint = IsUniqueConstraint;
+exports.IsUniqueConstraint = IsUniqueConstraint = __decorate([
+    (0, common_1.Injectable)(),
+    (0, class_validator_1.ValidatorConstraint)({ async: true }),
+    __metadata("design:paramtypes", [user_service_1.UserService])
+], IsUniqueConstraint);
+function IsUnique(validationOptions) {
+    return function (object, propertyName) {
+        (0, class_validator_1.registerDecorator)({
+            name: 'isUnique',
+            target: object.constructor,
+            propertyName: propertyName,
+            options: validationOptions,
+            validator: IsUniqueConstraint,
+        });
+    };
+}
+exports.IsUnique = IsUnique;
 class SignUpDto {
 }
 exports.SignUpDto = SignUpDto;
@@ -22,6 +54,7 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     (0, class_validator_1.IsString)(),
+    IsUnique({ message: 'Username is already taken' }),
     __metadata("design:type", String)
 ], SignUpDto.prototype, "username", void 0);
 __decorate([

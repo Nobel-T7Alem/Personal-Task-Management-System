@@ -35,6 +35,9 @@ let PostsController = class PostsController {
     async updateUser(id, posts) {
         return this.postsService.updatePosts(id, posts);
     }
+    async deletePosts(postsId) {
+        return this.postsService.deletePosts(postsId);
+    }
 };
 exports.PostsController = PostsController;
 __decorate([
@@ -68,6 +71,13 @@ __decorate([
     __metadata("design:paramtypes", [String, update_posts_dto_1.UpdatePostsDto]),
     __metadata("design:returntype", Promise)
 ], PostsController.prototype, "updateUser", null);
+__decorate([
+    (0, common_1.Delete)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], PostsController.prototype, "deletePosts", null);
 exports.PostsController = PostsController = __decorate([
     (0, common_1.Controller)('posts'),
     __metadata("design:paramtypes", [posts_service_1.PostsService])

@@ -66,15 +66,18 @@ function signUp(e) {
     },
     body: JSON.stringify(signUpData),
     cache: "default",
-  });
-  setTimeout(() => {
-    const storedData = sessionStorage.getItem("fromrequest");
-    if (storedData) {
-      window.location.href = "../HTML Agency/ServiceRequest.html";
-    } else {
-      window.location.href = "../HTML Volunteer/Home.html";
+  }).then((response) => {
+    if (response.ok) {
+      setTimeout(() => {
+        const storedData = sessionStorage.getItem("fromrequest");
+        if (storedData) {
+          window.location.href = "../HTML Agency/ServiceRequest.html";
+        } else {
+          window.location.href = "../HTML Volunteer/Home.html";
+        }
+      }, 2000);
     }
-  }, 2000);
+  });
 }
 
 //Service Request
@@ -82,7 +85,7 @@ function serviceRequest(e) {
   e.preventDefault();
   const storedData = sessionStorage.getItem("token");
   console.log(storedData);
-  
+
   // const newPost = {
   //   name: e.target.centerName.value,
   //   description: e.target.serviceDescription.value,

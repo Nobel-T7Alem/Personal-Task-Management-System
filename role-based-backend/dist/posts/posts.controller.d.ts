@@ -9,4 +9,5 @@ export declare class PostsController {
     getAllPosts(query: any): Promise<Posts[]>;
     getPosts(id: string): Promise<Posts>;
     updateUser(id: string, posts: UpdatePostsDto): Promise<Posts>;
+    deletePosts(postsId: string): Promise<void>;
 }
