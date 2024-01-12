@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
   <meta charset="UTF-8">
   <title>Sebawi</title>
@@ -35,12 +36,95 @@
   </nav>
     <h1 style="padding:50px; padding-bottom: 30px; color:#32CD32;">Welcome to Sebawi.</h1>
     <pre style="font-family: 'Gilmer', sans-serif; font-size: 15pt;padding-left: 50px;">
+=======
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sebawi</title>
+    <link rel="icon" href="../Images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.0/dist/aos.css"
+      rel="stylesheet"
+    /> -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.0/dist/aos.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gilmer:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body data-aos="fade-up">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="Home.html">
+        <img
+          src="../Images/Icon-03.png"
+          alt="Icon"
+          class="d-inline-block align-top"
+          style="width: 100px; height: 110px"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="About.html"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="Contact.html"
+              >Contact</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="../HTML Agency/Login.html"
+              >Login</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h1 style="padding: 50px; padding-bottom: 30px; color: #32cd32">
+      Welcome to Sebawi.
+    </h1>
+    <pre
+      style="
+        font-family: 'Gilmer', sans-serif;
+        font-size: 15pt;
+        padding-left: 50px;
+      "
+    >
+>>>>>>> 2bc738100e43c7ba10b8a192ec6460996c88f8e5
 Addis Ababa's first centralized hub for volunteering agencies. We are delighted to have you along with us on this journey
 and we thank you for the services you are about to provide.
 
 Addis Ababa is full of agencies and institutions who have devoted their life to serving a humanitarian cause. What cause will you
 be joining today?
     </pre>
+<<<<<<< HEAD
 
     <form class="form-inline mx-auto" style="padding-left: 50px; padding-bottom: 50px;">
       <input class="form-control mr-sm-2 w-75" type="search" style="border-color: #32CD32; border-radius: 15px; width: 40%; margin: auto;" placeholder=" &#128269; " aria-label="Search">
@@ -141,4 +225,80 @@ be joining today?
 <footer style="text-align: center; padding: 50px; background-color: rgb(30, 30, 30); color: white;">
   &#169; Sebawi Volunteering. 2024. All Rights Reserved. 
 </footer>
+=======
+    <form
+      class="form-inline flex justify-content-center"
+      style="padding-left: 50px; padding-bottom: 50px"
+    >
+      <input
+        class="form-control mr-sm-2 w-75"
+        type="search"
+        style="border-color: #32cd32; border-radius: 15px"
+        placeholder=" &#128269; "
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Search
+      </button>
+    </form>
+    <div class="container" style="padding-bottom: 100px">
+      <div class="row">
+        <div
+          class="col-md-4 invisible position-absolute"
+          id="to-be-duplicated"
+          style="border-color: #32cd32"
+        >
+          <div class="card custom-card" id="0">
+            <img
+              src="https://via.placeholder.com/200x200"
+              class="card-img-top"
+              alt="Placeholder Image"
+            />
+            <div class="card-body">
+              <p class="card-text">
+                <span>Agency: </span> <span class="agency text-dark"></span>
+              </p>
+              <p class="card-text">
+                <span>Service Required: </span>
+                <span class="service text-dark"></span>
+              </p>
+              <p class="card-text">
+                <span>Contact: </span><span class="location text-dark"></span>
+              </p>
+              <p class="card-text">
+                <span>Date & Time: </span> <span class="date text-dark"></span>
+              </p>
+              <button type="submit" class="btn btn-success mt-3">
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Call to Action for Service Requests -->
+      <div class="text-center my-5 w-100 d-flex flex-column align-items-center">
+        <h2>Ready to Request Volunteer Services?</h2>
+        <p>Click the button below to fill out a service request form.</p>
+        <a class="btn btn-big-green" onclick="request(event)"
+          >Request Service</a
+        >
+      </div>
+    </div>
+  </body>
+  <script src="../script/listPosts.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="../script/script.js"></script>
+  <footer
+    style="
+      text-align: center;
+      padding: 50px;
+      background-color: rgb(30, 30, 30);
+      color: white;
+    "
+  >
+    &#169; Sebawi Volunteering. 2024. All Rights Reserved.
+  </footer>
+>>>>>>> 2bc738100e43c7ba10b8a192ec6460996c88f8e5
 </html>

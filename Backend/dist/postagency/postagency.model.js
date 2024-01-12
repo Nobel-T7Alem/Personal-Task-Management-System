@@ -30,6 +30,10 @@ __decorate([
     (0, mongoose_1.Prop)({ default: Date.now }),
     __metadata("design:type", Date)
 ], Postagency.prototype, "date_added", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ type: Buffer }),
+    __metadata("design:type", Object)
+], Postagency.prototype, "image", void 0);
 exports.Postagency = Postagency = __decorate([
     (0, mongoose_1.Schema)()
 ], Postagency);

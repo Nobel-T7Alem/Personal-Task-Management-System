@@ -7,10 +7,10 @@ import { Postagency } from './postagency.model';
 
 @Controller('postagency')
 export class PostagencyController {
-  constructor(private readonly postagencyService: PostagencyService) {}
+  constructor(private readonly postagencyService: PostagencyService) { }
 
   @Post()
-  async createPostagency(@Body() agencyDto: Postagency){
+  async createPostagency(@Body() agencyDto: Postagency) {
     return this.postagencyService.createPostagency(agencyDto)
   }
 

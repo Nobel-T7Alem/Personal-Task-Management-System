@@ -3,33 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <title>Sebawi Service Req.</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="../Bootstrap/css/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Gilmer:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/styles.css">
+=======
+    <link rel="icon" href="../Images/favicon.ico">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
+>>>>>>> 2bc738100e43c7ba10b8a192ec6460996c88f8e5
   </head>
 
   <body>
     <!-- Navigation (same as in the volunteer interface) -->
 
-  
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="Home.html">
-        <img src="../Images/Icon-03.png" alt="Icon" class="d-inline-block align-top" style="width: 100px; height: 110px;">
+        <img
+          src="../Images/Icon-03.png"
+          alt="Icon"
+          class="d-inline-block align-top"
+          style="width: 100px; height: 110px"
+        />
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="About.html">About</a>
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="About.html"
+              >About</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="Contact.html">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="Login.html">Login</a>
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="Contact.html"
+              >Contact</a
+            >
           </li>
         </ul>
       </div>
@@ -37,8 +65,8 @@
 
     <!-- Service Request Form -->
     <div class="container">
-      <h2 class="mt-5" style="color: #006400;">Service Request Form:</h2>
-      <form>
+      <h2 class="mt-5" style="color: #006400">Service Request Form:</h2>
+      <form onsubmit="serviceRequest(event)">
         <div class="form-group">
           <label for="centerName">Volunteer Center Name:</label>
           <input
@@ -57,7 +85,7 @@
             placeholder="Describe the service needed"
           ></textarea>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="roleRequirements">Role Requirements:</label>
           <textarea
             class="form-control"
@@ -65,7 +93,7 @@
             rows="3"
             placeholder="Specify role requirements"
           ></textarea>
-        </div>
+        </div> -->
         <div class="form-group">
           <label for="contactInfo">Contact Information:</label>
           <input
@@ -75,17 +103,27 @@
             placeholder="Enter contact information"
           />
         </div>
-        <div class="form group my-4">
-          <label for="photo">Your agency logo:</label>
-          <div>
-            <form onsubmit=""></form>
-            <input type="file" />
+          <!-- <label for="photo">Your agency logo:</label>
+          <div class="input-div">
+              <input
+                type="file"
+                class="file"
+                accept="image/png, image/jpeg, image/jpg"
+                id="imageInput"
+              /> -->
+              <div class="button">
+              <button
+                type="submit"
+                class="btn btn-success"
+                style="margin: 20px"
+              >
+                Submit Request
+              </button>
+            </div>
           </div>
-        </div>
-        <button type="submit" class="btn btn-success" style="margin: 20px;">Submit Request</button>
       </form>
     </div>
-
+    <script src="../script/script.js"></script>
     <!-- Bootstrap JS, same as in the volunteer interface -->
     <script src="../script/script.js"></script>
 <script src="../Bootstrap/js/bootstrap.js"></script>

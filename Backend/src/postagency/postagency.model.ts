@@ -1,22 +1,27 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document } from 'mongoose';
-export type PostagencyDocument = Postagency & Document 
+export type PostagencyDocument = Postagency & Document;
 
 @Schema()
-export class Postagency{
-    
+export class Postagency {
 
     @Prop({ required: true })
     name: string;
-  
+
     @Prop({ required: true })
     description: string;
-  
+
     @Prop({ required: true })
     contact: string;
 
-    @Prop({default:Date.now})
+    @Prop({ default: Date.now })
     date_added: Date;
+
+    @Prop({ type: Buffer })
+    image: {
+        data: Buffer,
+        contentType: string,
+    };
 }
 
 

@@ -5,18 +5,18 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Postagency, PostagencyDocument } from './postagency.model';
 
+
 @Injectable()
 export class PostagencyService {
-
   constructor(
     @InjectModel('postagency') private readonly postagencyModel: Model<PostagencyDocument>
-   ){}
+  ) { }
 
   //creating an agency
-  async createPostagency (postagency: Postagency): Promise<Postagency>{
+  async createPostagency(postagency: Postagency): Promise<Postagency> {
     const newPostagency = new this.postagencyModel(postagency)
     return newPostagency.save()
-   }
+  }
 
   findAll() {
     return `This action returns all postagency`;

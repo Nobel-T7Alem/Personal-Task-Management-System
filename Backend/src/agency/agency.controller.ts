@@ -1,8 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Put } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Put, UploadedFile, HttpStatus, UseInterceptors } from '@nestjs/common';
 import { AgencyService } from './agency.service';
 import { Agency } from './agency.model';
 import { UpdateAgencyDto } from './dto/update-agency.dto';
-import { CreateAgencyDto } from './dto/create-agency.dto';
+
 
 @Controller('agency')
 export class AgencyController {

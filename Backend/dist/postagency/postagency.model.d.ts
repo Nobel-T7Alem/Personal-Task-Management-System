@@ -1,3 +1,4 @@
+/// <reference types="node" />
 /// <reference types="mongoose/types/aggregate" />
 /// <reference types="mongoose/types/callback" />
 /// <reference types="mongoose/types/collection" />
@@ -29,6 +30,10 @@ export declare class Postagency {
     description: string;
     contact: string;
     date_added: Date;
+    image: {
+        data: Buffer;
+        contentType: string;
+    };
 }
 export declare const PostagencySchema: import("mongoose").Schema<Postagency, import("mongoose").Model<Postagency, any, any, any, Document<unknown, any, Postagency> & Postagency & {
     _id: import("mongoose").Types.ObjectId;
