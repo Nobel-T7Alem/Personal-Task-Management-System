@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Sebawi</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.0/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.0/dist/aos.js"></script>
+
+  <link rel="stylesheet" href="../Bootstrap/css/main.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Gilmer:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles/styles.css">
@@ -44,61 +43,27 @@ be joining today?
     </pre>
 
     <form class="form-inline mx-auto" style="padding-left: 50px; padding-bottom: 50px;">
-      <input class="form-control mr-sm-2 w-75" type="search" style="border-color: #32CD32; border-radius: 15px;" placeholder=" &#128269; " aria-label="Search">
+      <input class="form-control mr-sm-2 w-75" type="search" style="border-color: #32CD32; border-radius: 15px; width: 40%; margin: auto;" placeholder=" &#128269; " aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
     </form>
   </nav>
  
   <div class="container" style="padding-bottom: 100px;">
     <div class="row">
-      <div class="col-md-4" style="border-color: #32CD32;">
+      <div class="col-md-4 d-flex align-items-stretch" style="border-color: #32CD32;">
+        <!-- Add d-flex and align-items-stretch classes to make columns same height -->
         <div class="card custom-card">
           <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
           <div class="card-body">
             <p class="card-text"><span>Agency:</span> The Ethiopian Red Cross Association</p>
             <p class="card-text"><span>Service Required:</span> Medicine packaging.</p>
             <p class="card-text"><span>Location:</span> Across Ambassador Hotel</p>
-            <p class="card-text"><span >Date & Time:</span> 12/2/2024, 7:15-11:00 AM</p>
+            <p class="card-text"><span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM</p>
             <button type="submit" class="btn btn-success mt-3">Register</button>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card custom-card">
-          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
-          <div class="card-body">
-            <p class="card-text">This is some placeholder text.</p>
-            <p class="card-text">More placeholder text here.</p>
-            <p class="card-text">Even more placeholder text.</p>
-            <p class="card-text">Last line of text.</p>
-            <button type="submit" class="btn btn-success mt-3">Register</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card custom-card">
-          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
-          <div class="card-body">
-            <p class="card-text">This is some placeholder text.</p>
-            <p class="card-text">More placeholder text here.</p>
-            <p class="card-text">Even more placeholder text.</p>
-            <p class="card-text">Last line of text.</p>
-            <button type="submit" class="btn btn-success mt-3">Register</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card custom-card" style="margin-top: 20px;">
-          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image" ">
-          <div class="card-body">
-            <p class="card-text">This is some placeholder text.</p>
-            <p class="card-text">More placeholder text here.</p>
-            <p class="card-text">Even more placeholder text.</p>
-            <p class="card-text">Last line of text.</p>
-            <button type="submit" class="btn btn-success mt-3">Register</button>
-          </div>
-        </div>
-      </div>
+
       <div class="col-md-4" style="margin-top: 20px;">
         <div class="card custom-card">
           <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
@@ -111,6 +76,7 @@ be joining today?
           </div>
         </div>
       </div>
+
       <div class="col-md-4" style="margin-top: 20px;">
         <div class="card custom-card">
           <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
@@ -123,14 +89,55 @@ be joining today?
           </div>
         </div>
       </div>
-    </div>
+
+      <div class="col-md-4" style="margin-top: 20px;">
+        <div class="card custom-card">
+          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <p class="card-text">This is some placeholder text.</p>
+            <p class="card-text">More placeholder text here.</p>
+            <p class="card-text">Even more placeholder text.</p>
+            <p class="card-text">Last line of text.</p>
+            <button type="submit" class="btn btn-success mt-3">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" style="margin-top: 20px;">
+        <div class="card custom-card">
+          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <p class="card-text">This is some placeholder text.</p>
+            <p class="card-text">More placeholder text here.</p>
+            <p class="card-text">Even more placeholder text.</p>
+            <p class="card-text">Last line of text.</p>
+            <button type="submit" class="btn btn-success mt-3">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" style="margin-top: 20px;">
+        <div class="card custom-card">
+          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <p class="card-text">This is some placeholder text.</p>
+            <p class="card-text">More placeholder text here.</p>
+            <p class="card-text">Even more placeholder text.</p>
+            <p class="card-text">Last line of text.</p>
+            <button type="submit" class="btn btn-success mt-3">Register</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>  
   </div>
 </body>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="../script/script.js"></script>
+<script src="../Bootstrap/js/bootstrap.js"></script>
+<script src="../Bootstrap/js/bootstrap.min.js"></script>
+<script src="../Bootstrap/js/npm.js"></script>
 <footer style="text-align: center; padding: 50px; background-color: rgb(30, 30, 30); color: white;">
   &#169; Sebawi Volunteering. 2024. All Rights Reserved. 
 </footer>
