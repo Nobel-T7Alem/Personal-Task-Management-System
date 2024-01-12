@@ -26,6 +26,7 @@ import { Model } from 'mongoose';
 import { User } from './schemas/user.schema';
 export declare class UserService {
     private readonly userModel;
+    findByUsername(value: any): void;
     constructor(userModel: Model<User>);
     getAllUsers(): Promise<User[]>;
     deleteUser(userId: string): Promise<void>;

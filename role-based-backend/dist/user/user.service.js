@@ -17,6 +17,9 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 let UserService = class UserService {
+    findByUsername(value) {
+        throw new Error('Method not implemented.');
+    }
     constructor(userModel) {
         this.userModel = userModel;
     }

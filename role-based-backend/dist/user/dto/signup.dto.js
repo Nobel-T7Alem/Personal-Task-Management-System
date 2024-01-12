@@ -19,7 +19,7 @@ let IsUniqueConstraint = class IsUniqueConstraint {
     }
     async validate(value) {
         const user = await this.userService.findByUsername(value);
-        return !user;
+        return user === null || user === undefined;
     }
     defaultMessage() {
         return 'Username is already taken';
@@ -54,7 +54,6 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     (0, class_validator_1.IsString)(),
-    IsUnique({ message: 'Username is already taken' }),
     __metadata("design:type", String)
 ], SignUpDto.prototype, "username", void 0);
 __decorate([

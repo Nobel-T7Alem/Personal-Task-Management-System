@@ -24,7 +24,7 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "name", void 0);
 __decorate([
-    (0, mongoose_1.Prop)(),
+    (0, mongoose_1.Prop)({ unique: [true, 'Duplicate username entered'] }),
     __metadata("design:type", String)
 ], User.prototype, "username", void 0);
 __decorate([

@@ -12,7 +12,7 @@ export class User {
   @Prop()
   name: string;
 
-  @Prop()
+  @Prop({ unique: [true, 'Duplicate username entered'] })
   username: string;
 
   @Prop({ unique: [true, 'Duplicate email entered'] })

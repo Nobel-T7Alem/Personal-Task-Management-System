@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { User } from '../user/schemas/user.schema';
 import * as bcrypt from 'bcryptjs'
@@ -16,24 +16,25 @@ export class AuthService {
     ) { }
 
     async signUp(signUpDto: SignUpDto) {
-        Promise<{ token: string }>
-        const { name, username, email, password } = signUpDto
+        Promise<any>
+        try {
+            const { name, username, email, password } = signUpDto
+            const hashedPassword = await bcrypt.hash(password, 10)
+            const user = await this.userModel.create({
+                name,
+                username,
+                email,
+                password: hashedPassword
+            })
 
-
-        const hashedPassword = await bcrypt.hash(password, 10)
-
-
-        const user = await this.userModel.create({
-            name,
-            username,
-            email,
-            password: hashedPassword
-        })
-
-        const token = this.jwtService.sign({ id: user._id })
-        return { token }
+            const token = this.jwtService.sign({ id: user._id })
+            return { token }
+        } catch (error) {
+            if (error.name === 'MongoServerError' && error.code === 11000 && Object.keys(error.keyPattern)[0] === 'email') {
+                throw new UnauthorizedException('There is an E-mail already associated with this account. Login or use another E-mail.')
+            }
+        }
     }
-
     async login(loginDTo: LogInDto): Promise<{ token: string }> {
         const { username, password } = loginDTo
 
@@ -47,8 +48,10 @@ export class AuthService {
             throw new UnauthorizedException('Invalid username or password')
         }
 
-        const token = this.jwtService.sign({ id: user._id,
-            role: user.role })
+        const token = this.jwtService.sign({
+            id: user._id,
+            role: user.role
+        })
         return { token }
 
     }
