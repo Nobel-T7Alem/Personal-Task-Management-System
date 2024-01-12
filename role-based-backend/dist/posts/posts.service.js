@@ -30,21 +30,7 @@ let PostsService = class PostsService {
             .catch((err) => console.log(err));
     }
     async findAll(query) {
-        const resPerPage = 2;
-        const currentPage = Number(query.page) || 1;
-        const skip = resPerPage * (currentPage - 1);
-        const keyword = query.keyword
-            ? {
-                name: {
-                    $regex: query.keyword,
-                    $options: 'i',
-                },
-            }
-            : {};
-        const posts = await this.postsModel.find({ ...keyword })
-            .limit(resPerPage)
-            .skip(skip)
-            .exec();
+        const posts = await this.postsModel.find();
         return posts;
     }
     async findById(id) {

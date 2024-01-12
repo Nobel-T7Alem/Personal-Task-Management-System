@@ -59,7 +59,9 @@ let AuthService = class AuthService {
             id: user._id,
             role: user.role
         });
-        return { token };
+        const role = await this.userModel.findOne({ username });
+        const status = role.role;
+        return { token, status };
     }
 };
 exports.AuthService = AuthService;
