@@ -16,25 +16,33 @@ export class AuthService {
     ) { }
 
     async signUp(signUpDto: SignUpDto) {
-        Promise<any>
-        try {
-            const { name, username, email, password } = signUpDto
-            const hashedPassword = await bcrypt.hash(password, 10)
-            const user = await this.userModel.create({
-                name,
-                username,
-                email,
-                password: hashedPassword
-            })
+        Promise<{ token: string }>
+        const { name, username, email, password } = signUpDto
 
-            const token = this.jwtService.sign({ id: user._id })
-            return { token }
-        } catch (error) {
-            if (error.name === 'MongoServerError' && error.code === 11000 && Object.keys(error.keyPattern)[0] === 'email') {
-                throw new UnauthorizedException('There is an E-mail already associated with this account. Login or use another E-mail.')
-            }
+        const existingUsername = await this.userModel.findOne({ username });
+        if (existingUsername) {
+            throw  new UnauthorizedException('Username already taken');
         }
+
+        const existingEmail = await this.userModel.findOne({ email });
+        if (existingEmail) {
+            throw  new UnauthorizedException('Email already taken');
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 10)
+
+
+        const user = await this.userModel.create({
+            name,
+            username,
+            email,
+            password: hashedPassword
+        })
+
+        const token = this.jwtService.sign({ id: user._id })
+        return { token }
     }
+    
     async login(loginDTo: LogInDto): Promise<{ token: string }> {
         const { username, password } = loginDTo
 
