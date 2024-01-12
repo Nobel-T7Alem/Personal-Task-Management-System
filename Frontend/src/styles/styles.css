@@ -124,6 +124,7 @@ pre {
 /* Custom CSS for the navbar */
 body {
   font-family: "Gilmer", sans-serif;
+  overflow-x: hidden;
 }
 
 .navbar-nav .nav-link {
@@ -148,6 +149,9 @@ h1 {
   height: 60px;
 }
 
+.navbar-brand {
+  padding-right: 55%;
+}
 .navbar-nav .nav-link-btn {
   background-color: #ffffff;
   border: none;
