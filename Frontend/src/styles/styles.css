@@ -3,6 +3,10 @@ body {
   background-color: #f4f4f4;
 }
 
+.navbar-nav {
+  padding-left: 60%;
+}
+
 .navbar-nav .nav-link {
   color: #ffffff;
   letter-spacing: 1px;
