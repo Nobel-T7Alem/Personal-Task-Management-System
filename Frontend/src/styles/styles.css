@@ -5,10 +5,6 @@ body {
   background-color: #f4f4f4;
 }
 
-.navbar-nav {
-  padding-left: 60%;
-}
-
 .navbar-nav .nav-link {
   color: #ffffff;
   letter-spacing: 1px;
@@ -127,7 +123,7 @@ pre {
 
 /* Custom CSS for the navbar */
 body {
-  font-family: 'Gilmer', sans-serif;
+  font-family: "Gilmer", sans-serif;
 }
 
 .navbar-nav .nav-link {
@@ -141,7 +137,7 @@ h1 {
   font-family: "Montserrat";
 }
 .navbar-nav .nav-link:hover {
-  color: #32CD32;
+  color: #32cd32;
 }
 
 .nav-item {
@@ -161,13 +157,12 @@ h1 {
   margin-right: 50px;
 }
 
-
 .navbar-nav .nav-link-btn:hover {
   background-color: #006400;
 }
 
 span {
-  color: #32CD32;
+  color: #32cd32;
   font-size: larger;
   font-weight: 500;
 }
@@ -181,7 +176,7 @@ pre {
 }
 
 .navbar-toggler-icon:hover {
-  color: #32CD32;
+  color: #32cd32;
 }
 
 .img {
@@ -192,7 +187,6 @@ pre {
   margin-left: 100px;
   margin-top: 350px;
 }
-
 
 .animate {
   opacity: 0;
@@ -210,7 +204,6 @@ pre {
   transition: transform 0.3s ease-in-out; /* Add a smooth transition */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
 }
-
 
 @media (min-width: 992px) {
   /* Adjust breakpoint if needed */

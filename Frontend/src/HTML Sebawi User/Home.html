@@ -1,165 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Sebawi</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sebawi</title>
 
-  <link rel="stylesheet" href="../Bootstrap/css/main.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Gilmer:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles/styles.css">
-</head>
-<body data-aos="fade-up">
-
- 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="Home.html">
-        <img src="../Images/Icon-03.png" alt="Icon" class="d-inline-block align-top" style="width: 100px; height: 110px;">
-    </a>
-    <!-- Add the mobile toggle button (hamburger menu) -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <link rel="stylesheet" href="../Bootstrap/css/main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gilmer:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body data-aos="fade-up">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="Home.html">
+        <img
+          src="../Images/favicon.ico"
+          alt="Icon"
+          class="d-inline-block align-top mx-5"
+          style="width: 60px; height: 60px"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="About.html">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="Contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link nav-link-btn btn" style="color: #32CD32;" href="Login.html">Login</a>
-            </li>
+          <li class="nav-item">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="About.html"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="Contact.html"
+              >Contact</a
+            >
+          </li>
+          <li class="nav-item login-link" id="login-link">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="../HTML Agency/Login.html"
+              >Login</a
+            >
+          </li>
+          <li class="nav-item admin invisible position-absolute">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="../adminPage.html"
+              >Manage Posts</a
+            >
+          </li>
+          <li class="nav-item accounts invisible position-absolute">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="../adminPage.html"
+              >Manage accounts</a
+            >
+          </li>
         </ul>
-    </div>
-</nav>
+      </div>
+    </nav>
+    <div class="container" style="padding-bottom: 100px">
+      <h1 style="padding: 50px; padding-bottom: 30px; color: #32cd32">
+        Welcome to Sebawi.
+      </h1>
+      <pre>
+Addis Ababa's first centralized hub for volunteering agencies. We are delighted to have you along with us on this journeyand we thank you for the services you are about to provide.
 
-    
-  <h1 style="padding:50px; padding-bottom: 30px; color:#32CD32;">Welcome to Sebawi.</h1>
-    <pre style="font-family: 'Gilmer', sans-serif; font-size: 15pt;padding-left: 50px;">
-Addis Ababa's first centralized hub for volunteering agencies. We are delighted to have you along with us on this journey
-and we thank you for the services you are about to provide.
-
-Addis Ababa is full of agencies and institutions who have devoted their life to serving a humanitarian cause. What cause will you
-be joining today?
-    </pre>
-
-    <div class="container" style="padding-bottom: 50px; margin-right: 30%; padding-left: 20%;">
-      <form class="form-inline">
-        <div class="input-group">
-          <input class="form-control form-control-sm" type="search" style="border-color: #32CD32; border-radius: 10px; height: 30px; font-size: 14px;" placeholder=" &#128269; " aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-outline-success btn-sm" type="submit" style="font-size: 14px; padding: 5px 10px; margin-left: 20%;">Search</button>
-            
-          </div>
-        </div>
+Addis Ababa is full of agencies and institutions who have devoted their life to serving a humanitarian cause. What cause will you be joining today?
+      </pre>
+      <form
+        class="form-inline d-flex justify-content-center"
+        style="padding-left: 50px; padding-bottom: 50px"
+      >
+        <input
+          class="form-control d-inline-block mr-sm-2 w-75"
+          type="search"
+          style="border-color: #32cd32; border-radius: 15px"
+          placeholder="&#128269;  Search for Agencies or Services "
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success my-2 mx-3 my-sm-0" type="submit">
+          Search
+        </button>
       </form>
+      <div class="row">
+        <div
+          class="col-md-4 invisible position-absolute"
+          id="to-be-duplicated"
+          style="border-color: #32cd32"
+        >
+          <div class="card custom-card" id="0">
+            <img
+              src="https://via.placeholder.com/200x200"
+              class="card-img-top"
+              alt="Placeholder Image"
+            />
+            <div class="card-body">
+              <p class="card-text">
+                <span>Agency: </span>
+                <span class="agency text-dark"></span>
+              </p>
+              <p class="card-text">
+                <span>Service Required: </span>
+                <span class="service text-dark"></span>
+              </p>
+              <p class="card-text">
+                <span>Contact: </span><span class="location text-dark"></span>
+              </p>
+              <p class="card-text">
+                <span>Date & Time: </span> <span class="date text-dark"></span>
+              </p>
+              <button type="submit" class="btn btn-success mt-3">
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Call to Action for Service Requests -->
+      <div class="text-center my-5 w-100 d-flex flex-column align-items-center">
+        <h2>Ready to Request Volunteer Services?</h2>
+        <p>Click the button below to fill out a service request form.</p>
+        <a class="btn btn-big-green" onclick="request(event)"
+          >Request Service</a
+        >
+      </div>
     </div>
-    
- 
-  <div class="container" style="padding-bottom: 20px;">
-    <div class="row">
-      <div class="col-md-4 d-flex align-items-stretch" style="border-color: #32CD32;">
-        <!-- Add d-flex and align-items-stretch classes to make columns same height -->
-        <div class="card custom-card">
-          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
-          <div class="card-body">
-            <p class="card-text"><span>Agency:</span> The Ethiopian Red Cross Association</p>
-            <p class="card-text"><span>Service Required:</span> Medicine packaging.</p>
-            <p class="card-text"><span>Location:</span> Across Ambassador Hotel</p>
-            <p class="card-text"><span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM</p>
-            <button type="submit" class="btn btn-success mt-3">Register</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4" style="margin-top: 20px;">
-        <div class="card custom-card">
-          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
-          <div class="card-body">
-            <p class="card-text">This is some placeholder text.</p>
-            <p class="card-text">More placeholder text here.</p>
-            <p class="card-text">Even more placeholder text.</p>
-            <p class="card-text">Last line of text.</p>
-            <button type="submit" class="btn btn-success mt-3">Register</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4" style="margin-top: 20px;">
-        <div class="card custom-card">
-          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
-          <div class="card-body">
-            <p class="card-text">This is some placeholder text.</p>
-            <p class="card-text">More placeholder text here.</p>
-            <p class="card-text">Even more placeholder text.</p>
-            <p class="card-text">Last line of text.</p>
-            <button type="submit" class="btn btn-success mt-3">Register</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4" style="margin-top: 20px;">
-        <div class="card custom-card">
-          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
-          <div class="card-body">
-            <p class="card-text">This is some placeholder text.</p>
-            <p class="card-text">More placeholder text here.</p>
-            <p class="card-text">Even more placeholder text.</p>
-            <p class="card-text">Last line of text.</p>
-            <button type="submit" class="btn btn-success mt-3">Register</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4" style="margin-top: 20px;">
-        <div class="card custom-card">
-          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
-          <div class="card-body">
-            <p class="card-text">This is some placeholder text.</p>
-            <p class="card-text">More placeholder text here.</p>
-            <p class="card-text">Even more placeholder text.</p>
-            <p class="card-text">Last line of text.</p>
-            <button type="submit" class="btn btn-success mt-3">Register</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4" style="margin-top: 20px;">
-        <div class="card custom-card">
-          <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Placeholder Image">
-          <div class="card-body">
-            <p class="card-text">This is some placeholder text.</p>
-            <p class="card-text">More placeholder text here.</p>
-            <p class="card-text">Even more placeholder text.</p>
-            <p class="card-text">Last line of text.</p>
-            <button type="submit" class="btn btn-success mt-3">Register</button>
-          </div>
-        </div>
-      </div>
-
-
-    </div>  
-  </div>
-
-  <div class="text-center my-5">
-
-    <h2>Looking for volunteers yourself?</h2>
-    <p>Click the button below to fill out a service request form.</p>
-    <a href="ServiceRequest.html" class="btn btn-big-green"
-      >Request Service</a
-    >
-  </div>
-</body>
-
-<script src="../script/script.ts"></script>
-<script src="../Bootstrap/js/bootstrap.js"></script>
-<script src="../Bootstrap/js/bootstrap.min.js"></script>
-<script src="../Bootstrap/js/npm.js"></script>
-<script src="../Bootstrap/js/jquery.min.js"></script>
-
-<footer style="text-align: center; padding: 50px; background-color: rgb(30, 30, 30); color: white;">
-  &#169; Sebawi Volunteering. 2024. All Rights Reserved. 
-</footer>
+  </body>
+  <script src="../script/listPosts.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="../script/script.js"></script>
+  <footer
+    style="
+      text-align: center;
+      padding: 50px;
+      background-color: rgb(30, 30, 30);
+      color: white;
+    "
+  >
+    &#169; Sebawi Volunteering. 2024. All Rights Reserved.
+  </footer>
 </html>
