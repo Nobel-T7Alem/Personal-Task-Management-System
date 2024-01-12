@@ -18,6 +18,7 @@ async function logIn(e) {
   })
     .then((response) => {
       if (response.ok) {
+        sessionStorage.setItem("isloggedin", "true");
         document.querySelector(".correct").classList.toggle("invisible");
         document
           .querySelector(".correct")
@@ -25,9 +26,9 @@ async function logIn(e) {
         setTimeout(() => {
           const storedData = sessionStorage.getItem("fromrequest");
           if (storedData) {
-            window.location.href = "../HTML Agency/ServiceRequest.html";
+            window.location.href = "../HTML Sebawi User/ServiceRequest.html";
           } else {
-            window.location.href = "../HTML Volunteer/Home.html";
+            window.location.href = "../HTML Sebawi User/Home.html";
           }
         }, 2000);
       } else {
@@ -45,7 +46,9 @@ async function logIn(e) {
       res = json;
       let status = res.status;
       if (status == "admin") sessionStorage.setItem("type", "admin");
-      sessionStorage.setItem("isloggedin", "true");
+      let token = res.token;
+      console.log(token, typeof token);
+      sessionStorage.setItem("tok", String(token));
     });
 }
 
@@ -70,15 +73,16 @@ function signUp(e) {
   })
     .then((response) => {
       if (response.ok) {
+        sessionStorage.setItem("isloggedin", "true");
+        const storedData = sessionStorage.getItem("fromrequest");
+        successDiv = document.getElementById("scorrect");
+        successDiv.classList.toggle("invisible");
+        successDiv.classList.toggle("position-absolute");
         setTimeout(() => {
-          const storedData = sessionStorage.getItem("fromrequest");
-          successDiv = document.getElementById("scorrect");
-          successDiv.classList.toggle("invisible");
-          successDiv.classList.toggle("position-absolute");
           if (storedData) {
-            window.location.href = "../HTML Agency/ServiceRequest.html";
+            window.location.href = "../HTML Sebawi User/ServiceRequest.html";
           } else {
-            window.location.href = "../HTML Volunteer/Home.html";
+            window.location.href = "../HTML Sebawi User/Home.html";
           }
         }, 2000);
       } else {
@@ -115,21 +119,28 @@ function signUp(e) {
 //Service Request
 function serviceRequest(e) {
   e.preventDefault();
-  const storedData = sessionStorage.getItem("token");
-  console.log(storedData);
-
-  // const newPost = {
-  //   name: e.target.centerName.value,
-  //   description: e.target.serviceDescription.value,
-  //   contact: e.target.contactInfo.value,
-  // };
-  // fetch("http://localhost:3000/posts", {
-  //   method: "POST",
-  //   headers: {
-  //     Accept: "application/json",
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify(newPost),
-  //   cache: "default",
-  // });
+  const newPost = {
+    name: e.target.centerName.value,
+    description: e.target.serviceDescription.value,
+    contact: e.target.contactInfo.value,
+  };
+  let token = sessionStorage.getItem("tok");
+  console.log(token);
+  fetch(`http://localhost:3000/posts/${token}`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newPost),
+    cache: "default",
+  }).then((response) => {
+    if (response.ok) {
+      document.querySelector(".correct").classList.toggle("invisible");
+      document.querySelector(".correct").classList.toggle("position-absolute");
+      setTimeout(() => {
+        window.location.href = "../HTML Sebawi User/Home.html";
+      }, 2000);
+    }
+  });
 }

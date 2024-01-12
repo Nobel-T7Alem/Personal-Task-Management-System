@@ -2,11 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Sebawi Service Req.</title>
-    <link rel="stylesheet" href="../Bootstrap/css/main.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Gilmer:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Sebawi | Service Request</title>
+    <link rel="icon" href="../Images/favicon.ico" />
+
+    <link rel="stylesheet" href="../Bootstrap/css/main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gilmer:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
   </head>
 
   <body>
@@ -50,6 +55,14 @@
               >Contact</a
             >
           </li>
+          <li class="nav-item">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="Login.html"
+              >Login</a
+            >
+          </li>
         </ul>
       </div>
     </nav>
@@ -63,6 +76,7 @@
           <input
             type="text"
             class="form-control"
+            name="centerName"
             id="centerName"
             placeholder="Enter center name"
           />
@@ -72,51 +86,53 @@
           <textarea
             class="form-control"
             id="serviceDescription"
+            name="serviceDescription"
             rows="3"
             placeholder="Describe the service needed"
           ></textarea>
         </div>
-        <!-- <div class="form-group">
-          <label for="roleRequirements">Role Requirements:</label>
-          <textarea
-            class="form-control"
-            id="roleRequirements"
-            rows="3"
-            placeholder="Specify role requirements"
-          ></textarea>
-        </div> -->
         <div class="form-group">
           <label for="contactInfo">Contact Information:</label>
           <input
             type="text"
             class="form-control"
             id="contactInfo"
+            name="contactInfo"
             placeholder="Enter contact information"
           />
         </div>
-          <!-- <label for="photo">Your agency logo:</label>
+        <div class="form group my-4">
+          <label for="photo">Your agency logo:</label>
           <div class="input-div">
-              <input
-                type="file"
-                class="file"
-                accept="image/png, image/jpeg, image/jpg"
-                id="imageInput"
-              /> -->
-              <div class="button">
-              <button
-                type="submit"
-                class="btn btn-success"
-                style="margin: 20px"
-              >
-                Submit Request
-              </button>
+            <input
+              type="file"
+              class="file"
+              accept="image/png, image/jpeg, image/jpg"
+              id="imageInput"
+            />
+            <button
+              onclick=""
+              type="submit"
+              class="btn btn-success"
+              style="margin: 20px"
+            >
+              Submit Request
+            </button>
+            <div
+              id="correct"
+              class="text-success my-3 fs-6 font-italic position-absolute invisible"
+            >
+              Sign Up Successful, redirecting...
             </div>
           </div>
+        </div>
       </form>
     </div>
-    <script src="../script/script.ts"></script>
-<script src="../Bootstrap/js/bootstrap.js"></script>
-<script src="../Bootstrap/js/bootstrap.min.js"></script>
-<script src="../Bootstrap/js/npm.js"></script>
+    <script src="../script/script.js"></script>
+    <!-- Bootstrap JS, same as in the volunteer interface -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../script/script.js"></script>
   </body>
 </html>

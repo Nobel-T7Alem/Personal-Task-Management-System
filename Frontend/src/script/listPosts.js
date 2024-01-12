@@ -6,11 +6,7 @@ if (sessionStorage.getItem("isloggedin")) {
   }
 }
 if (sessionStorage.getItem("type")) {
-  if (document.querySelector(".admin")) {
-    let admin = document.querySelector(".admin");
-    admin.classList.toggle("invisible");
-    admin.classList.toggle("position-absolute");
-  } if (document.querySelector(".accounts")) {
+  if (document.querySelector(".accounts")) {
     let acc = document.querySelector(".accounts");
     acc.classList.toggle("invisible");
     acc.classList.toggle("position-absolute");
@@ -42,6 +38,7 @@ function displayPosts(p) {
     clone.querySelector(".agency").innerHTML = i.name;
     clone.querySelector(".service").innerHTML = i.description;
     clone.querySelector(".location").innerHTML = i.contact;
+    clone.querySelector(".id").innerText = i._id;
     const createdAt = new Date(i.createdAt);
     const dateOptions = { year: "numeric", month: "long", day: "numeric" };
     const timeOptions = {
@@ -60,11 +57,24 @@ function displayPosts(p) {
 function request(event) {
   event.preventDefault();
   sessionStorage.setItem("fromrequest", "true");
-  a = event.target;
-  a.href = "../HTML Agency/Login.html";
-  if (storedData) {
-    window.location.replace("../HTML Agency/ServiceRequest.html");
+  if (sessionStorage.getItem("isloggedin")) {
+    window.location.replace("../HTML Sebawi User/ServiceRequest.html");
   } else {
-    window.location.replace("../HTML Agency/Login.html");
+    window.location.replace("../HTML Sebawi User/Login.html");
   }
 }
+
+//deleting posts
+function deletePost(event) {
+  let tbd = event.target.parentElement.parentElement.parentElement;
+  tbd.remove();
+  let name = tbd.querySelector(".id");
+  id = name.innerHTML;
+  console.log(id);
+  fetch(`http://localhost:3000/posts/${id}`, {
+    method: "DELETE",
+    cache: "default",
+  });
+}
+
+function updatePost(event) {}

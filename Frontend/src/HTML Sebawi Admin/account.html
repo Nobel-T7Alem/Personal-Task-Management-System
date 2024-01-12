@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Post Management</title>
-
+    <title>Account Management</title>
     <link rel="stylesheet" href="../Bootstrap/css/main.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -19,7 +18,7 @@
           src="../Images/favicon.ico"
           alt="Icon"
           class="d-inline-block align-top mx-3"
-          style="width: 60px; height: 60px"
+          style="width: 60px; height: 60px "
         />
       </a>
       <button
@@ -35,14 +34,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a
-              class="nav-link nav-link-btn btn"
-              style="color: #32cd32"
-              href="../HTML Sebawi User/Home.html"
-              >Home</a
-            >
-          </li>
           <li class="nav-item">
             <a
               class="nav-link nav-link-btn btn"
@@ -95,45 +86,23 @@
           id="to-be-duplicated"
           style="border-color: #32cd32"
         >
-          <div class="card custom-card" id="0">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="card-body">
-                <p class="card-text">
-                  <span>Agency: </span>
-                  <span class="agency text-dark"></span>
-                </p>
-                <p class="card-text">
-                  <span>Service Required: </span>
-                  <span class="service text-dark"></span>
-                </p>
-                <p class="card-text">
-                  <span>Contact: </span>
-                  <span class="location text-dark"></span>
-                </p>
-                <p class="card-text">
-                  <span>Date & Time: </span>
-                  <span class="date text-dark"></span>
-                </p>
-                <p class="card-text">
-                  <span class="id invisible position-absolute"></span>
-                </p>
-              </div>
-              <div class="d-flex flex-column justify-content-center">
-                <button
-                  type="submit"
-                  onclick="deletePost(event)"
-                  class="btn btn-danger mx-5 m-3"
-                >
-                  Delete Post
-                </button>
-                <button
-                  type="submit"
-                  onclick="updatePost(event)"
-                  class="btn btn-secondary mx-5 m-3"
-                >
-                  Update Post
-                </button>
-              </div>
+        <div class="card custom-card" id="0">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="card-body">
+              <p class="card-text">
+                <span>Name: </span>
+                <span class="agency text-dark"></span>
+              </p>
+              <p class="card-text">
+                <span>username: </span>
+                <span class="service text-dark"></span>
+              </p>
+            </div>
+            <button type="submit" class="btn btn-danger mx-5 m-3">
+              Delete User
+            </button>
+          </div>
+        </div>
             </div>
           </div>
         </div>
