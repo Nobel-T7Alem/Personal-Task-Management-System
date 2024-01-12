@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <title>Account Management</title>
+    <script src="../dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="../Images/favicon.ico" />
     <link rel="stylesheet" href="../Bootstrap/css/main.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -12,61 +14,64 @@
     <link rel="stylesheet" href="../styles/styles.css" />
   </head>
   <body data-aos="fade-up">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="../HTML Sebawi User/Home.html">
-        <img
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
           src="../Images/favicon.ico"
           alt="Icon"
           class="d-inline-block align-top mx-3"
-          style="width: 60px; height: 60px "
+          style="width: 60px; height: 60px"
         />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a
-              class="nav-link nav-link-btn btn"
-              style="color: #32cd32"
-              href="../HTML Sebawi User/About.html"
-              >About</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link nav-link-btn btn"
-              style="color: #32cd32"
-              href="../HTML Sebawi User/Contact.html"
-              >Contact</a
-            >
-          </li>
-          <li class="nav-item login-link" id="login-link">
-            <a
-              class="nav-link nav-link-btn btn"
-              style="color: #32cd32"
-              href="../HTML Agency/Login.html"
-              >Login</a
-            >
-          </li>
-          <li class="nav-item accounts invisible position-absolute">
-            <a
-              class="nav-link nav-link-btn btn"
-              style="color: #32cd32"
-              href="../accounts.html"
-              >Manage accounts</a
-            >
-          </li>
-        </ul>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-btn btn"
+                style="color: #32cd32"
+                href="../HTML Sebawi User/Home.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-btn btn"
+                style="color: #32cd32"
+                href="../HTML Sebawi User/About.html"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-btn btn"
+                style="color: #32cd32"
+                href="../HTML Sebawi User/Contact.html"
+                href="../HTML Sebawi User/Contact.html"
+                >Contact</a
+              >
+            </li>
+            <li class="nav-item login-link" id="login-link">
+              <a
+                class="nav-link nav-link-btn btn"
+                style="color: #32cd32"
+                href="../HTML Sebawi User/Login.html"
+                >Login</a
+              >
+            </li>
+            <li class="nav-item accounts invisible position-absolute">
+              <a
+                class="nav-link nav-link-btn btn"
+                style="color: #32cd32"
+                href="../accounts.html"
+                >Manage accounts</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
     <div class="container" style="padding-bottom: 100px">
@@ -109,9 +114,6 @@
       </div>
     </div>
     <script src="../script/listPosts.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
   <footer
     style="

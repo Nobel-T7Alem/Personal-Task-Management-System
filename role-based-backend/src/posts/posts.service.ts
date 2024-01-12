@@ -42,6 +42,7 @@ export class PostsService {
     return newPosts.save();
   }
 
+  
   //reading posts collection 
   async readPosts() {
     return this.postsModel.find({})

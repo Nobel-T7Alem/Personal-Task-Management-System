@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Post Management</title>
-
+    <title>Sebawi | Post Management</title>
+    <script src="../dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="../Images/favicon.ico" />
     <link rel="stylesheet" href="../Bootstrap/css/main.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -13,71 +14,66 @@
     <link rel="stylesheet" href="../styles/styles.css" />
   </head>
   <body data-aos="fade-up">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="../HTML Sebawi User/Home.html">
-        <img
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
           src="../Images/favicon.ico"
           alt="Icon"
           class="d-inline-block align-top mx-3"
           style="width: 60px; height: 60px"
         />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a
-              class="nav-link nav-link-btn btn"
-              style="color: #32cd32"
-              href="../HTML Sebawi User/Home.html"
-              >Home</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link nav-link-btn btn"
-              style="color: #32cd32"
-              href="../HTML Sebawi User/About.html"
-              >About</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link nav-link-btn btn"
-              style="color: #32cd32"
-              href="../HTML Sebawi User/Contact.html"
-              href="../HTML Sebawi User/Contact.html"
-              >Contact</a
-            >
-          </li>
-          <li class="nav-item login-link" id="login-link">
-            <a
-              class="nav-link nav-link-btn btn"
-              style="color: #32cd32"
-              href="../HTML Sebawi User/Login.html"
-              >Login</a
-            >
-          </li>
-          <li class="nav-item accounts invisible position-absolute">
-            <a
-              class="nav-link nav-link-btn btn"
-              style="color: #32cd32"
-              href="../accounts.html"
-              >Manage accounts</a
-            >
-          </li>
-        </ul>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-btn btn"
+                style="color: #32cd32"
+                href="../HTML Sebawi User/Home.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-btn btn"
+                style="color: #32cd32"
+                href="../HTML Sebawi User/About.html"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-btn btn"
+                style="color: #32cd32"
+                href="../HTML Sebawi User/Contact.html"
+                href="../HTML Sebawi User/Contact.html"
+                >Contact</a
+              >
+            </li>
+            <li class="nav-item login-link" id="login-link">
+              <a
+                class="nav-link nav-link-btn btn"
+                style="color: #32cd32"
+                href="../HTML Sebawi User/Login.html"
+                >Login</a
+              >
+            </li>
+            <li class="nav-item accounts invisible position-absolute">
+              <a
+                class="nav-link nav-link-btn btn"
+                style="color: #32cd32"
+                href="../accounts.html"
+                >Manage accounts</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
+    </nav>
     </nav>
     <div class="container" style="padding-bottom: 100px">
       <h1
@@ -97,8 +93,8 @@
           style="border-color: #32cd32"
         >
           <div class="card custom-card" id="0">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="card-body">
+            <div class="row d-flex justify-content-between align-items-center">
+              <div class="card-body col-md-6">
                 <p class="card-text">
                   <span>Agency: </span>
                   <span class="agency text-dark"></span>
@@ -119,33 +115,55 @@
                   <span class="id invisible position-absolute"></span>
                 </p>
               </div>
-              <div class="d-flex flex-column justify-content-center">
+              <div class="col-md-6 mb-3 d-flex justify-content-around">
                 <button
                   type="submit"
                   onclick="deletePost(event)"
-                  class="btn btn-danger mx-5 m-3"
+                  class="btn btn-danger"
                 >
                   Delete Post
                 </button>
                 <button
                   type="submit"
-                  onclick="updatePost(event)"
-                  class="btn btn-secondary mx-5 m-3"
+                  onclick="TogglePost(event)"
+                  class="btn btn-secondary"
                 >
                   Update Post
                 </button>
               </div>
+              <form
+                onsubmit="updatePost(event)"
+                id="update-input"
+                class="flex-column invisible position-absolute d-flex w-"
+              >
+                <input
+                  type="text"
+                  placeholder="center"
+                  name="fullname"
+                  class="form-control w-75 m-auto my-3"
+                />
+                <input
+                  type="text"
+                  placeholder="service"
+                  name="service"
+                  class="form-control w-75 m-auto my-3"
+                />
+                <input
+                  type="text"
+                  placeholder="contact"
+                  name="contact"
+                  class="form-control w-75 m-auto my-3"
+                />
+                <button type="submit" class="btn btn-primary w-25 m-auto my-4">
+                  Update
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="../script/script.ts"></script>
-    <script src="../Bootstrap/js/bootstrap.js"></script>
-    <script src="../Bootstrap/js/bootstrap.min.js"></script>
-    <script src="../Bootstrap/js/npm.js"></script>
     <script src="../script/listPosts.js"></script>
-    <script src="../script/script.js"></script>
   </body>
   <footer
     style="

@@ -18,7 +18,6 @@ const posts_service_1 = require("./posts.service");
 const create_posts_dto_1 = require("./dto/create-posts.dto");
 const update_posts_dto_1 = require("./dto/update-posts.dto");
 const passport_1 = require("@nestjs/passport");
-const platform_express_1 = require("@nestjs/platform-express");
 let PostsController = class PostsController {
     constructor(postsService) {
         this.postsService = postsService;
@@ -45,7 +44,6 @@ exports.PostsController = PostsController;
 __decorate([
     (0, common_1.Post)(),
     (0, common_1.UseGuards)((0, passport_1.AuthGuard)()),
-    (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('image')),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Req)()),
     __param(2, (0, common_1.UploadedFile)()),
