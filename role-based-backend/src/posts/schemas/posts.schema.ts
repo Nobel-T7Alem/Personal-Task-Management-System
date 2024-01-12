@@ -16,6 +16,9 @@ export class Posts{
     @Prop({ required: true })
     contact: string;
 
+    @Prop()
+    image?: string;
+
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref:'User' })
     user: User;
 
