@@ -113,7 +113,6 @@ nav {
   background-color: #32cd32;
 }
 
-<<<<<<< HEAD
 /* Custom CSS for the navbar */
 body {
   font-family: 'Gilmer', sans-serif;
@@ -123,62 +122,6 @@ body {
   color: #006400;
   letter-spacing: 4px;
   text-transform: uppercase;
-=======
-.navbar-nav .nav-link {
-  color: #006400; /* White */
-  letter-spacing: 4px; /* Adjust spacing between links */
-  text-transform: uppercase; /* Convert to uppercase */
-}
-
-.navbar-nav .nav-link:hover {
-  color: #32cd32; /* Light green on hover */
-}
-.nav-item {
-  color: #006400;
-}
-
-.navbar-brand img {
-  height: 60px; /* Adjust image height */
-}
-
-.navbar-nav .nav-link-btn {
-  background-color: #ffffff; /* Dark green for buttons */
-  border: none;
-  color: #006400; /* White text */
-  font-weight: bold; /* Bold text */
-  transition: background-color 0.3s ease-in-out; /* Smooth hover effect */
-  margin-right: 50px; /* Increase space between buttons */
-}
-.custom-card {
-  color: white; /* White text */
-  margin: 10px; /* Add some space between cards */
-}
-
-.navbar-nav .nav-link-btn:hover {
-  background-color: #006400; /* Light green on hover */
-}
-span {
-  color: #32cd32;
-}
-
-pre {
-  text-wrap: wrap;
-  font-size: larger;
-  padding-left: 40px;
-  padding-right: 70px;
-}
-
-.navbar-toggler-icon:hover {
-  color: #32cd32;
-}
-
-.img {
-  display: flex;
-}
-.text {
-  margin-left: 100px;
-  margin-top: 350px;
->>>>>>> 2bc738100e43c7ba10b8a192ec6460996c88f8e5
 }
 
 .navbar-nav .nav-link:hover {
