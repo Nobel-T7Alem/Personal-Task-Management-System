@@ -1,3 +1,4 @@
+/// <reference types="node" />
 /// <reference types="mongoose/types/aggregate" />
 /// <reference types="mongoose/types/callback" />
 /// <reference types="mongoose/types/collection" />
@@ -25,10 +26,21 @@
 import { Posts } from './schemas/posts.schema';
 import mongoose, { Model } from 'mongoose';
 import { User } from 'src/user/schemas/user.schema';
+export interface MulterFile {
+    fieldname: string;
+    originalname: string;
+    encoding: string;
+    mimetype: string;
+    size: number;
+    destination: string;
+    filename: string;
+    path: string;
+    buffer: Buffer;
+}
 export declare class PostsService {
     private readonly postsModel;
     constructor(postsModel: Model<Posts>);
-    createPosts(posts: Posts, user: User): Promise<Posts>;
+    createPosts(posts: Posts, user: User, image: MulterFile): Promise<Posts>;
     readPosts(): Promise<void | (mongoose.Document<unknown, {}, Posts> & Posts & {
         _id: mongoose.Types.ObjectId;
     })[]>;

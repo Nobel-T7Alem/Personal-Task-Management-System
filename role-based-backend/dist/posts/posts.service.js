@@ -16,12 +16,22 @@ exports.PostsService = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("mongoose");
 const mongoose_2 = require("@nestjs/mongoose");
+const path_1 = require("path");
+const uuid_1 = require("uuid");
+const fs = require("fs");
 let PostsService = class PostsService {
     constructor(postsModel) {
         this.postsModel = postsModel;
     }
-    async createPosts(posts, user) {
-        const newPosts = await new this.postsModel(posts);
+    async createPosts(posts, user, image) {
+        if (image) {
+            const imageName = `${(0, uuid_1.v4)()}${(0, path_1.extname)(image.originalname)}`;
+            const imagePath = (0, path_1.join)(process.cwd(), 'src', 'posts', 'uploads', imageName);
+            fs.writeFileSync(imagePath, image.buffer);
+            posts.image = imageName;
+        }
+        posts.user = user;
+        const newPosts = new this.postsModel(posts);
         return newPosts.save();
     }
     async readPosts() {
