@@ -29,6 +29,10 @@ __decorate([
     __metadata("design:type", String)
 ], Posts.prototype, "contact", void 0);
 __decorate([
+    (0, mongoose_1.Prop)(),
+    __metadata("design:type", String)
+], Posts.prototype, "image", void 0);
+__decorate([
     (0, mongoose_1.Prop)({ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'User' }),
     __metadata("design:type", user_schema_1.User)
 ], Posts.prototype, "user", void 0);
