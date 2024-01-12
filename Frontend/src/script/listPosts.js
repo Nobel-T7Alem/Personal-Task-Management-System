@@ -1,5 +1,23 @@
+if (sessionStorage.getItem("isloggedin")) {
+  if (document.querySelector(".login-link")) {
+    let Loginlink = document.querySelector("#login-link");
+    Loginlink.classList.toggle("invisible");
+    Loginlink.classList.toggle("position-absolute");
+  }
+}
+if (sessionStorage.getItem("type")) {
+  if (document.querySelector(".admin")) {
+    let admin = document.querySelector(".admin");
+    admin.classList.toggle("invisible");
+    admin.classList.toggle("position-absolute");
+  } if (document.querySelector(".accounts")) {
+    let acc = document.querySelector(".accounts");
+    acc.classList.toggle("invisible");
+    acc.classList.toggle("position-absolute");
+  }
+}
+
 //Displaying Agency Posts
-// let posts;
 fetch("http://localhost:3000/posts", {
   method: "GET",
   headers: {
@@ -37,8 +55,6 @@ function displayPosts(p) {
     )} ${createdAt.toLocaleTimeString(undefined, timeOptions)}`;
     clone.querySelector(".date").innerHTML = readableCreatedAt;
   });
-  console.log(p);
-  let card = document.querySelector(".agency");
 }
 
 function request(event) {
@@ -46,8 +62,6 @@ function request(event) {
   sessionStorage.setItem("fromrequest", "true");
   a = event.target;
   a.href = "../HTML Agency/Login.html";
-  const storedData = sessionStorage.getItem("isloggedin");
-  console.log(storedData);
   if (storedData) {
     window.location.replace("../HTML Agency/ServiceRequest.html");
   } else {

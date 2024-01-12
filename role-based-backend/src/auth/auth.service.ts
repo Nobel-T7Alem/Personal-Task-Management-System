@@ -21,12 +21,12 @@ export class AuthService {
 
         const existingUsername = await this.userModel.findOne({ username });
         if (existingUsername) {
-            throw  new UnauthorizedException('Username already taken');
+            throw new UnauthorizedException('Username already taken');
         }
 
         const existingEmail = await this.userModel.findOne({ email });
         if (existingEmail) {
-            throw  new UnauthorizedException('Email already taken');
+            throw new UnauthorizedException('Email already taken');
         }
 
         const hashedPassword = await bcrypt.hash(password, 10)
@@ -42,8 +42,8 @@ export class AuthService {
         const token = this.jwtService.sign({ id: user._id })
         return { token }
     }
-    
-    async login(loginDTo: LogInDto): Promise<{ token: string }> {
+
+    async login(loginDTo: LogInDto): Promise<{ token, status }> {
         const { username, password } = loginDTo
 
         const user = await this.userModel.findOne({ username })
@@ -60,7 +60,8 @@ export class AuthService {
             id: user._id,
             role: user.role
         })
-        return { token }
-
+        const role = await this.userModel.findOne({ username })
+        const status = role.role;
+        return { token, status }
     }
 }

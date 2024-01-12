@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+
 body {
   font-family: "Gilmer", sans-serif;
   background-color: #f4f4f4;
@@ -18,9 +20,15 @@ body {
 }
 
 nav {
-  height: 60px;
+  height: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+pre {
+  font-family: "Gilmer", sans-serif;
+  font-size: 15pt;
+  margin-left: 20px;
+}
 .navbar-nav .nav-link-btn {
   background-color: #40ab40;
   border-color: #006400;
@@ -51,7 +59,7 @@ nav {
 .login-form {
   margin-top: 20px;
   min-width: 200px;
-  width:400px;
+  width: 400px;
   margin: auto;
   padding: 30px;
   background-color: #ffffff;
@@ -113,11 +121,15 @@ nav {
 }
 
 .navbar-nav .nav-link {
+  font-family: "Montserrat";
   color: #006400; /* White */
-  letter-spacing: 4px; /* Adjust spacing between links */
+  letter-spacing: 2px; /* Adjust spacing between links */
   text-transform: uppercase; /* Convert to uppercase */
 }
 
+h1 {
+  font-family: "Montserrat";
+}
 .navbar-nav .nav-link:hover {
   color: #32cd32; /* Light green on hover */
 }

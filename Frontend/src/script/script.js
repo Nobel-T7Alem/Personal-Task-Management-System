@@ -43,6 +43,8 @@ async function logIn(e) {
     })
     .then((json) => {
       res = json;
+      let status = res.status;
+      if (status == "admin") sessionStorage.setItem("type", "admin");
       sessionStorage.setItem("isloggedin", "true");
     });
 }
@@ -57,8 +59,7 @@ function signUp(e) {
     password: e.target.password.value,
   };
 
-  console.log(signUpData);
-  fetch("http://localhost:3000/post", {
+  fetch("http://localhost:3000/auth/signup", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -66,18 +67,49 @@ function signUp(e) {
     },
     body: JSON.stringify(signUpData),
     cache: "default",
-  }).then((response) => {
-    if (response.ok) {
-      setTimeout(() => {
-        const storedData = sessionStorage.getItem("fromrequest");
-        if (storedData) {
-          window.location.href = "../HTML Agency/ServiceRequest.html";
-        } else {
-          window.location.href = "../HTML Volunteer/Home.html";
-        }
-      }, 2000);
-    }
-  });
+  })
+    .then((response) => {
+      if (response.ok) {
+        setTimeout(() => {
+          const storedData = sessionStorage.getItem("fromrequest");
+          successDiv = document.getElementById("scorrect");
+          successDiv.classList.toggle("invisible");
+          successDiv.classList.toggle("position-absolute");
+          if (storedData) {
+            window.location.href = "../HTML Agency/ServiceRequest.html";
+          } else {
+            window.location.href = "../HTML Volunteer/Home.html";
+          }
+        }, 2000);
+      } else {
+        return response.json().then((errorData) => {
+          document.getElementById("sincorrect").innerHTML = "";
+          err = errorData.message;
+          console.log(err);
+          let errorDiv = document.getElementById("sincorrect");
+          if (typeof err == "string") {
+            newdiv = document.createElement("div");
+            newdiv.innerText = err;
+            errorDiv.appendChild(newdiv);
+            errorDiv.classList.remove("invisible");
+            errorDiv.classList.remove("position-absolute");
+          } else {
+            for (i in err) {
+              e = err[i];
+              console.log(e);
+              newdiv = document.createElement("div");
+              newdiv.innerText = e;
+              errorDiv.appendChild(newdiv);
+            }
+            errorDiv.classList.toggle("invisible");
+            errorDiv.classList.toggle("position-absolute");
+          }
+        });
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error.message);
+    });
 }
 
 //Service Request

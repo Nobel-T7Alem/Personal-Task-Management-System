@@ -24,10 +24,10 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="Home.html">
         <img
-          src="../Images/Icon-03.png"
+          src="../Images/favicon.ico"
           alt="Icon"
-          class="d-inline-block align-top"
-          style="width: 100px; height: 110px"
+          class="d-inline-block align-top mx-5"
+          style="width: 60px; height: 60px"
         />
       </a>
       <button
@@ -59,7 +59,7 @@
               >Contact</a
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item login-link" id="login-link">
             <a
               class="nav-link nav-link-btn btn"
               style="color: #32cd32"
@@ -67,41 +67,49 @@
               >Login</a
             >
           </li>
+          <li class="nav-item admin invisible position-absolute">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="../adminPage.html"
+              >Manage Posts</a
+            >
+          </li>
+          <li class="nav-item accounts invisible position-absolute">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="../adminPage.html"
+              >Manage accounts</a
+            >
+          </li>
         </ul>
       </div>
     </nav>
-    <h1 style="padding: 50px; padding-bottom: 30px; color: #32cd32">
-      Welcome to Sebawi.
-    </h1>
-    <pre
-      style="
-        font-family: 'Gilmer', sans-serif;
-        font-size: 15pt;
-        padding-left: 50px;
-      "
-    >
-Addis Ababa's first centralized hub for volunteering agencies. We are delighted to have you along with us on this journey
-and we thank you for the services you are about to provide.
-
-Addis Ababa is full of agencies and institutions who have devoted their life to serving a humanitarian cause. What cause will you
-be joining today?
-    </pre>
-    <form
-      class="form-inline flex justify-content-center"
-      style="padding-left: 50px; padding-bottom: 50px"
-    >
-      <input
-        class="form-control mr-sm-2 w-75"
-        type="search"
-        style="border-color: #32cd32; border-radius: 15px"
-        placeholder=" &#128269; "
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-        Search
-      </button>
-    </form>
     <div class="container" style="padding-bottom: 100px">
+      <h1 style="padding: 50px; padding-bottom: 30px; color: #32cd32">
+        Welcome to Sebawi.
+      </h1>
+      <pre>
+Addis Ababa's first centralized hub for volunteering agencies. We are delighted to have you along with us on this journeyand we thank you for the services you are about to provide.
+
+Addis Ababa is full of agencies and institutions who have devoted their life to serving a humanitarian cause. What cause will you be joining today?
+      </pre>
+      <form
+        class="form-inline flex justify-content-center"
+        style="padding-left: 50px; padding-bottom: 50px"
+      >
+        <input
+          class="form-control mr-sm-2 w-75"
+          type="search"
+          style="border-color: #32cd32; border-radius: 15px"
+          placeholder="&#128269;  Search for Agencies or Services "
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
       <div class="row">
         <div
           class="col-md-4 invisible position-absolute"
@@ -116,7 +124,8 @@ be joining today?
             />
             <div class="card-body">
               <p class="card-text">
-                <span>Agency: </span> <span class="agency text-dark"></span>
+                <span>Agency: </span>
+                <span class="agency text-dark"></span>
               </p>
               <p class="card-text">
                 <span>Service Required: </span>
