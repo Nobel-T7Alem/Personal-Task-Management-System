@@ -3,6 +3,11 @@ if (sessionStorage.getItem("isloggedin")) {
         let Loginlink = document.querySelector("#login-link") as HTMLElement;
         Loginlink.classList.toggle("invisible");
         Loginlink.classList.toggle("position-absolute");
+        if (document.querySelector('.posts')) {
+            let posts = document.querySelector(".posts") as HTMLElement;
+            posts.classList.toggle("invisible");
+            posts.classList.toggle("position-absolute");
+        }
     }
 }
 if (sessionStorage.getItem("type")) {
@@ -12,6 +17,8 @@ if (sessionStorage.getItem("type")) {
         acc.classList.toggle("position-absolute");
     }
 }
+
+
 //Displaying Agency Posts
 fetch("http://localhost:3000/posts", {
     method: "GET",
@@ -25,7 +32,9 @@ fetch("http://localhost:3000/posts", {
     .then((json) => {
         const posts = json;
         displayPosts(posts);
+        console.log(posts);
     });
+
 function displayPosts(p: any[]) {
     p.forEach((i) => {
         const card = document.getElementById("to-be-duplicated") as HTMLElement;
@@ -33,10 +42,12 @@ function displayPosts(p: any[]) {
         clone.classList.toggle("invisible");
         clone.classList.toggle("position-absolute");
         document.querySelector(".row")?.appendChild(clone);
-        clone.querySelector(".agency")!.innerHTML = i.name;
-        clone.querySelector(".service")!.innerHTML = i.description;
-        clone.querySelector(".location")!.innerHTML = i.contact;
+        clone.querySelector(".agency")!.textContent = i.name;
+        clone.querySelector(".service")!.textContent = i.description;
+        clone.querySelector(".location")!.textContent = i.contact;
         clone.querySelector(".id")!.textContent = i._id;
+        clone.querySelector('.userid')!.textContent = i.user;
+        (clone.querySelector('.phone') as HTMLAnchorElement)!.href = "tel:".concat(i.contact);
         const createdAt = new Date(i.createdAt);
         const dateOptions = { year: "numeric", month: "long", day: "numeric" };
         const timeOptions = {
@@ -58,6 +69,8 @@ function request(event: Event) {
         window.location.replace("../HTML Sebawi User/Login.html");
     }
 }
+
+
 //deleting posts
 function deletePost(event: Event) {
     const tbd =

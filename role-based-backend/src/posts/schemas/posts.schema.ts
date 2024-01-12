@@ -6,23 +6,19 @@ import { User } from "src/user/schemas/user.schema";
     timestamps: true
 })
 
-export class Posts{
+export class Posts {
     @Prop({ required: true })
     name: string;
-  
+
     @Prop({ required: true })
     description: string;
-  
+
     @Prop({ required: true })
     contact: string;
 
-    @Prop()
-    image?: string;
-
-    @Prop({ type: mongoose.Schema.Types.ObjectId, ref:'User' })
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
     user: User;
 
-    
 }
 
-export const PostsSchema= SchemaFactory.createForClass(Posts)
+export const PostsSchema = SchemaFactory.createForClass(Posts)

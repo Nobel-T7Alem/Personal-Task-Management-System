@@ -5,7 +5,6 @@
     <title>Sebawi | Service Request</title>
     <script src="../dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" href="../Images/favicon.ico" />
-
     <link rel="stylesheet" href="../Bootstrap/css/main.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -16,45 +15,48 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="Home.html">
-        <img
-          src="../Images/Icon-03.png"
-          alt="Icon"
-          class="d-inline-block align-top"
-          style="width: 100px; height: 110px"
-        />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a
-              class="nav-link nav-link-btn btn"
-              style="color: #32cd32"
-              href="About.html"
-              >About</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link nav-link-btn btn"
-              style="color: #32cd32"
-              href="Contact.html"
-              >Contact</a
-            >
-          </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="Home.html">
+          <img
+            src="../Images/favicon.ico"
+            alt="Icon"
+            class="d-inline-block align-top mx-3"
+            style="width: 60px; height: 60px"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-btn btn"
+                style="color: #32cd32"
+                href="../HTML Sebawi User/About.html"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-btn btn"
+                style="color: #32cd32"
+                href="../HTML Sebawi User/Contact.html"
+                href="../HTML Sebawi User/Contact.html"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
@@ -92,15 +94,7 @@
             placeholder="Enter contact information"
           />
         </div>
-        <div class="form group my-4">
-          <label for="photo">Your agency logo:</label>
-          <div class="input-div">
-            <input
-              type="file"
-              class="file"
-              accept="image/png, image/jpeg, image/jpg"
-              id="imageInput"
-            />
+        <div class="form group my-4">          
             <button type="submit" class="btn btn-success" style="margin: 20px">
               Submit Request
             </button>

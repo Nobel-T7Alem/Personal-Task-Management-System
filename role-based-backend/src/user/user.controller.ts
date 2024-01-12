@@ -6,15 +6,23 @@ import { UserService } from './user.service';
 
 @Controller('user')
 export class UserController {
-    constructor(private readonly userService:UserService) {}
+    constructor(private readonly userService: UserService) { }
 
     @Delete(':id')
     @UseGuards(AuthGuard('admin'))
     async deleteUser(@Param('id') userId: string): Promise<void> {
-    return this.userService.deleteUser(userId);
+        return this.userService.deleteUser(userId);
     }
 
-   
+
+    @Get(':id')
+    async getPosts(
+        @Param('id')
+        id: string
+    ): Promise<User> {
+        return this.userService.findById(id);
+    }
+
     @Get()
     @UseGuards(AuthGuard('admin'))
     async getAllUsers(): Promise<User[]> {

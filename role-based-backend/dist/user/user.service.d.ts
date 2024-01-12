@@ -29,5 +29,6 @@ export declare class UserService {
     findByUsername(value: any): void;
     constructor(userModel: Model<User>);
     getAllUsers(): Promise<User[]>;
+    findById(id: String): Promise<User>;
     deleteUser(userId: string): Promise<void>;
 }

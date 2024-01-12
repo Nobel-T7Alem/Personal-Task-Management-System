@@ -22,8 +22,10 @@ let PostsController = class PostsController {
     constructor(postsService) {
         this.postsService = postsService;
     }
-    async createPosts(postsDto, req, image) {
-        const createdPost = await this.postsService.createPosts(postsDto, req.user, image);
+    async createPosts(postsDto, req) {
+        const user = req.user;
+        const createdPost = await this.postsService.createPosts(postsDto, user);
+        createdPost.user = user._id;
         return createdPost;
     }
     async getAllPosts(query) {
@@ -46,9 +48,8 @@ __decorate([
     (0, common_1.UseGuards)((0, passport_1.AuthGuard)()),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Req)()),
-    __param(2, (0, common_1.UploadedFile)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_posts_dto_1.CreatePostsDto, Object, Object]),
+    __metadata("design:paramtypes", [create_posts_dto_1.CreatePostsDto, Object]),
     __metadata("design:returntype", Promise)
 ], PostsController.prototype, "createPosts", null);
 __decorate([

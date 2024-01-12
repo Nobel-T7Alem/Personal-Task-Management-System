@@ -28,7 +28,6 @@ export declare class Posts {
     name: string;
     description: string;
     contact: string;
-    image?: string;
     user: User;
 }
 export declare const PostsSchema: mongoose.Schema<Posts, mongoose.Model<Posts, any, any, any, mongoose.Document<unknown, any, Posts> & Posts & {

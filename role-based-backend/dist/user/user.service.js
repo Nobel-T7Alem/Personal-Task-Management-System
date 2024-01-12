@@ -27,6 +27,10 @@ let UserService = class UserService {
         const users = await this.userModel.find().exec();
         return users;
     }
+    async findById(id) {
+        const user = await this.userModel.findById(id);
+        return user;
+    }
     async deleteUser(userId) {
         const result = await this.userModel.deleteOne({ _id: userId }).exec();
         if (result.deletedCount === 0) {

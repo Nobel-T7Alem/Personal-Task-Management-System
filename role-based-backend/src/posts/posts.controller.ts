@@ -13,12 +13,13 @@ export class PostsController {
 
   @Post()
   @UseGuards(AuthGuard())
-  async createPosts(
-    @Body() postsDto: CreatePostsDto,
-    @Req() req,
-    @UploadedFile() image: MulterFile,
-  ) {
-    const createdPost = await this.postsService.createPosts(postsDto, req.user, image);
+  async createPosts(@Body() postsDto: CreatePostsDto, @Req() req): Promise<Posts> {
+    const user = req.user;
+
+    const createdPost = await this.postsService.createPosts(postsDto, user);
+
+    createdPost.user = user._id;
+
     return createdPost;
   }
 

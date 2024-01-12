@@ -40,7 +40,7 @@ export interface MulterFile {
 export declare class PostsService {
     private readonly postsModel;
     constructor(postsModel: Model<Posts>);
-    createPosts(posts: Posts, user: User, image: MulterFile): Promise<Posts>;
+    createPosts(posts: Posts, user: User): Promise<Posts>;
     readPosts(): Promise<void | (mongoose.Document<unknown, {}, Posts> & Posts & {
         _id: mongoose.Types.ObjectId;
     })[]>;

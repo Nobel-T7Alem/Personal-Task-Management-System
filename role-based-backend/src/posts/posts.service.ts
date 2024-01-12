@@ -27,22 +27,12 @@ export class PostsService {
   ) { }
 
   //creating a posts
-  async createPosts(posts: Posts, user: User, image: MulterFile): Promise<Posts> {
-    if (image) {
-      const imageName = `${uuidv4()}${extname(image.originalname)}`;
-      const imagePath = join(process.cwd(), 'src', 'posts', 'uploads', imageName);
-  
-      fs.writeFileSync(imagePath, image.buffer);
-      posts.image = imageName;
-    }
-  
-    posts.user = user;
-  
-    const newPosts = new this.postsModel(posts);
-    return newPosts.save();
+  async createPosts(posts: Posts, user: User): Promise<Posts> {
+    const newPosts = await new this.postsModel(posts)
+    return newPosts.save()
   }
 
-  
+
   //reading posts collection 
   async readPosts() {
     return this.postsModel.find({})
@@ -52,22 +42,8 @@ export class PostsService {
 
   //All posts
   async findAll(query: any): Promise<Posts[]> {
-    // const resPerPage = 2;
-    // const currentPage = Number(query.page) || 1;
-    // const skip = resPerPage * (currentPage - 1);
-
-    // const keyword = query.keyword
-    //   ? {
-    //       name: {
-    //         $regex: query.keyword,
-    //         $options: 'i',
-    //       },
-    //     }
-    //   : {};
     const posts = await this.postsModel.find();
-    // .limit(resPerPage)
-    // .skip(skip)
-    // .exec();
+
 
     return posts;
   }

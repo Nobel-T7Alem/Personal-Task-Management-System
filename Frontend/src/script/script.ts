@@ -14,6 +14,7 @@ async function logIn(e: Event): Promise<void> {
     username: (e.target as HTMLFormElement).username.value,
     password: (e.target as HTMLFormElement).password.value,
   };
+
   const url = `http://localhost:3000/auth/login?username=${encodeURIComponent(
     loginData.username
   )}&password=${encodeURIComponent(loginData.password)}`;
@@ -27,6 +28,9 @@ async function logIn(e: Event): Promise<void> {
   })
     .then((response) => {
       if (response.ok) {
+        let user = (e.target as HTMLFormElement).username.value;
+        sessionStorage.setItem("username", user);
+
         sessionStorage.setItem("isloggedin", "true");
         document.querySelector(".correct")!.classList.toggle("invisible");
         document
@@ -84,19 +88,19 @@ function signUp(e: Event): void {
     cache: "default",
   })
     .then((response) => {
+
       if (response.ok) {
+        let user = (e.target as HTMLFormElement).username.value;
+        sessionStorage.setItem("username", user);
         sessionStorage.setItem("isloggedin", "true");
         const storedData = sessionStorage.getItem("fromrequest");
         const successDiv = document.getElementById("scorrect")!;
         successDiv.classList.toggle("invisible");
         successDiv.classList.toggle("position-absolute");
         setTimeout(() => {
-          if (storedData) {
-            window.location.href = "../HTML Sebawi User/ServiceRequest.html";
-          } else {
-            window.location.href = "../HTML Sebawi User/Home.html";
-          }
-        }, 2000);
+          window.location.href = "../HTML Sebawi User/Login.html";
+        }
+          , 2000);
       } else {
         return response.json().then((errorData) => {
           document.getElementById("sincorrect")!.innerHTML = "";
@@ -130,17 +134,14 @@ function signUp(e: Event): void {
 //Service Request
 function serviceRequest(e: Event): void {
   e.preventDefault();
-  console.log((e.target as HTMLFormElement).imageInput.files[0]);
   const newPost: {
     name: string;
     description: string;
     contact: string;
-    image: File;
   } = {
     name: (e.target as HTMLFormElement).centerName.value,
     description: (e.target as HTMLFormElement).serviceDescription.value,
     contact: (e.target as HTMLFormElement).contactInfo.value,
-    image: (e.target as HTMLFormElement).imageInput.files[0],
   };
   let token = sessionStorage.getItem("tok");
   fetch(`http://localhost:3000/posts`, {

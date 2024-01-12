@@ -23,6 +23,9 @@ let UserController = class UserController {
     async deleteUser(userId) {
         return this.userService.deleteUser(userId);
     }
+    async getPosts(id) {
+        return this.userService.findById(id);
+    }
     async getAllUsers() {
         return this.userService.getAllUsers();
     }
@@ -36,6 +39,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "deleteUser", null);
+__decorate([
+    (0, common_1.Get)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "getPosts", null);
 __decorate([
     (0, common_1.Get)(),
     (0, common_1.UseGuards)((0, passport_1.AuthGuard)('admin')),

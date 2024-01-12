@@ -65,6 +65,8 @@ function logIn(e) {
                         })
                             .then(function (response) {
                             if (response.ok) {
+                                var user = e.target.username.value;
+                                sessionStorage.setItem("username", user);
                                 sessionStorage.setItem("isloggedin", "true");
                                 document.querySelector(".correct").classList.toggle("invisible");
                                 document
@@ -127,18 +129,15 @@ function signUp(e) {
     })
         .then(function (response) {
         if (response.ok) {
+            var user = e.target.username.value;
+            sessionStorage.setItem("username", user);
             sessionStorage.setItem("isloggedin", "true");
-            var storedData_1 = sessionStorage.getItem("fromrequest");
+            var storedData = sessionStorage.getItem("fromrequest");
             var successDiv = document.getElementById("scorrect");
             successDiv.classList.toggle("invisible");
             successDiv.classList.toggle("position-absolute");
             setTimeout(function () {
-                if (storedData_1) {
-                    window.location.href = "../HTML Sebawi User/ServiceRequest.html";
-                }
-                else {
-                    window.location.href = "../HTML Sebawi User/Home.html";
-                }
+                window.location.href = "../HTML Sebawi User/Login.html";
             }, 2000);
         }
         else {
@@ -175,12 +174,10 @@ function signUp(e) {
 //Service Request
 function serviceRequest(e) {
     e.preventDefault();
-    console.log(e.target.imageInput.files[0]);
     var newPost = {
         name: e.target.centerName.value,
         description: e.target.serviceDescription.value,
         contact: e.target.contactInfo.value,
-        image: e.target.imageInput.files[0],
     };
     var token = sessionStorage.getItem("tok");
     fetch("http://localhost:3000/posts", {
