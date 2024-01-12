@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="../Bootstrap/css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gilmer:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="adminPage.html">
+        <img
+          src="../Images/Icon-03.png"
+          alt="Icon"
+          class="d-inline-block align-top"
+          style="width: 100px; height: 110px"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="About.html"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="Contact.html"
+              >Contact</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link nav-link-btn btn"
+              style="color: #32cd32"
+              href="Login.html"
+              >Login</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container" style="padding-bottom: 100px">
+      <h1
+        style="
+          padding: 50px;
+          padding-bottom: 30px;
+          color: #32cd32;
+          padding-left: 20px;
+        "
+      >
+        User Posts
+      </h1>
+      <pre>- Monitor posts made by the Sebawi community.</pre>
+      <div class="row">
+        <div class="col-md-4" style="border-color: #32cd32">
+          <div class="card custom-card">
+            <div class="card-body">
+              <p class="card-text">
+                <span>Agency:</span> The Ethiopian Red Cross Association
+              </p>
+              <p class="card-text">
+                <span>Service Required:</span> Medicine packaging.
+              </p>
+              <p class="card-text">
+                <span>Location:</span> Across Ambassador Hotel
+              </p>
+              <p class="card-text">
+                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
+              </p>
+              <button
+                type="submit"
+                onclick="deletePost(event)"
+                class="btn btn-danger mt-3"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" style="border-color: #32cd32">
+          <div class="card custom-card">
+            <div class="card-body">
+              <p class="card-text">
+                <span>Agency:</span> The Ethiopian Red Cross Association
+              </p>
+              <p class="card-text">
+                <span>Service Required:</span> Medicine packaging.
+              </p>
+              <p class="card-text">
+                <span>Location:</span> Across Ambassador Hotel
+              </p>
+              <p class="card-text">
+                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
+              </p>
+              <button
+                type="submit"
+                onclick="deletePost(event)"
+                class="btn btn-danger mt-3"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" style="border-color: #32cd32">
+          <div class="card custom-card">
+            <div class="card-body">
+              <p class="card-text">
+                <span>Agency:</span> The Ethiopian Red Cross Association
+              </p>
+              <p class="card-text">
+                <span>Service Required:</span> Medicine packaging.
+              </p>
+              <p class="card-text">
+                <span>Location:</span> Across Ambassador Hotel
+              </p>
+              <p class="card-text">
+                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
+              </p>
+              <button
+                type="submit"
+                onclick="deletePost(event)"
+                class="btn btn-danger mt-3"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" style="border-color: #32cd32">
+          <div class="card custom-card">
+            <div class="card-body">
+              <p class="card-text">
+                <span>Agency:</span> The Ethiopian Red Cross Association
+              </p>
+              <p class="card-text">
+                <span>Service Required:</span> Medicine packaging.
+              </p>
+              <p class="card-text">
+                <span>Location:</span> Across Ambassador Hotel
+              </p>
+              <p class="card-text">
+                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
+              </p>
+              <button
+                type="submit"
+                onclick="deletePost(event)"
+                class="btn btn-danger mt-3"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" style="border-color: #32cd32">
+          <div class="card custom-card">
+            <div class="card-body">
+              <p class="card-text">
+                <span>Agency:</span> The Ethiopian Red Cross Association
+              </p>
+              <p class="card-text">
+                <span>Service Required:</span> Medicine packaging.
+              </p>
+              <p class="card-text">
+                <span>Location:</span> Across Ambassador Hotel
+              </p>
+              <p class="card-text">
+                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
+              </p>
+              <button
+                type="submit"
+                onclick="deletePost(event)"
+                class="btn btn-danger mt-3"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" style="border-color: #32cd32">
+          <div class="card custom-card">
+            <div class="card-body">
+              <p class="card-text">
+                <span>Agency:</span> The Ethiopian Red Cross Association
+              </p>
+              <p class="card-text">
+                <span>Service Required:</span> Medicine packaging.
+              </p>
+              <p class="card-text">
+                <span>Location:</span> Across Ambassador Hotel
+              </p>
+              <p class="card-text">
+                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
+              </p>
+              <button
+                type="submit"
+                onclick="deletePost(event)"
+                class="btn btn-danger mt-3"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" style="border-color: #32cd32">
+          <div class="card custom-card">
+            <div class="card-body">
+              <p class="card-text">
+                <span>Agency:</span> The Ethiopian Red Cross Association
+              </p>
+              <p class="card-text">
+                <span>Service Required:</span> Medicine packaging.
+              </p>
+              <p class="card-text">
+                <span>Location:</span> Across Ambassador Hotel
+              </p>
+              <p class="card-text">
+                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
+              </p>
+              <button
+                type="submit"
+                onclick="deletePost(event)"
+                class="btn btn-danger mt-3"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" style="border-color: #32cd32">
+          <div class="card custom-card">
+            <div class="card-body">
+              <p class="card-text">
+                <span>Agency:</span> The Ethiopian Red Cross Association
+              </p>
+              <p class="card-text">
+                <span>Service Required:</span> Medicine packaging.
+              </p>
+              <p class="card-text">
+                <span>Location:</span> Across Ambassador Hotel
+              </p>
+              <p class="card-text">
+                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
+              </p>
+              <button
+                type="submit"
+                onclick="deletePost(event)"
+                class="btn btn-danger mt-3"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" style="border-color: #32cd32">
+          <div class="card custom-card">
+            <div class="card-body">
+              <p class="card-text">
+                <span>Agency:</span> The Ethiopian Red Cross Association
+              </p>
+              <p class="card-text">
+                <span>Service Required:</span> Medicine packaging.
+              </p>
+              <p class="card-text">
+                <span>Location:</span> Across Ambassador Hotel
+              </p>
+              <p class="card-text">
+                <span>Date & Time:</span> 12/2/2024, 7:15-11:00 AM
+              </p>
+              <button
+                type="submit"
+                onclick="deletePost(event)"
+                class="btn btn-danger mt-3"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script/script.js" defer></script>
+  </body>
+</html>
