@@ -3,6 +3,23 @@ import { Posts } from './schemas/posts.schema';
 import mongoose, { Model } from 'mongoose'
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from 'src/user/schemas/user.schema';
+import { extname, join } from 'path';
+import { v4 as uuidv4 } from 'uuid';
+import * as fs from 'fs';
+
+
+export interface MulterFile {
+  fieldname: string;
+  originalname: string;
+  encoding: string;
+  mimetype: string;
+  size: number;
+  destination: string;
+  filename: string;
+  path: string;
+  buffer: Buffer;
+}
+
 @Injectable()
 export class PostsService {
   constructor(
@@ -10,9 +27,19 @@ export class PostsService {
   ) { }
 
   //creating a posts
-  async createPosts(posts: Posts, user: User): Promise<Posts> {
-    const newPosts = await new this.postsModel(posts)
-    return newPosts.save()
+  async createPosts(posts: Posts, user: User, image: MulterFile): Promise<Posts> {
+    if (image) {
+      const imageName = `${uuidv4()}${extname(image.originalname)}`;
+      const imagePath = join(process.cwd(), 'src', 'posts', 'uploads', imageName);
+  
+      fs.writeFileSync(imagePath, image.buffer);
+      posts.image = imageName;
+    }
+  
+    posts.user = user;
+  
+    const newPosts = new this.postsModel(posts);
+    return newPosts.save();
   }
 
   //reading posts collection 

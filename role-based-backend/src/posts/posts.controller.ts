@@ -1,21 +1,24 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete,Put, UseGuards, Req, Query } from '@nestjs/common';
-import { PostsService } from './posts.service';
+import { Controller, Get, Post, Body, Patch, Param, Delete,Put, UseGuards, Req, Query, UseInterceptors, UploadedFile } from '@nestjs/common';
+import { MulterFile, PostsService } from './posts.service';
 import { CreatePostsDto } from './dto/create-posts.dto';
 import {UpdatePostsDto} from './dto/update-posts.dto'
 import { Posts } from './schemas/posts.schema';
 import { AuthGuard } from '@nestjs/passport';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 
 @Controller('posts')
 export class PostsController {
   constructor(private readonly postsService:PostsService) {}
 
- 
   @Post()
   @UseGuards(AuthGuard())
-  async createPosts(@Body() postsDto: CreatePostsDto, @Req() req,){
-    return this.postsService.createPosts(postsDto, req.user)
+  @UseInterceptors(FileInterceptor('image'))
+  async createPosts(@Body() postsDto: CreatePostsDto, @Req() req, @UploadedFile() image: MulterFile,) {
+    const createdPost = await this.postsService.createPosts(postsDto, req.user, image);
+    return createdPost;
   }
+
 
   @Get()
   async getAllPosts(@Query() query: any): Promise<Posts[]> {
