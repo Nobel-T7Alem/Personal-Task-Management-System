@@ -53,3 +53,43 @@ export class AdminStrategy extends PassportStrategy(Strategy, 'admin') {
     return payload;
   }
 }
+
+@Injectable()
+export class UserRoleStrategy extends PassportStrategy(Strategy, 'user') {
+  constructor() {
+    super({
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      secretOrKey: process.env.JWT_SECRET
+    });
+  }
+
+  async validate(payload) {
+    const { role } = payload;
+
+    if (role !== UserRole.User) {
+      throw new UnauthorizedException('Only users can access this endpoint.');
+    }
+
+    return payload;
+  }
+}
+
+@Injectable()
+export class AgencyRoleStrategy extends PassportStrategy(Strategy, 'agency') {
+  constructor() {
+    super({
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      secretOrKey: process.env.JWT_SECRET
+    });
+  }
+
+  async validate(payload) {
+    const { role } = payload;
+
+    if (role !== UserRole.Agency) {
+      throw new UnauthorizedException('Only agencies can access this endpoint.');
+    }
+
+    return payload;
+  }
+}

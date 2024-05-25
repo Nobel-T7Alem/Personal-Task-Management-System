@@ -34,8 +34,8 @@ export declare class AuthService {
     signUp(signUpDto: SignUpDto): Promise<{
         token: string;
     }>;
-    login(loginDTo: LogInDto): Promise<{
-        token: any;
-        status: any;
+    login(loginDto: LogInDto): Promise<{
+        token: string;
+        status: string;
     }>;
 }

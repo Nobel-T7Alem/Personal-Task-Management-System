@@ -15,6 +15,7 @@ var UserRole;
 (function (UserRole) {
     UserRole["Admin"] = "admin";
     UserRole["User"] = "user";
+    UserRole["Agency"] = "agency";
 })(UserRole || (exports.UserRole = UserRole = {}));
 let User = class User {
 };
@@ -36,7 +37,7 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "password", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ default: UserRole.User, enum: UserRole }),
+    (0, mongoose_1.Prop)(),
     __metadata("design:type", String)
 ], User.prototype, "role", void 0);
 exports.User = User = __decorate([

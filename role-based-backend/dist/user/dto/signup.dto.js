@@ -66,4 +66,9 @@ __decorate([
     (0, class_validator_1.MinLength)(6),
     __metadata("design:type", String)
 ], SignUpDto.prototype, "password", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], SignUpDto.prototype, "role", void 0);
 //# sourceMappingURL=signup.dto.js.map
