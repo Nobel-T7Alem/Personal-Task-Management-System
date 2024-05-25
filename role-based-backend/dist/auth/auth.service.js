@@ -25,8 +25,7 @@ let AuthService = class AuthService {
         this.jwtService = jwtService;
     }
     async signUp(signUpDto) {
-        Promise;
-        const { name, username, email, password } = signUpDto;
+        const { name, username, email, password, role } = signUpDto;
         const existingUsername = await this.userModel.findOne({ username });
         if (existingUsername) {
             throw new common_1.UnauthorizedException('Username already taken');
@@ -40,14 +39,15 @@ let AuthService = class AuthService {
             name,
             username,
             email,
-            password: hashedPassword
+            password: hashedPassword,
+            role
         });
-        const token = this.jwtService.sign({ id: user._id });
+        const token = this.jwtService.sign({ id: user._id, role });
         return { token };
     }
-    async login(loginDTo) {
-        const { username, password } = loginDTo;
-        const user = await this.userModel.findOne({ username });
+    async login(loginDto) {
+        const { username, password } = loginDto;
+        const user = await this.userModel.findOne({ username }).select('+password +role');
         if (!user) {
             throw new common_1.UnauthorizedException('Invalid username or password');
         }
@@ -59,9 +59,7 @@ let AuthService = class AuthService {
             id: user._id,
             role: user.role
         });
-        const role = await this.userModel.findOne({ username });
-        const status = role.role;
-        return { token, status };
+        return { token, status: user.role };
     }
 };
 exports.AuthService = AuthService;

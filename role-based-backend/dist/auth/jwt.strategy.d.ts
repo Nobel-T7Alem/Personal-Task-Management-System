@@ -37,4 +37,14 @@ export declare class AdminStrategy extends AdminStrategy_base {
     constructor();
     validate(payload: any): Promise<any>;
 }
+declare const UserRoleStrategy_base: new (...args: any[]) => any;
+export declare class UserRoleStrategy extends UserRoleStrategy_base {
+    constructor();
+    validate(payload: any): Promise<any>;
+}
+declare const AgencyRoleStrategy_base: new (...args: any[]) => any;
+export declare class AgencyRoleStrategy extends AgencyRoleStrategy_base {
+    constructor();
+    validate(payload: any): Promise<any>;
+}
 export {};

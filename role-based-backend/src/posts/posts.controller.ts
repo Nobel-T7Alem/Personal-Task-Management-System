@@ -12,7 +12,7 @@ export class PostsController {
   constructor(private readonly postsService: PostsService) { }
 
   @Post()
-  @UseGuards(AuthGuard())
+  @UseGuards(AuthGuard('agency'))
   async createPosts(@Body() postsDto: CreatePostsDto, @Req() req): Promise<Posts> {
     const user = req.user;
 

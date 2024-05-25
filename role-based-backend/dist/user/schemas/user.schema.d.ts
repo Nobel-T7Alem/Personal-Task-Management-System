@@ -25,7 +25,8 @@
 /// <reference types="mongoose/types/inferschematype" />
 export declare enum UserRole {
     Admin = "admin",
-    User = "user"
+    User = "user",
+    Agency = "agency"
 }
 export declare class User {
     name: string;

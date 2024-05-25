@@ -3,6 +3,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 export enum UserRole {
   Admin = 'admin',
   User = 'user',
+  Agency = 'agency'
 }
 
 @Schema({
@@ -21,7 +22,7 @@ export class User {
   @Prop()
   password: string;
 
-  @Prop({ default: UserRole.User, enum: UserRole })
+  @Prop()
   role: UserRole;
 }
 

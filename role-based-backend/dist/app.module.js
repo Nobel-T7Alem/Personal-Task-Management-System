@@ -14,18 +14,18 @@ const mongoose_1 = require("@nestjs/mongoose");
 const auth_module_1 = require("./auth/auth.module");
 const posts_module_1 = require("./posts/posts.module");
 const user_module_1 = require("./user/user.module");
+const calendars_module_1 = require("./calendars/calendars.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forRoot("mongodb://127.0.0.1:27017", {
-                dbName: 'Sebawi-app',
-            }),
+            mongoose_1.MongooseModule.forRoot("mongodb+srv://ruthalemfanta:TuwCd03wmLP0JkcI@cluster0.lqgxryr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"),
             auth_module_1.AuthModule,
             posts_module_1.PostsModule,
             user_module_1.UserModule,
+            calendars_module_1.CalendarsModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

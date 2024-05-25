@@ -7,7 +7,7 @@ import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import { ConfigModule } from '@nestjs/config';
-import { JwtStrategy } from './jwt.strategy';
+import { AgencyRoleStrategy, JwtStrategy, UserRoleStrategy } from './jwt.strategy';
 import { AdminStrategy } from './jwt.strategy';
 
 
@@ -30,7 +30,7 @@ import { AdminStrategy } from './jwt.strategy';
     MongooseModule.forFeature([{name: User.name, schema:UserSchema}])
   ],
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy, AdminStrategy],
-  exports: [JwtStrategy, PassportModule, AdminStrategy]
+  providers: [AuthService, JwtStrategy, AdminStrategy, UserRoleStrategy, AgencyRoleStrategy],
+  exports: [JwtStrategy, PassportModule, AdminStrategy, UserRoleStrategy, AgencyRoleStrategy]
 })
 export class AuthModule {}

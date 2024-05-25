@@ -5,16 +5,18 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
 import { PostsModule } from './posts/posts.module';
 import { UserModule } from './user/user.module';
+import { CalendarsModule } from './calendars/calendars.module';
+
 
 
 @Module({
   imports: [
-    MongooseModule.forRoot("mongodb://127.0.0.1:27017", {
-      dbName: 'Sebawi-app',
-    }),
+    MongooseModule.forRoot("mongodb+srv://ruthalemfanta:TuwCd03wmLP0JkcI@cluster0.lqgxryr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"),
     AuthModule,
     PostsModule,
     UserModule,
+    CalendarsModule,
+
   ],
   controllers: [AppController],
   providers: [AppService],

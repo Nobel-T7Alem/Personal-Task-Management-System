@@ -39,7 +39,7 @@ export class SignUpDto {
 
   @IsNotEmpty()
   @IsString()
-  // @IsUnique({ message: 'Username is already taken' })
+  
   readonly username: string;
 
   @IsNotEmpty()
@@ -49,4 +49,9 @@ export class SignUpDto {
   @IsNotEmpty()
   @MinLength(6)
   readonly password: string;
+
+  @IsNotEmpty()
+  @IsString()
+  readonly role: string;
+
 }

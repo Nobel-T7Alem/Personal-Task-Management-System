@@ -41,8 +41,8 @@ exports.AuthModule = AuthModule = __decorate([
             mongoose_1.MongooseModule.forFeature([{ name: user_schema_1.User.name, schema: user_schema_1.UserSchema }])
         ],
         controllers: [auth_controller_1.AuthController],
-        providers: [auth_service_1.AuthService, jwt_strategy_1.JwtStrategy, jwt_strategy_2.AdminStrategy],
-        exports: [jwt_strategy_1.JwtStrategy, passport_1.PassportModule, jwt_strategy_2.AdminStrategy]
+        providers: [auth_service_1.AuthService, jwt_strategy_1.JwtStrategy, jwt_strategy_2.AdminStrategy, jwt_strategy_1.UserRoleStrategy, jwt_strategy_1.AgencyRoleStrategy],
+        exports: [jwt_strategy_1.JwtStrategy, passport_1.PassportModule, jwt_strategy_2.AdminStrategy, jwt_strategy_1.UserRoleStrategy, jwt_strategy_1.AgencyRoleStrategy]
     })
 ], AuthModule);
 //# sourceMappingURL=auth.module.js.map

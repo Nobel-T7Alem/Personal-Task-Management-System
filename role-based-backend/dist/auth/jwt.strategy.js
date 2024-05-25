@@ -12,7 +12,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AdminStrategy = exports.JwtStrategy = void 0;
+exports.AgencyRoleStrategy = exports.UserRoleStrategy = exports.AdminStrategy = exports.JwtStrategy = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const passport_1 = require("@nestjs/passport");
@@ -62,4 +62,44 @@ exports.AdminStrategy = AdminStrategy = __decorate([
     (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [])
 ], AdminStrategy);
+let UserRoleStrategy = class UserRoleStrategy extends (0, passport_1.PassportStrategy)(passport_jwt_1.Strategy, 'user') {
+    constructor() {
+        super({
+            jwtFromRequest: passport_jwt_1.ExtractJwt.fromAuthHeaderAsBearerToken(),
+            secretOrKey: process.env.JWT_SECRET
+        });
+    }
+    async validate(payload) {
+        const { role } = payload;
+        if (role !== user_schema_1.UserRole.User) {
+            throw new common_1.UnauthorizedException('Only users can access this endpoint.');
+        }
+        return payload;
+    }
+};
+exports.UserRoleStrategy = UserRoleStrategy;
+exports.UserRoleStrategy = UserRoleStrategy = __decorate([
+    (0, common_1.Injectable)(),
+    __metadata("design:paramtypes", [])
+], UserRoleStrategy);
+let AgencyRoleStrategy = class AgencyRoleStrategy extends (0, passport_1.PassportStrategy)(passport_jwt_1.Strategy, 'agency') {
+    constructor() {
+        super({
+            jwtFromRequest: passport_jwt_1.ExtractJwt.fromAuthHeaderAsBearerToken(),
+            secretOrKey: process.env.JWT_SECRET
+        });
+    }
+    async validate(payload) {
+        const { role } = payload;
+        if (role !== user_schema_1.UserRole.Agency) {
+            throw new common_1.UnauthorizedException('Only agencies can access this endpoint.');
+        }
+        return payload;
+    }
+};
+exports.AgencyRoleStrategy = AgencyRoleStrategy;
+exports.AgencyRoleStrategy = AgencyRoleStrategy = __decorate([
+    (0, common_1.Injectable)(),
+    __metadata("design:paramtypes", [])
+], AgencyRoleStrategy);
 //# sourceMappingURL=jwt.strategy.js.map

@@ -22,20 +22,17 @@
 /// <reference types="mongoose/types/validation" />
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
-import { Model } from 'mongoose';
-import { User } from '../user/schemas/user.schema';
-import { JwtService } from '@nestjs/jwt';
-import { SignUpDto } from '../user/dto/signup.dto';
-import { LogInDto } from '../user/dto/login.dto';
-export declare class AuthService {
-    private userModel;
-    private jwtService;
-    constructor(userModel: Model<User>, jwtService: JwtService);
-    signUp(signUpDto: SignUpDto): Promise<{
-        token: string;
-    }>;
-    login(loginDto: LogInDto): Promise<{
-        token: string;
-        status: string;
-    }>;
+import { Document } from 'mongoose';
+import { Posts } from "src/posts/schemas/posts.schema";
+import { User } from "src/user/schemas/user.schema";
+import mongoose from "mongoose";
+export declare class Calendars {
+    user: User;
+    post: Posts;
+    date: Date;
 }
+export declare const CalendarsSchema: mongoose.Schema<Calendars, mongoose.Model<Calendars, any, any, any, Document<unknown, any, Calendars> & Calendars & {
+    _id: mongoose.Types.ObjectId;
+}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, Calendars, Document<unknown, {}, mongoose.FlatRecord<Calendars>> & mongoose.FlatRecord<Calendars> & {
+    _id: mongoose.Types.ObjectId;
+}>;

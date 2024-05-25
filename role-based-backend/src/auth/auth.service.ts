@@ -16,52 +16,52 @@ export class AuthService {
     ) { }
 
     async signUp(signUpDto: SignUpDto) {
-        Promise<{ token: string }>
-        const { name, username, email, password } = signUpDto
-
+        const { name, username, email, password, role } = signUpDto; // Ensure role is included
+    
         const existingUsername = await this.userModel.findOne({ username });
         if (existingUsername) {
             throw new UnauthorizedException('Username already taken');
         }
-
+    
         const existingEmail = await this.userModel.findOne({ email });
         if (existingEmail) {
             throw new UnauthorizedException('Email already taken');
         }
-
-        const hashedPassword = await bcrypt.hash(password, 10)
-
-
+    
+        const hashedPassword = await bcrypt.hash(password, 10);
+    
         const user = await this.userModel.create({
             name,
             username,
             email,
-            password: hashedPassword
-        })
-
-        const token = this.jwtService.sign({ id: user._id })
-        return { token }
+            password: hashedPassword,
+            role 
+        });
+    
+        const token = this.jwtService.sign({ id: user._id, role }); // Include role in JWT payload
+        return { token };
     }
-
-    async login(loginDTo: LogInDto): Promise<{ token, status }> {
-        const { username, password } = loginDTo
-
-        const user = await this.userModel.findOne({ username })
-
+    
+    // login method
+    async login(loginDto: LogInDto): Promise<{ token: string; status: string }> {
+        const { username, password } = loginDto;
+    
+        const user = await this.userModel.findOne({ username }).select('+password +role'); // Include role in selection
+    
         if (!user) {
-            throw new UnauthorizedException('Invalid username or password')
+            throw new UnauthorizedException('Invalid username or password');
         }
-        const isPasswordMatched = await bcrypt.compare(password, user.password)
+    
+        const isPasswordMatched = await bcrypt.compare(password, user.password);
         if (!isPasswordMatched) {
-            throw new UnauthorizedException('Invalid username or password')
+            throw new UnauthorizedException('Invalid username or password');
         }
-
+    
         const token = this.jwtService.sign({
             id: user._id,
             role: user.role
-        })
-        const role = await this.userModel.findOne({ username })
-        const status = role.role;
-        return { token, status }
-    }
+        });
+    
+        return { token, status: user.role }; 
+}
 }
